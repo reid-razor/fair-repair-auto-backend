@@ -96,6 +96,6 @@ app.post("/api/quote", (req, res) => {
 });
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
+app.listen(PORT, "0.0.0.0", () => {
   console.log(`Fair Repair Auto backend running on port ${PORT}`);
 });
