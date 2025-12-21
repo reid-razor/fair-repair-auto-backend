@@ -1,9 +1,10 @@
 /**
- * Fair Repair Auto — JSON-ONLY Backend (DEBUG BUILD v2)
+ * Fair Repair Auto — JSON-ONLY Backend (FINAL, SHAPE-SAFE)
  *
- * • Flat JSON structure
+ * • Supports BOTH flat JSON and { data: {...} } wrapped JSON
  * • Source of truth: ./data/<make>.json
- * • Includes debug endpoints to verify JSON structure on Render
+ * • Lookup path (normalized):
+ *     make → (data || root) → model → year → repairSlug
  */
 
 import express from "express";
@@ -25,13 +26,11 @@ const DATA_DIR = path.join(__dirname, "data");
 const cache = new Map();
 
 /* -------------------------
-   Normalization helpers
+   Normalization
 -------------------------- */
 
 const norm = (v) =>
-  String(v || "")
-    .trim()
-    .toLowerCase();
+  String(v || "").trim().toLowerCase();
 
 const normYear = (v) => {
   const n = Number(v);
@@ -42,7 +41,7 @@ const normSlug = (v) =>
   norm(v).replace(/_/g, "-");
 
 /* -------------------------
-   JSON loading
+   JSON loading (shape-safe)
 -------------------------- */
 
 function loadMake(make) {
@@ -58,9 +57,15 @@ function loadMake(make) {
   }
 
   try {
-    const json = JSON.parse(fs.readFileSync(filePath, "utf8"));
-    cache.set(key, json);
-    return json;
+    const raw = JSON.parse(fs.readFileSync(filePath, "utf8"));
+
+    // 👇 CRITICAL LINE: support BOTH shapes
+    const data = raw.data && typeof raw.data === "object"
+      ? raw.data
+      : raw;
+
+    cache.set(key, data);
+    return data;
   } catch (err) {
     console.error("JSON parse error:", err);
     cache.set(key, null);
@@ -81,38 +86,7 @@ app.get("/", (_, res) => {
 });
 
 /* -------------------------
-   DEBUG — verify JSON files
--------------------------- */
-
-app.get("/api/debug/makes", (_, res) => {
-  try {
-    const files = fs
-      .readdirSync(DATA_DIR)
-      .filter((f) => f.endsWith(".json"));
-    res.json({ ok: true, files });
-  } catch (e) {
-    res.json({ ok: false, error: e.message });
-  }
-});
-
-/* -------------------------
-   DEBUG — verify Audi model keys
--------------------------- */
-
-app.get("/api/debug/audi-models", (_, res) => {
-  try {
-    const audi = loadMake("audi");
-    res.json({
-      ok: true,
-      models: audi ? Object.keys(audi) : null,
-    });
-  } catch (e) {
-    res.json({ ok: false, error: e.message });
-  }
-});
-
-/* -------------------------
-   QUOTE — JSON ONLY
+   QUOTE
 -------------------------- */
 
 app.post("/api/quote", (req, res) => {
