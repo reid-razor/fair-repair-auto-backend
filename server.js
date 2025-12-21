@@ -1,11 +1,9 @@
 /**
- * Fair Repair Auto — JSON-ONLY Backend (FINAL)
+ * Fair Repair Auto — JSON-ONLY Backend (DEBUG BUILD)
  *
- * • Flat JSON structure (no .data wrapper)
+ * • Flat JSON structure
  * • Source of truth: ./data/<make>.json
- * • Lookup path: make → model → year → repairSlug
- * • Compatible with pivot-table–generated JSON
- * • Safe normalization, no speculative logic
+ * • Includes debug endpoint to verify JSON loading on Render
  */
 
 import express from "express";
@@ -80,6 +78,21 @@ app.get("/", (_, res) => {
     service: "fair-repair-auto-api",
     mode: "json-only",
   });
+});
+
+/* -------------------------
+   DEBUG — verify JSON files on Render
+-------------------------- */
+
+app.get("/api/debug/makes", (_, res) => {
+  try {
+    const files = fs
+      .readdirSync(DATA_DIR)
+      .filter((f) => f.endsWith(".json"));
+    res.json({ ok: true, files });
+  } catch (e) {
+    res.json({ ok: false, error: e.message });
+  }
 });
 
 /* -------------------------
