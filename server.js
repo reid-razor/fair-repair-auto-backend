@@ -1,9 +1,9 @@
 /**
- * Fair Repair Auto — JSON-ONLY Backend (DEBUG BUILD)
+ * Fair Repair Auto — JSON-ONLY Backend (DEBUG BUILD v2)
  *
  * • Flat JSON structure
  * • Source of truth: ./data/<make>.json
- * • Includes debug endpoint to verify JSON loading on Render
+ * • Includes debug endpoints to verify JSON structure on Render
  */
 
 import express from "express";
@@ -81,7 +81,7 @@ app.get("/", (_, res) => {
 });
 
 /* -------------------------
-   DEBUG — verify JSON files on Render
+   DEBUG — verify JSON files
 -------------------------- */
 
 app.get("/api/debug/makes", (_, res) => {
@@ -90,6 +90,22 @@ app.get("/api/debug/makes", (_, res) => {
       .readdirSync(DATA_DIR)
       .filter((f) => f.endsWith(".json"));
     res.json({ ok: true, files });
+  } catch (e) {
+    res.json({ ok: false, error: e.message });
+  }
+});
+
+/* -------------------------
+   DEBUG — verify Audi model keys
+-------------------------- */
+
+app.get("/api/debug/audi-models", (_, res) => {
+  try {
+    const audi = loadMake("audi");
+    res.json({
+      ok: true,
+      models: audi ? Object.keys(audi) : null,
+    });
   } catch (e) {
     res.json({ ok: false, error: e.message });
   }
