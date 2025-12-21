@@ -1,3 +1,13 @@
+/**
+ * Fair Repair Auto — JSON-ONLY Backend (FINAL)
+ *
+ * • Flat JSON structure (no .data wrapper)
+ * • Source of truth: ./data/<make>.json
+ * • Lookup path: make → model → year → repairSlug
+ * • Compatible with pivot-table–generated JSON
+ * • Safe normalization, no speculative logic
+ */
+
 import express from "express";
 import cors from "cors";
 import fs from "fs";
@@ -11,91 +21,140 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 app.use(cors());
-app.use(express.json());
+app.use(express.json({ limit: "1mb" }));
 
 const DATA_DIR = path.join(__dirname, "data");
 const cache = new Map();
 
+/* -------------------------
+   Normalization helpers
+-------------------------- */
+
+const norm = (v) =>
+  String(v || "")
+    .trim()
+    .toLowerCase();
+
+const normYear = (v) => {
+  const n = Number(v);
+  return Number.isFinite(n) ? String(n) : null;
+};
+
+const normSlug = (v) =>
+  norm(v).replace(/_/g, "-");
+
+/* -------------------------
+   JSON loading
+-------------------------- */
+
 function loadMake(make) {
-  if (cache.has(make)) return cache.get(make);
+  const key = norm(make);
+  if (!key) return null;
 
-  const filePath = path.join(DATA_DIR, `${make}.json`);
-  if (!fs.existsSync(filePath)) return null;
+  if (cache.has(key)) return cache.get(key);
 
-  const data = JSON.parse(fs.readFileSync(filePath, "utf8"));
-  cache.set(make, data);
-  return data;
-}
-
-function lookupRepair({ make, model, year, repairSlug }) {
-  const makeData = loadMake(make);
-  if (!makeData) return { found: false, reason: "MAKE_NOT_FOUND" };
-
-  const modelData = makeData[model];
-  if (!modelData) return { found: false, reason: "MODEL_NOT_FOUND" };
-
-  const yearData = modelData[year];
-  if (!yearData) return { found: false, reason: "YEAR_NOT_FOUND" };
-
-  const repair = yearData[repairSlug];
-  if (!repair) return { found: false, reason: "REPAIR_NOT_FOUND" };
-
-  return { found: true, data: repair };
-}
-
-app.post("/api/quote", (req, res) => {
-  const { make, model, year, repairSlug, zip } = req.body;
-
-  if (!make || !model || !year || !repairSlug) {
-    return res.status(400).json({ ok: false, error: "INVALID_INPUT" });
+  const filePath = path.join(DATA_DIR, `${key}.json`);
+  if (!fs.existsSync(filePath)) {
+    cache.set(key, null);
+    return null;
   }
 
-  const lookup = lookupRepair({
-    make: make.toLowerCase(),
-    model: model.toLowerCase(),
-    year: String(year),
-    repairSlug
-  });
+  try {
+    const json = JSON.parse(fs.readFileSync(filePath, "utf8"));
+    cache.set(key, json);
+    return json;
+  } catch (err) {
+    console.error("JSON parse error:", err);
+    cache.set(key, null);
+    return null;
+  }
+}
 
-  if (!lookup.found) {
-    return res.json({
-      ok: true,
-      available: false,
-      reason: lookup.reason
+/* -------------------------
+   Health
+-------------------------- */
+
+app.get("/", (_, res) => {
+  res.json({
+    ok: true,
+    service: "fair-repair-auto-api",
+    mode: "json-only",
+  });
+});
+
+/* -------------------------
+   QUOTE — JSON ONLY
+-------------------------- */
+
+app.post("/api/quote", (req, res) => {
+  const make = norm(req.body.make);
+  const model = norm(req.body.model);
+  const year = normYear(req.body.year);
+  const repairSlug = normSlug(req.body.repairSlug);
+  const zip = norm(req.body.zip);
+
+  if (!make || !model || !year || !repairSlug) {
+    return res.status(400).json({
+      ok: false,
+      error: "INVALID_INPUT",
     });
+  }
+
+  const makeData = loadMake(make);
+  if (!makeData) {
+    return res.json({ ok: true, available: false, reason: "MAKE_NOT_FOUND" });
+  }
+
+  const modelData = makeData[model];
+  if (!modelData) {
+    return res.json({ ok: true, available: false, reason: "MODEL_NOT_FOUND" });
+  }
+
+  const yearData = modelData[year];
+  if (!yearData) {
+    return res.json({ ok: true, available: false, reason: "YEAR_NOT_FOUND" });
+  }
+
+  const record = yearData[repairSlug];
+  if (!record || !record.total) {
+    return res.json({ ok: true, available: false, reason: "REPAIR_NOT_FOUND" });
   }
 
   const state = zip ? zipToState(zip) : null;
   const multiplier = state ? getLaborMultiplier(state) : 1;
-  const base = lookup.data;
-
-  const adjusted = {
-    parts: base.parts,
-    labor: base.labor
-      ? {
-          low: Math.round(base.labor.low * multiplier),
-          high: Math.round(base.labor.high * multiplier)
-        }
-      : null,
-    total: base.total
-      ? {
-          low: Math.round(base.total.low * multiplier),
-          high: Math.round(base.total.high * multiplier)
-        }
-      : null
-  };
 
   res.json({
     ok: true,
     available: true,
+    match: {
+      make,
+      model,
+      year: Number(year),
+      repairSlug,
+      title: record.title,
+    },
+    price: {
+      low: Math.round(record.total.low * multiplier),
+      high: Math.round(record.total.high * multiplier),
+    },
+    labor: record.labor
+      ? {
+          low: Math.round(record.labor.low * multiplier),
+          high: Math.round(record.labor.high * multiplier),
+        }
+      : null,
+    parts: record.parts || null,
     state,
     multiplier,
-    base,
-    adjusted
+    source: record.source || "JSON",
   });
 });
 
+/* -------------------------
+   START
+-------------------------- */
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, "0.0.0.0", () => {
-  console.log(`Fair Repair Auto backend running on port ${PORT}`);
+  console.log(`Fair Repair Auto API running on port ${PORT}`);
 });
