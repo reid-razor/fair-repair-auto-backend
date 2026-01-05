@@ -1,6 +1,6 @@
 {
   "make": "hyundai",
-  "generatedAt": "2025-12-15T18:01:29.599Z",
+  "generatedAt": "2026-01-05T17:14:38.113Z",
   "data": {
     "accent": {
       "2015": {
@@ -58077,6 +58077,7750 @@
           "total": {
             "low": 44,
             "high": 56
+          },
+          "source": null
+        }
+      }
+    },
+    "palisade": {
+      "2019": {
+        "abs-module-replacement": {
+          "title": "ABS Module Replacement",
+          "parts": {
+            "low": 675,
+            "high": 746
+          },
+          "labor": {
+            "low": 376,
+            "high": 424
+          },
+          "total": {
+            "low": 1051,
+            "high": 1170
+          },
+          "source": null
+        },
+        "ac-line-replacement": {
+          "title": "AC Line Replacement",
+          "parts": {
+            "low": 245,
+            "high": 287
+          },
+          "labor": {
+            "low": 332,
+            "high": 374
+          },
+          "total": {
+            "low": 577,
+            "high": 661
+          },
+          "source": null
+        },
+        "ac-repair": {
+          "title": "AC Repair",
+          "parts": {
+            "low": 175,
+            "high": 205
+          },
+          "labor": {
+            "low": 241,
+            "high": 283
+          },
+          "total": {
+            "low": 416,
+            "high": 488
+          },
+          "source": null
+        },
+        "air-conditioning---recharge": {
+          "title": "Air Conditioning - Recharge",
+          "parts": {
+            "low": 71,
+            "high": 97
+          },
+          "labor": {
+            "low": 108,
+            "high": 146
+          },
+          "total": {
+            "low": 179,
+            "high": 243
+          },
+          "source": null
+        },
+        "alternator-replacement": {
+          "title": "Alternator Replacement",
+          "parts": {
+            "low": 530,
+            "high": 586
+          },
+          "labor": {
+            "low": 335,
+            "high": 377
+          },
+          "total": {
+            "low": 865,
+            "high": 963
+          },
+          "source": null
+        },
+        "axle---replace-front-axle": {
+          "title": "Axle - Replace Front Axle",
+          "parts": {
+            "low": 259,
+            "high": 351
+          },
+          "labor": {
+            "low": 389,
+            "high": 527
+          },
+          "total": {
+            "low": 648,
+            "high": 878
+          },
+          "source": null
+        },
+        "battery---replace": {
+          "title": "Battery - Replace",
+          "parts": {
+            "low": 143,
+            "high": 193
+          },
+          "labor": {
+            "low": 48,
+            "high": 65
+          },
+          "total": {
+            "low": 191,
+            "high": 258
+          },
+          "source": null
+        },
+        "battery-check": {
+          "title": "Battery Check",
+          "parts": {
+            "low": 0,
+            "high": 0
+          },
+          "labor": {
+            "low": 143,
+            "high": 167
+          },
+          "total": {
+            "low": 143,
+            "high": 167
+          },
+          "source": null
+        },
+        "brake-bleed": {
+          "title": "Brake Bleed",
+          "parts": {
+            "low": 0,
+            "high": 0
+          },
+          "labor": {
+            "low": 224,
+            "high": 262
+          },
+          "total": {
+            "low": 224,
+            "high": 262
+          },
+          "source": null
+        },
+        "brake-caliper-replacement": {
+          "title": "Brake Caliper Replacement",
+          "parts": {
+            "low": 318,
+            "high": 358
+          },
+          "labor": {
+            "low": 190,
+            "high": 224
+          },
+          "total": {
+            "low": 508,
+            "high": 582
+          },
+          "source": null
+        },
+        "brake-fluid---flush-fluid--bleed-brakes": {
+          "title": "Brake Fluid - Flush Fluid & Bleed Brakes",
+          "parts": {
+            "low": 53,
+            "high": 72
+          },
+          "labor": {
+            "low": 64,
+            "high": 87
+          },
+          "total": {
+            "low": 117,
+            "high": 159
+          },
+          "source": null
+        },
+        "brake-light-switch-replacement": {
+          "title": "Brake Light Switch Replacement",
+          "parts": {
+            "low": 32,
+            "high": 40
+          },
+          "labor": {
+            "low": 174,
+            "high": 204
+          },
+          "total": {
+            "low": 206,
+            "high": 244
+          },
+          "source": null
+        },
+        "brake-line-replacement": {
+          "title": "Brake Line Replacement",
+          "parts": {
+            "low": 178,
+            "high": 210
+          },
+          "labor": {
+            "low": 325,
+            "high": 367
+          },
+          "total": {
+            "low": 503,
+            "high": 577
+          },
+          "source": null
+        },
+        "brake-master-cylinder-replacement": {
+          "title": "Brake Master Cylinder Replacement",
+          "parts": {
+            "low": 470,
+            "high": 530
+          },
+          "labor": {
+            "low": 340,
+            "high": 384
+          },
+          "total": {
+            "low": 810,
+            "high": 914
+          },
+          "source": null
+        },
+        "brakes---adjust": {
+          "title": "Brakes - Adjust",
+          "parts": {
+            "low": 0,
+            "high": 0
+          },
+          "labor": {
+            "low": 91,
+            "high": 123
+          },
+          "total": {
+            "low": 91,
+            "high": 123
+          },
+          "source": null
+        },
+        "brakes---replace-pads": {
+          "title": "Brakes - Replace Pads",
+          "parts": {
+            "low": 103,
+            "high": 140
+          },
+          "labor": {
+            "low": 154,
+            "high": 208
+          },
+          "total": {
+            "low": 257,
+            "high": 348
+          },
+          "source": null
+        },
+        "brakes---replace-pads--resurface-rotors": {
+          "title": "Brakes - Replace Pads & Resurface Rotors",
+          "parts": {
+            "low": 114,
+            "high": 154
+          },
+          "labor": {
+            "low": 172,
+            "high": 232
+          },
+          "total": {
+            "low": 286,
+            "high": 386
+          },
+          "source": null
+        },
+        "brakes---replace-pads--rotors": {
+          "title": "Brakes - Replace Pads & Rotors",
+          "parts": {
+            "low": 181,
+            "high": 245
+          },
+          "labor": {
+            "low": 149,
+            "high": 201
+          },
+          "total": {
+            "low": 330,
+            "high": 446
+          },
+          "source": null
+        },
+        "brakes---replace-rotors": {
+          "title": "Brakes - Replace Rotors",
+          "parts": {
+            "low": 156,
+            "high": 212
+          },
+          "labor": {
+            "low": 128,
+            "high": 173
+          },
+          "total": {
+            "low": 284,
+            "high": 385
+          },
+          "source": null
+        },
+        "brakes---resurface-rotors": {
+          "title": "Brakes - Resurface Rotors",
+          "parts": {
+            "low": 0,
+            "high": 0
+          },
+          "labor": {
+            "low": 227,
+            "high": 307
+          },
+          "total": {
+            "low": 227,
+            "high": 307
+          },
+          "source": null
+        },
+        "cabin-air-filter---replace": {
+          "title": "Cabin Air Filter - Replace",
+          "parts": {
+            "low": 29,
+            "high": 40
+          },
+          "labor": {
+            "low": 29,
+            "high": 40
+          },
+          "total": {
+            "low": 58,
+            "high": 80
+          },
+          "source": null
+        },
+        "catalytic-converter-replacement": {
+          "title": "Catalytic Converter Replacement",
+          "parts": {
+            "low": 1957,
+            "high": 2121
+          },
+          "labor": {
+            "low": 421,
+            "high": 475
+          },
+          "total": {
+            "low": 2378,
+            "high": 2596
+          },
+          "source": null
+        },
+        "clutch-replacement": {
+          "title": "Clutch Replacement",
+          "parts": {
+            "low": 880,
+            "high": 972
+          },
+          "labor": {
+            "low": 612,
+            "high": 676
+          },
+          "total": {
+            "low": 1492,
+            "high": 1648
+          },
+          "source": null
+        },
+        "coolant---flush": {
+          "title": "Coolant - Flush",
+          "parts": {
+            "low": 52,
+            "high": 71
+          },
+          "labor": {
+            "low": 122,
+            "high": 164
+          },
+          "total": {
+            "low": 174,
+            "high": 235
+          },
+          "source": null
+        },
+        "coolant-thermostat-replacement": {
+          "title": "Coolant Thermostat Replacement",
+          "parts": {
+            "low": 143,
+            "high": 167
+          },
+          "labor": {
+            "low": 416,
+            "high": 470
+          },
+          "total": {
+            "low": 559,
+            "high": 637
+          },
+          "source": null
+        },
+        "crankshaft-seal-replacement": {
+          "title": "Crankshaft Seal Replacement",
+          "parts": {
+            "low": 52,
+            "high": 62
+          },
+          "labor": {
+            "low": 844,
+            "high": 932
+          },
+          "total": {
+            "low": 896,
+            "high": 994
+          },
+          "source": null
+        },
+        "differential-fluid---flush": {
+          "title": "Differential Fluid - Flush",
+          "parts": {
+            "low": 59,
+            "high": 79
+          },
+          "labor": {
+            "low": 59,
+            "high": 79
+          },
+          "total": {
+            "low": 118,
+            "high": 158
+          },
+          "source": null
+        },
+        "drive-belt-tensioner-replacement": {
+          "title": "Drive Belt Tensioner Replacement",
+          "parts": {
+            "low": 323,
+            "high": 365
+          },
+          "labor": {
+            "low": 211,
+            "high": 247
+          },
+          "total": {
+            "low": 534,
+            "high": 612
+          },
+          "source": null
+        },
+        "engine-air-filter---replace": {
+          "title": "Engine Air Filter - Replace",
+          "parts": {
+            "low": 14,
+            "high": 20
+          },
+          "labor": {
+            "low": 21,
+            "high": 30
+          },
+          "total": {
+            "low": 35,
+            "high": 50
+          },
+          "source": null
+        },
+        "engine-belt---replace": {
+          "title": "Engine Belt - Replace",
+          "parts": {
+            "low": 65,
+            "high": 87
+          },
+          "labor": {
+            "low": 97,
+            "high": 131
+          },
+          "total": {
+            "low": 162,
+            "high": 218
+          },
+          "source": null
+        },
+        "engine-diagnostics---check-engine-light": {
+          "title": "Engine Diagnostics - Check Engine Light",
+          "parts": {
+            "low": 0,
+            "high": 0
+          },
+          "labor": {
+            "low": 183,
+            "high": 248
+          },
+          "total": {
+            "low": 183,
+            "high": 248
+          },
+          "source": null
+        },
+        "engine-replacement": {
+          "title": "Engine Replacement",
+          "parts": {
+            "low": 5509,
+            "high": 5909
+          },
+          "labor": {
+            "low": 2580,
+            "high": 2794
+          },
+          "total": {
+            "low": 8089,
+            "high": 8703
+          },
+          "source": null
+        },
+        "exhaust-system-replacement": {
+          "title": "Exhaust System Replacement",
+          "parts": {
+            "low": 441,
+            "high": 497
+          },
+          "labor": {
+            "low": 233,
+            "high": 273
+          },
+          "total": {
+            "low": 674,
+            "high": 770
+          },
+          "source": null
+        },
+        "fuel-injector---service": {
+          "title": "Fuel Injector - Service",
+          "parts": {
+            "low": 90,
+            "high": 121
+          },
+          "labor": {
+            "low": 110,
+            "high": 148
+          },
+          "total": {
+            "low": 200,
+            "high": 269
+          },
+          "source": null
+        },
+        "head-gasket-replacement": {
+          "title": "Head Gasket Replacement",
+          "parts": {
+            "low": 572,
+            "high": 632
+          },
+          "labor": {
+            "low": 1563,
+            "high": 1693
+          },
+          "total": {
+            "low": 2135,
+            "high": 2325
+          },
+          "source": null
+        },
+        "hood-latch-assembly-replacement": {
+          "title": "Hood Latch Assembly Replacement",
+          "parts": {
+            "low": 177,
+            "high": 207
+          },
+          "labor": {
+            "low": 190,
+            "high": 224
+          },
+          "total": {
+            "low": 367,
+            "high": 431
+          },
+          "source": null
+        },
+        "ignition-switch-replacement": {
+          "title": "Ignition Switch Replacement",
+          "parts": {
+            "low": 253,
+            "high": 297
+          },
+          "labor": {
+            "low": 253,
+            "high": 297
+          },
+          "total": {
+            "low": 506,
+            "high": 594
+          },
+          "source": null
+        },
+        "intake-manifold-gasket---replace": {
+          "title": "Intake Manifold Gasket - Replace",
+          "parts": {
+            "low": 64,
+            "high": 88
+          },
+          "labor": {
+            "low": 367,
+            "high": 495
+          },
+          "total": {
+            "low": 431,
+            "high": 583
+          },
+          "source": null
+        },
+        "mass-air-sensor-replacement": {
+          "title": "Mass Air Sensor Replacement",
+          "parts": {
+            "low": 302,
+            "high": 340
+          },
+          "labor": {
+            "low": 189,
+            "high": 221
+          },
+          "total": {
+            "low": 491,
+            "high": 561
+          },
+          "source": null
+        },
+        "oil-change": {
+          "title": "Oil Change",
+          "parts": {
+            "low": 29,
+            "high": 39
+          },
+          "labor": {
+            "low": 29,
+            "high": 39
+          },
+          "total": {
+            "low": 58,
+            "high": 78
+          },
+          "source": null
+        },
+        "oil-pan-gasket-replacement": {
+          "title": "Oil Pan Gasket Replacement",
+          "parts": {
+            "low": 81,
+            "high": 97
+          },
+          "labor": {
+            "low": 409,
+            "high": 461
+          },
+          "total": {
+            "low": 490,
+            "high": 558
+          },
+          "source": null
+        },
+        "oil-pan-replacement": {
+          "title": "Oil Pan Replacement",
+          "parts": {
+            "low": 149,
+            "high": 175
+          },
+          "labor": {
+            "low": 323,
+            "high": 365
+          },
+          "total": {
+            "low": 472,
+            "high": 540
+          },
+          "source": null
+        },
+        "oil-pressure-sensor-replacement": {
+          "title": "Oil Pressure Sensor Replacement",
+          "parts": {
+            "low": 37,
+            "high": 45
+          },
+          "labor": {
+            "low": 233,
+            "high": 273
+          },
+          "total": {
+            "low": 270,
+            "high": 318
+          },
+          "source": null
+        },
+        "oil-pump-replacement": {
+          "title": "Oil Pump Replacement",
+          "parts": {
+            "low": 814,
+            "high": 900
+          },
+          "labor": {
+            "low": 542,
+            "high": 600
+          },
+          "total": {
+            "low": 1356,
+            "high": 1500
+          },
+          "source": null
+        },
+        "pcv-valve-replacement": {
+          "title": "PCV Valve Replacement",
+          "parts": {
+            "low": 35,
+            "high": 43
+          },
+          "labor": {
+            "low": 68,
+            "high": 82
+          },
+          "total": {
+            "low": 103,
+            "high": 125
+          },
+          "source": null
+        },
+        "power-steering-fluid---flush": {
+          "title": "Power Steering Fluid - Flush",
+          "parts": {
+            "low": 50,
+            "high": 68
+          },
+          "labor": {
+            "low": 76,
+            "high": 102
+          },
+          "total": {
+            "low": 126,
+            "high": 170
+          },
+          "source": null
+        },
+        "purge-valve-replacement": {
+          "title": "Purge Valve Replacement",
+          "parts": {
+            "low": 91,
+            "high": 109
+          },
+          "labor": {
+            "low": 213,
+            "high": 251
+          },
+          "total": {
+            "low": 304,
+            "high": 360
+          },
+          "source": null
+        },
+        "radiator-fan-motor-replacement": {
+          "title": "Radiator Fan Motor Replacement",
+          "parts": {
+            "low": 383,
+            "high": 431
+          },
+          "labor": {
+            "low": 289,
+            "high": 325
+          },
+          "total": {
+            "low": 672,
+            "high": 756
+          },
+          "source": null
+        },
+        "radiator-hose-replacement": {
+          "title": "Radiator Hose Replacement",
+          "parts": {
+            "low": 180,
+            "high": 212
+          },
+          "labor": {
+            "low": 213,
+            "high": 249
+          },
+          "total": {
+            "low": 393,
+            "high": 461
+          },
+          "source": null
+        },
+        "radiator-replacement": {
+          "title": "Radiator Replacement",
+          "parts": {
+            "low": 511,
+            "high": 565
+          },
+          "labor": {
+            "low": 531,
+            "high": 587
+          },
+          "total": {
+            "low": 1042,
+            "high": 1152
+          },
+          "source": null
+        },
+        "spark-plugs---replace": {
+          "title": "Spark Plugs - Replace",
+          "parts": {
+            "low": 109,
+            "high": 147
+          },
+          "labor": {
+            "low": 163,
+            "high": 220
+          },
+          "total": {
+            "low": 272,
+            "high": 367
+          },
+          "source": null
+        },
+        "starter-replacement": {
+          "title": "Starter Replacement",
+          "parts": {
+            "low": 380,
+            "high": 428
+          },
+          "labor": {
+            "low": 324,
+            "high": 366
+          },
+          "total": {
+            "low": 704,
+            "high": 794
+          },
+          "source": null
+        },
+        "throttle-body-replacement": {
+          "title": "Throttle Body Replacement",
+          "parts": {
+            "low": 344,
+            "high": 388
+          },
+          "labor": {
+            "low": 234,
+            "high": 274
+          },
+          "total": {
+            "low": 578,
+            "high": 662
+          },
+          "source": null
+        },
+        "timing-belt---replace": {
+          "title": "Timing Belt - Replace",
+          "parts": {
+            "low": 294,
+            "high": 398
+          },
+          "labor": {
+            "low": 440,
+            "high": 596
+          },
+          "total": {
+            "low": 734,
+            "high": 994
+          },
+          "source": null
+        },
+        "timing-chain-replacement": {
+          "title": "Timing Chain Replacement",
+          "parts": {
+            "low": 1009,
+            "high": 1093
+          },
+          "labor": {
+            "low": 1050,
+            "high": 1138
+          },
+          "total": {
+            "low": 2059,
+            "high": 2231
+          },
+          "source": null
+        },
+        "tire-pressure-tpms-sensor---replace": {
+          "title": "Tire Pressure (TPMS) Sensor - Replace",
+          "parts": {
+            "low": 77,
+            "high": 104
+          },
+          "labor": {
+            "low": 141,
+            "high": 191
+          },
+          "total": {
+            "low": 218,
+            "high": 295
+          },
+          "source": null
+        },
+        "tires---mount--balance-4-wheels": {
+          "title": "Tire(s) - Mount & Balance (4 Wheels)",
+          "parts": {
+            "low": 0,
+            "high": 0
+          },
+          "labor": {
+            "low": 156,
+            "high": 211
+          },
+          "total": {
+            "low": 156,
+            "high": 211
+          },
+          "source": null
+        },
+        "tires---patch": {
+          "title": "Tire(s) - Patch",
+          "parts": {
+            "low": 14,
+            "high": 20
+          },
+          "labor": {
+            "low": 22,
+            "high": 29
+          },
+          "total": {
+            "low": 36,
+            "high": 49
+          },
+          "source": null
+        },
+        "tires---rotate": {
+          "title": "Tire(s) - Rotate",
+          "parts": {
+            "low": 0,
+            "high": 0
+          },
+          "labor": {
+            "low": 34,
+            "high": 45
+          },
+          "total": {
+            "low": 34,
+            "high": 45
+          },
+          "source": null
+        },
+        "tires---rotate--balance-4-wheels": {
+          "title": "Tire(s) - Rotate & Balance (4 Wheels)",
+          "parts": {
+            "low": 0,
+            "high": 0
+          },
+          "labor": {
+            "low": 76,
+            "high": 104
+          },
+          "total": {
+            "low": 76,
+            "high": 104
+          },
+          "source": null
+        },
+        "transmission---replace": {
+          "title": "Transmission - Replace",
+          "parts": {
+            "low": 2967,
+            "high": 4015
+          },
+          "labor": {
+            "low": 989,
+            "high": 1339
+          },
+          "total": {
+            "low": 3956,
+            "high": 5354
+          },
+          "source": null
+        },
+        "transmission-fluid---flush": {
+          "title": "Transmission Fluid - Flush",
+          "parts": {
+            "low": 97,
+            "high": 132
+          },
+          "labor": {
+            "low": 119,
+            "high": 161
+          },
+          "total": {
+            "low": 216,
+            "high": 293
+          },
+          "source": null
+        },
+        "turbo-replacement": {
+          "title": "Turbo Replacement",
+          "parts": {
+            "low": 1601,
+            "high": 1735
+          },
+          "labor": {
+            "low": 781,
+            "high": 863
+          },
+          "total": {
+            "low": 2382,
+            "high": 2598
+          },
+          "source": null
+        },
+        "valve-cover-gasket-replacement": {
+          "title": "Valve Cover Gasket Replacement",
+          "parts": {
+            "low": 187,
+            "high": 219
+          },
+          "labor": {
+            "low": 447,
+            "high": 504
+          },
+          "total": {
+            "low": 634,
+            "high": 723
+          },
+          "source": null
+        },
+        "water-pump---replace": {
+          "title": "Water Pump - Replace",
+          "parts": {
+            "low": 208,
+            "high": 282
+          },
+          "labor": {
+            "low": 388,
+            "high": 524
+          },
+          "total": {
+            "low": 596,
+            "high": 806
+          },
+          "source": null
+        },
+        "wheel-locks---install": {
+          "title": "Wheel Locks - Install",
+          "parts": {
+            "low": 50,
+            "high": 68
+          },
+          "labor": {
+            "low": 22,
+            "high": 30
+          },
+          "total": {
+            "low": 72,
+            "high": 98
+          },
+          "source": null
+        },
+        "wheels---alignment": {
+          "title": "Wheels - Alignment",
+          "parts": {
+            "low": 0,
+            "high": 0
+          },
+          "labor": {
+            "low": 112,
+            "high": 151
+          },
+          "total": {
+            "low": 112,
+            "high": 151
+          },
+          "source": null
+        },
+        "window-regulator-replacement---rear": {
+          "title": "Window Regulator Replacement - Rear",
+          "parts": {
+            "low": 418,
+            "high": 472
+          },
+          "labor": {
+            "low": 272,
+            "high": 320
+          },
+          "total": {
+            "low": 690,
+            "high": 792
+          },
+          "source": null
+        },
+        "wiper-blades---replace-1-front-wiper": {
+          "title": "Wiper Blades - Replace 1 Front Wiper",
+          "parts": {
+            "low": 33,
+            "high": 45
+          },
+          "labor": {
+            "low": 9,
+            "high": 12
+          },
+          "total": {
+            "low": 42,
+            "high": 57
+          },
+          "source": null
+        }
+      },
+      "2020": {
+        "abs-module-replacement": {
+          "title": "ABS Module Replacement",
+          "parts": {
+            "low": 675,
+            "high": 746
+          },
+          "labor": {
+            "low": 376,
+            "high": 424
+          },
+          "total": {
+            "low": 1051,
+            "high": 1170
+          },
+          "source": null
+        },
+        "ac-line-replacement": {
+          "title": "AC Line Replacement",
+          "parts": {
+            "low": 245,
+            "high": 287
+          },
+          "labor": {
+            "low": 332,
+            "high": 374
+          },
+          "total": {
+            "low": 577,
+            "high": 661
+          },
+          "source": null
+        },
+        "ac-repair": {
+          "title": "AC Repair",
+          "parts": {
+            "low": 175,
+            "high": 205
+          },
+          "labor": {
+            "low": 241,
+            "high": 283
+          },
+          "total": {
+            "low": 416,
+            "high": 488
+          },
+          "source": null
+        },
+        "air-conditioning---recharge": {
+          "title": "Air Conditioning - Recharge",
+          "parts": {
+            "low": 71,
+            "high": 97
+          },
+          "labor": {
+            "low": 108,
+            "high": 146
+          },
+          "total": {
+            "low": 179,
+            "high": 243
+          },
+          "source": null
+        },
+        "alternator-replacement": {
+          "title": "Alternator Replacement",
+          "parts": {
+            "low": 530,
+            "high": 586
+          },
+          "labor": {
+            "low": 335,
+            "high": 377
+          },
+          "total": {
+            "low": 865,
+            "high": 963
+          },
+          "source": null
+        },
+        "axle---replace-front-axle": {
+          "title": "Axle - Replace Front Axle",
+          "parts": {
+            "low": 259,
+            "high": 351
+          },
+          "labor": {
+            "low": 389,
+            "high": 527
+          },
+          "total": {
+            "low": 648,
+            "high": 878
+          },
+          "source": null
+        },
+        "battery---replace": {
+          "title": "Battery - Replace",
+          "parts": {
+            "low": 143,
+            "high": 193
+          },
+          "labor": {
+            "low": 48,
+            "high": 65
+          },
+          "total": {
+            "low": 191,
+            "high": 258
+          },
+          "source": null
+        },
+        "battery-check": {
+          "title": "Battery Check",
+          "parts": {
+            "low": 0,
+            "high": 0
+          },
+          "labor": {
+            "low": 143,
+            "high": 167
+          },
+          "total": {
+            "low": 143,
+            "high": 167
+          },
+          "source": null
+        },
+        "brake-bleed": {
+          "title": "Brake Bleed",
+          "parts": {
+            "low": 0,
+            "high": 0
+          },
+          "labor": {
+            "low": 224,
+            "high": 262
+          },
+          "total": {
+            "low": 224,
+            "high": 262
+          },
+          "source": null
+        },
+        "brake-caliper-replacement": {
+          "title": "Brake Caliper Replacement",
+          "parts": {
+            "low": 318,
+            "high": 358
+          },
+          "labor": {
+            "low": 190,
+            "high": 224
+          },
+          "total": {
+            "low": 508,
+            "high": 582
+          },
+          "source": null
+        },
+        "brake-fluid---flush-fluid--bleed-brakes": {
+          "title": "Brake Fluid - Flush Fluid & Bleed Brakes",
+          "parts": {
+            "low": 53,
+            "high": 72
+          },
+          "labor": {
+            "low": 64,
+            "high": 87
+          },
+          "total": {
+            "low": 117,
+            "high": 159
+          },
+          "source": null
+        },
+        "brake-light-switch-replacement": {
+          "title": "Brake Light Switch Replacement",
+          "parts": {
+            "low": 32,
+            "high": 40
+          },
+          "labor": {
+            "low": 174,
+            "high": 204
+          },
+          "total": {
+            "low": 206,
+            "high": 244
+          },
+          "source": null
+        },
+        "brake-line-replacement": {
+          "title": "Brake Line Replacement",
+          "parts": {
+            "low": 178,
+            "high": 210
+          },
+          "labor": {
+            "low": 325,
+            "high": 367
+          },
+          "total": {
+            "low": 503,
+            "high": 577
+          },
+          "source": null
+        },
+        "brake-master-cylinder-replacement": {
+          "title": "Brake Master Cylinder Replacement",
+          "parts": {
+            "low": 470,
+            "high": 530
+          },
+          "labor": {
+            "low": 340,
+            "high": 384
+          },
+          "total": {
+            "low": 810,
+            "high": 914
+          },
+          "source": null
+        },
+        "brakes---adjust": {
+          "title": "Brakes - Adjust",
+          "parts": {
+            "low": 0,
+            "high": 0
+          },
+          "labor": {
+            "low": 91,
+            "high": 123
+          },
+          "total": {
+            "low": 91,
+            "high": 123
+          },
+          "source": null
+        },
+        "brakes---replace-pads": {
+          "title": "Brakes - Replace Pads",
+          "parts": {
+            "low": 103,
+            "high": 140
+          },
+          "labor": {
+            "low": 154,
+            "high": 208
+          },
+          "total": {
+            "low": 257,
+            "high": 348
+          },
+          "source": null
+        },
+        "brakes---replace-pads--resurface-rotors": {
+          "title": "Brakes - Replace Pads & Resurface Rotors",
+          "parts": {
+            "low": 114,
+            "high": 154
+          },
+          "labor": {
+            "low": 172,
+            "high": 232
+          },
+          "total": {
+            "low": 286,
+            "high": 386
+          },
+          "source": null
+        },
+        "brakes---replace-pads--rotors": {
+          "title": "Brakes - Replace Pads & Rotors",
+          "parts": {
+            "low": 181,
+            "high": 245
+          },
+          "labor": {
+            "low": 149,
+            "high": 201
+          },
+          "total": {
+            "low": 330,
+            "high": 446
+          },
+          "source": null
+        },
+        "brakes---replace-rotors": {
+          "title": "Brakes - Replace Rotors",
+          "parts": {
+            "low": 156,
+            "high": 212
+          },
+          "labor": {
+            "low": 128,
+            "high": 173
+          },
+          "total": {
+            "low": 284,
+            "high": 385
+          },
+          "source": null
+        },
+        "brakes---resurface-rotors": {
+          "title": "Brakes - Resurface Rotors",
+          "parts": {
+            "low": 0,
+            "high": 0
+          },
+          "labor": {
+            "low": 227,
+            "high": 307
+          },
+          "total": {
+            "low": 227,
+            "high": 307
+          },
+          "source": null
+        },
+        "cabin-air-filter---replace": {
+          "title": "Cabin Air Filter - Replace",
+          "parts": {
+            "low": 29,
+            "high": 40
+          },
+          "labor": {
+            "low": 29,
+            "high": 40
+          },
+          "total": {
+            "low": 58,
+            "high": 80
+          },
+          "source": null
+        },
+        "catalytic-converter-replacement": {
+          "title": "Catalytic Converter Replacement",
+          "parts": {
+            "low": 1957,
+            "high": 2121
+          },
+          "labor": {
+            "low": 421,
+            "high": 475
+          },
+          "total": {
+            "low": 2378,
+            "high": 2596
+          },
+          "source": null
+        },
+        "clutch-replacement": {
+          "title": "Clutch Replacement",
+          "parts": {
+            "low": 880,
+            "high": 972
+          },
+          "labor": {
+            "low": 612,
+            "high": 676
+          },
+          "total": {
+            "low": 1492,
+            "high": 1648
+          },
+          "source": null
+        },
+        "coolant---flush": {
+          "title": "Coolant - Flush",
+          "parts": {
+            "low": 52,
+            "high": 71
+          },
+          "labor": {
+            "low": 122,
+            "high": 164
+          },
+          "total": {
+            "low": 174,
+            "high": 235
+          },
+          "source": null
+        },
+        "coolant-thermostat-replacement": {
+          "title": "Coolant Thermostat Replacement",
+          "parts": {
+            "low": 143,
+            "high": 167
+          },
+          "labor": {
+            "low": 416,
+            "high": 470
+          },
+          "total": {
+            "low": 559,
+            "high": 637
+          },
+          "source": null
+        },
+        "crankshaft-seal-replacement": {
+          "title": "Crankshaft Seal Replacement",
+          "parts": {
+            "low": 52,
+            "high": 62
+          },
+          "labor": {
+            "low": 844,
+            "high": 932
+          },
+          "total": {
+            "low": 896,
+            "high": 994
+          },
+          "source": null
+        },
+        "differential-fluid---flush": {
+          "title": "Differential Fluid - Flush",
+          "parts": {
+            "low": 59,
+            "high": 79
+          },
+          "labor": {
+            "low": 59,
+            "high": 79
+          },
+          "total": {
+            "low": 118,
+            "high": 158
+          },
+          "source": null
+        },
+        "drive-belt-tensioner-replacement": {
+          "title": "Drive Belt Tensioner Replacement",
+          "parts": {
+            "low": 323,
+            "high": 365
+          },
+          "labor": {
+            "low": 211,
+            "high": 247
+          },
+          "total": {
+            "low": 534,
+            "high": 612
+          },
+          "source": null
+        },
+        "engine-air-filter---replace": {
+          "title": "Engine Air Filter - Replace",
+          "parts": {
+            "low": 14,
+            "high": 20
+          },
+          "labor": {
+            "low": 21,
+            "high": 30
+          },
+          "total": {
+            "low": 35,
+            "high": 50
+          },
+          "source": null
+        },
+        "engine-belt---replace": {
+          "title": "Engine Belt - Replace",
+          "parts": {
+            "low": 65,
+            "high": 87
+          },
+          "labor": {
+            "low": 97,
+            "high": 131
+          },
+          "total": {
+            "low": 162,
+            "high": 218
+          },
+          "source": null
+        },
+        "engine-diagnostics---check-engine-light": {
+          "title": "Engine Diagnostics - Check Engine Light",
+          "parts": {
+            "low": 0,
+            "high": 0
+          },
+          "labor": {
+            "low": 183,
+            "high": 248
+          },
+          "total": {
+            "low": 183,
+            "high": 248
+          },
+          "source": null
+        },
+        "engine-replacement": {
+          "title": "Engine Replacement",
+          "parts": {
+            "low": 5509,
+            "high": 5909
+          },
+          "labor": {
+            "low": 2580,
+            "high": 2794
+          },
+          "total": {
+            "low": 8089,
+            "high": 8703
+          },
+          "source": null
+        },
+        "exhaust-system-replacement": {
+          "title": "Exhaust System Replacement",
+          "parts": {
+            "low": 441,
+            "high": 497
+          },
+          "labor": {
+            "low": 233,
+            "high": 273
+          },
+          "total": {
+            "low": 674,
+            "high": 770
+          },
+          "source": null
+        },
+        "fuel-injector---service": {
+          "title": "Fuel Injector - Service",
+          "parts": {
+            "low": 90,
+            "high": 121
+          },
+          "labor": {
+            "low": 110,
+            "high": 148
+          },
+          "total": {
+            "low": 200,
+            "high": 269
+          },
+          "source": null
+        },
+        "head-gasket-replacement": {
+          "title": "Head Gasket Replacement",
+          "parts": {
+            "low": 572,
+            "high": 632
+          },
+          "labor": {
+            "low": 1563,
+            "high": 1693
+          },
+          "total": {
+            "low": 2135,
+            "high": 2325
+          },
+          "source": null
+        },
+        "hood-latch-assembly-replacement": {
+          "title": "Hood Latch Assembly Replacement",
+          "parts": {
+            "low": 177,
+            "high": 207
+          },
+          "labor": {
+            "low": 190,
+            "high": 224
+          },
+          "total": {
+            "low": 367,
+            "high": 431
+          },
+          "source": null
+        },
+        "ignition-switch-replacement": {
+          "title": "Ignition Switch Replacement",
+          "parts": {
+            "low": 253,
+            "high": 297
+          },
+          "labor": {
+            "low": 253,
+            "high": 297
+          },
+          "total": {
+            "low": 506,
+            "high": 594
+          },
+          "source": null
+        },
+        "intake-manifold-gasket---replace": {
+          "title": "Intake Manifold Gasket - Replace",
+          "parts": {
+            "low": 64,
+            "high": 88
+          },
+          "labor": {
+            "low": 367,
+            "high": 495
+          },
+          "total": {
+            "low": 431,
+            "high": 583
+          },
+          "source": null
+        },
+        "mass-air-sensor-replacement": {
+          "title": "Mass Air Sensor Replacement",
+          "parts": {
+            "low": 302,
+            "high": 340
+          },
+          "labor": {
+            "low": 189,
+            "high": 221
+          },
+          "total": {
+            "low": 491,
+            "high": 561
+          },
+          "source": null
+        },
+        "oil-change": {
+          "title": "Oil Change",
+          "parts": {
+            "low": 29,
+            "high": 39
+          },
+          "labor": {
+            "low": 29,
+            "high": 39
+          },
+          "total": {
+            "low": 58,
+            "high": 78
+          },
+          "source": null
+        },
+        "oil-pan-gasket-replacement": {
+          "title": "Oil Pan Gasket Replacement",
+          "parts": {
+            "low": 81,
+            "high": 97
+          },
+          "labor": {
+            "low": 409,
+            "high": 461
+          },
+          "total": {
+            "low": 490,
+            "high": 558
+          },
+          "source": null
+        },
+        "oil-pan-replacement": {
+          "title": "Oil Pan Replacement",
+          "parts": {
+            "low": 149,
+            "high": 175
+          },
+          "labor": {
+            "low": 323,
+            "high": 365
+          },
+          "total": {
+            "low": 472,
+            "high": 540
+          },
+          "source": null
+        },
+        "oil-pressure-sensor-replacement": {
+          "title": "Oil Pressure Sensor Replacement",
+          "parts": {
+            "low": 37,
+            "high": 45
+          },
+          "labor": {
+            "low": 233,
+            "high": 273
+          },
+          "total": {
+            "low": 270,
+            "high": 318
+          },
+          "source": null
+        },
+        "oil-pump-replacement": {
+          "title": "Oil Pump Replacement",
+          "parts": {
+            "low": 814,
+            "high": 900
+          },
+          "labor": {
+            "low": 542,
+            "high": 600
+          },
+          "total": {
+            "low": 1356,
+            "high": 1500
+          },
+          "source": null
+        },
+        "pcv-valve-replacement": {
+          "title": "PCV Valve Replacement",
+          "parts": {
+            "low": 35,
+            "high": 43
+          },
+          "labor": {
+            "low": 68,
+            "high": 82
+          },
+          "total": {
+            "low": 103,
+            "high": 125
+          },
+          "source": null
+        },
+        "power-steering-fluid---flush": {
+          "title": "Power Steering Fluid - Flush",
+          "parts": {
+            "low": 50,
+            "high": 68
+          },
+          "labor": {
+            "low": 76,
+            "high": 102
+          },
+          "total": {
+            "low": 126,
+            "high": 170
+          },
+          "source": null
+        },
+        "purge-valve-replacement": {
+          "title": "Purge Valve Replacement",
+          "parts": {
+            "low": 91,
+            "high": 109
+          },
+          "labor": {
+            "low": 213,
+            "high": 251
+          },
+          "total": {
+            "low": 304,
+            "high": 360
+          },
+          "source": null
+        },
+        "radiator-fan-motor-replacement": {
+          "title": "Radiator Fan Motor Replacement",
+          "parts": {
+            "low": 383,
+            "high": 431
+          },
+          "labor": {
+            "low": 289,
+            "high": 325
+          },
+          "total": {
+            "low": 672,
+            "high": 756
+          },
+          "source": null
+        },
+        "radiator-hose-replacement": {
+          "title": "Radiator Hose Replacement",
+          "parts": {
+            "low": 180,
+            "high": 212
+          },
+          "labor": {
+            "low": 213,
+            "high": 249
+          },
+          "total": {
+            "low": 393,
+            "high": 461
+          },
+          "source": null
+        },
+        "radiator-replacement": {
+          "title": "Radiator Replacement",
+          "parts": {
+            "low": 511,
+            "high": 565
+          },
+          "labor": {
+            "low": 531,
+            "high": 587
+          },
+          "total": {
+            "low": 1042,
+            "high": 1152
+          },
+          "source": null
+        },
+        "spark-plugs---replace": {
+          "title": "Spark Plugs - Replace",
+          "parts": {
+            "low": 109,
+            "high": 147
+          },
+          "labor": {
+            "low": 163,
+            "high": 220
+          },
+          "total": {
+            "low": 272,
+            "high": 367
+          },
+          "source": null
+        },
+        "starter-replacement": {
+          "title": "Starter Replacement",
+          "parts": {
+            "low": 380,
+            "high": 428
+          },
+          "labor": {
+            "low": 324,
+            "high": 366
+          },
+          "total": {
+            "low": 704,
+            "high": 794
+          },
+          "source": null
+        },
+        "throttle-body-replacement": {
+          "title": "Throttle Body Replacement",
+          "parts": {
+            "low": 344,
+            "high": 388
+          },
+          "labor": {
+            "low": 234,
+            "high": 274
+          },
+          "total": {
+            "low": 578,
+            "high": 662
+          },
+          "source": null
+        },
+        "timing-belt---replace": {
+          "title": "Timing Belt - Replace",
+          "parts": {
+            "low": 294,
+            "high": 398
+          },
+          "labor": {
+            "low": 440,
+            "high": 596
+          },
+          "total": {
+            "low": 734,
+            "high": 994
+          },
+          "source": null
+        },
+        "timing-chain-replacement": {
+          "title": "Timing Chain Replacement",
+          "parts": {
+            "low": 1009,
+            "high": 1093
+          },
+          "labor": {
+            "low": 1050,
+            "high": 1138
+          },
+          "total": {
+            "low": 2059,
+            "high": 2231
+          },
+          "source": null
+        },
+        "tire-pressure-tpms-sensor---replace": {
+          "title": "Tire Pressure (TPMS) Sensor - Replace",
+          "parts": {
+            "low": 77,
+            "high": 104
+          },
+          "labor": {
+            "low": 141,
+            "high": 191
+          },
+          "total": {
+            "low": 218,
+            "high": 295
+          },
+          "source": null
+        },
+        "tires---mount--balance-4-wheels": {
+          "title": "Tire(s) - Mount & Balance (4 Wheels)",
+          "parts": {
+            "low": 0,
+            "high": 0
+          },
+          "labor": {
+            "low": 156,
+            "high": 211
+          },
+          "total": {
+            "low": 156,
+            "high": 211
+          },
+          "source": null
+        },
+        "tires---patch": {
+          "title": "Tire(s) - Patch",
+          "parts": {
+            "low": 14,
+            "high": 20
+          },
+          "labor": {
+            "low": 22,
+            "high": 29
+          },
+          "total": {
+            "low": 36,
+            "high": 49
+          },
+          "source": null
+        },
+        "tires---rotate": {
+          "title": "Tire(s) - Rotate",
+          "parts": {
+            "low": 0,
+            "high": 0
+          },
+          "labor": {
+            "low": 34,
+            "high": 45
+          },
+          "total": {
+            "low": 34,
+            "high": 45
+          },
+          "source": null
+        },
+        "tires---rotate--balance-4-wheels": {
+          "title": "Tire(s) - Rotate & Balance (4 Wheels)",
+          "parts": {
+            "low": 0,
+            "high": 0
+          },
+          "labor": {
+            "low": 76,
+            "high": 104
+          },
+          "total": {
+            "low": 76,
+            "high": 104
+          },
+          "source": null
+        },
+        "transmission---replace": {
+          "title": "Transmission - Replace",
+          "parts": {
+            "low": 2967,
+            "high": 4015
+          },
+          "labor": {
+            "low": 989,
+            "high": 1339
+          },
+          "total": {
+            "low": 3956,
+            "high": 5354
+          },
+          "source": null
+        },
+        "transmission-fluid---flush": {
+          "title": "Transmission Fluid - Flush",
+          "parts": {
+            "low": 97,
+            "high": 132
+          },
+          "labor": {
+            "low": 119,
+            "high": 161
+          },
+          "total": {
+            "low": 216,
+            "high": 293
+          },
+          "source": null
+        },
+        "turbo-replacement": {
+          "title": "Turbo Replacement",
+          "parts": {
+            "low": 1601,
+            "high": 1735
+          },
+          "labor": {
+            "low": 781,
+            "high": 863
+          },
+          "total": {
+            "low": 2382,
+            "high": 2598
+          },
+          "source": null
+        },
+        "valve-cover-gasket-replacement": {
+          "title": "Valve Cover Gasket Replacement",
+          "parts": {
+            "low": 187,
+            "high": 219
+          },
+          "labor": {
+            "low": 447,
+            "high": 504
+          },
+          "total": {
+            "low": 634,
+            "high": 723
+          },
+          "source": null
+        },
+        "water-pump---replace": {
+          "title": "Water Pump - Replace",
+          "parts": {
+            "low": 208,
+            "high": 282
+          },
+          "labor": {
+            "low": 388,
+            "high": 524
+          },
+          "total": {
+            "low": 596,
+            "high": 806
+          },
+          "source": null
+        },
+        "wheel-locks---install": {
+          "title": "Wheel Locks - Install",
+          "parts": {
+            "low": 50,
+            "high": 68
+          },
+          "labor": {
+            "low": 22,
+            "high": 30
+          },
+          "total": {
+            "low": 72,
+            "high": 98
+          },
+          "source": null
+        },
+        "wheels---alignment": {
+          "title": "Wheels - Alignment",
+          "parts": {
+            "low": 0,
+            "high": 0
+          },
+          "labor": {
+            "low": 112,
+            "high": 151
+          },
+          "total": {
+            "low": 112,
+            "high": 151
+          },
+          "source": null
+        },
+        "window-regulator-replacement---rear": {
+          "title": "Window Regulator Replacement - Rear",
+          "parts": {
+            "low": 418,
+            "high": 472
+          },
+          "labor": {
+            "low": 272,
+            "high": 320
+          },
+          "total": {
+            "low": 690,
+            "high": 792
+          },
+          "source": null
+        },
+        "wiper-blades---replace-1-front-wiper": {
+          "title": "Wiper Blades - Replace 1 Front Wiper",
+          "parts": {
+            "low": 33,
+            "high": 45
+          },
+          "labor": {
+            "low": 9,
+            "high": 12
+          },
+          "total": {
+            "low": 42,
+            "high": 57
+          },
+          "source": null
+        }
+      },
+      "2021": {
+        "abs-module-replacement": {
+          "title": "ABS Module Replacement",
+          "parts": {
+            "low": 675,
+            "high": 746
+          },
+          "labor": {
+            "low": 376,
+            "high": 424
+          },
+          "total": {
+            "low": 1051,
+            "high": 1170
+          },
+          "source": null
+        },
+        "ac-line-replacement": {
+          "title": "AC Line Replacement",
+          "parts": {
+            "low": 245,
+            "high": 287
+          },
+          "labor": {
+            "low": 332,
+            "high": 374
+          },
+          "total": {
+            "low": 577,
+            "high": 661
+          },
+          "source": null
+        },
+        "ac-repair": {
+          "title": "AC Repair",
+          "parts": {
+            "low": 175,
+            "high": 205
+          },
+          "labor": {
+            "low": 241,
+            "high": 283
+          },
+          "total": {
+            "low": 416,
+            "high": 488
+          },
+          "source": null
+        },
+        "air-conditioning---recharge": {
+          "title": "Air Conditioning - Recharge",
+          "parts": {
+            "low": 71,
+            "high": 97
+          },
+          "labor": {
+            "low": 108,
+            "high": 146
+          },
+          "total": {
+            "low": 179,
+            "high": 243
+          },
+          "source": null
+        },
+        "alternator-replacement": {
+          "title": "Alternator Replacement",
+          "parts": {
+            "low": 530,
+            "high": 586
+          },
+          "labor": {
+            "low": 335,
+            "high": 377
+          },
+          "total": {
+            "low": 865,
+            "high": 963
+          },
+          "source": null
+        },
+        "axle---replace-front-axle": {
+          "title": "Axle - Replace Front Axle",
+          "parts": {
+            "low": 259,
+            "high": 351
+          },
+          "labor": {
+            "low": 389,
+            "high": 527
+          },
+          "total": {
+            "low": 648,
+            "high": 878
+          },
+          "source": null
+        },
+        "battery---replace": {
+          "title": "Battery - Replace",
+          "parts": {
+            "low": 146,
+            "high": 197
+          },
+          "labor": {
+            "low": 49,
+            "high": 66
+          },
+          "total": {
+            "low": 195,
+            "high": 263
+          },
+          "source": null
+        },
+        "battery-check": {
+          "title": "Battery Check",
+          "parts": {
+            "low": 0,
+            "high": 0
+          },
+          "labor": {
+            "low": 143,
+            "high": 167
+          },
+          "total": {
+            "low": 143,
+            "high": 167
+          },
+          "source": null
+        },
+        "brake-bleed": {
+          "title": "Brake Bleed",
+          "parts": {
+            "low": 0,
+            "high": 0
+          },
+          "labor": {
+            "low": 224,
+            "high": 262
+          },
+          "total": {
+            "low": 224,
+            "high": 262
+          },
+          "source": null
+        },
+        "brake-caliper-replacement": {
+          "title": "Brake Caliper Replacement",
+          "parts": {
+            "low": 318,
+            "high": 358
+          },
+          "labor": {
+            "low": 190,
+            "high": 224
+          },
+          "total": {
+            "low": 508,
+            "high": 582
+          },
+          "source": null
+        },
+        "brake-fluid---flush-fluid--bleed-brakes": {
+          "title": "Brake Fluid - Flush Fluid & Bleed Brakes",
+          "parts": {
+            "low": 54,
+            "high": 74
+          },
+          "labor": {
+            "low": 66,
+            "high": 89
+          },
+          "total": {
+            "low": 120,
+            "high": 163
+          },
+          "source": null
+        },
+        "brake-light-switch-replacement": {
+          "title": "Brake Light Switch Replacement",
+          "parts": {
+            "low": 32,
+            "high": 40
+          },
+          "labor": {
+            "low": 174,
+            "high": 204
+          },
+          "total": {
+            "low": 206,
+            "high": 244
+          },
+          "source": null
+        },
+        "brake-line-replacement": {
+          "title": "Brake Line Replacement",
+          "parts": {
+            "low": 178,
+            "high": 210
+          },
+          "labor": {
+            "low": 325,
+            "high": 367
+          },
+          "total": {
+            "low": 503,
+            "high": 577
+          },
+          "source": null
+        },
+        "brake-master-cylinder-replacement": {
+          "title": "Brake Master Cylinder Replacement",
+          "parts": {
+            "low": 470,
+            "high": 530
+          },
+          "labor": {
+            "low": 340,
+            "high": 384
+          },
+          "total": {
+            "low": 810,
+            "high": 914
+          },
+          "source": null
+        },
+        "brakes---adjust": {
+          "title": "Brakes - Adjust",
+          "parts": {
+            "low": 0,
+            "high": 0
+          },
+          "labor": {
+            "low": 91,
+            "high": 123
+          },
+          "total": {
+            "low": 91,
+            "high": 123
+          },
+          "source": null
+        },
+        "brakes---replace-pads": {
+          "title": "Brakes - Replace Pads",
+          "parts": {
+            "low": 97,
+            "high": 132
+          },
+          "labor": {
+            "low": 146,
+            "high": 196
+          },
+          "total": {
+            "low": 243,
+            "high": 328
+          },
+          "source": null
+        },
+        "brakes---replace-pads--resurface-rotors": {
+          "title": "Brakes - Replace Pads & Resurface Rotors",
+          "parts": {
+            "low": 96,
+            "high": 129
+          },
+          "labor": {
+            "low": 144,
+            "high": 194
+          },
+          "total": {
+            "low": 240,
+            "high": 323
+          },
+          "source": null
+        },
+        "brakes---replace-pads--rotors": {
+          "title": "Brakes - Replace Pads & Rotors",
+          "parts": {
+            "low": 170,
+            "high": 230
+          },
+          "labor": {
+            "low": 139,
+            "high": 188
+          },
+          "total": {
+            "low": 309,
+            "high": 418
+          },
+          "source": null
+        },
+        "brakes---replace-rotors": {
+          "title": "Brakes - Replace Rotors",
+          "parts": {
+            "low": 156,
+            "high": 212
+          },
+          "labor": {
+            "low": 128,
+            "high": 173
+          },
+          "total": {
+            "low": 284,
+            "high": 385
+          },
+          "source": null
+        },
+        "brakes---resurface-rotors": {
+          "title": "Brakes - Resurface Rotors",
+          "parts": {
+            "low": 0,
+            "high": 0
+          },
+          "labor": {
+            "low": 227,
+            "high": 307
+          },
+          "total": {
+            "low": 227,
+            "high": 307
+          },
+          "source": null
+        },
+        "cabin-air-filter---replace": {
+          "title": "Cabin Air Filter - Replace",
+          "parts": {
+            "low": 29,
+            "high": 40
+          },
+          "labor": {
+            "low": 29,
+            "high": 40
+          },
+          "total": {
+            "low": 58,
+            "high": 80
+          },
+          "source": null
+        },
+        "catalytic-converter-replacement": {
+          "title": "Catalytic Converter Replacement",
+          "parts": {
+            "low": 1957,
+            "high": 2121
+          },
+          "labor": {
+            "low": 421,
+            "high": 475
+          },
+          "total": {
+            "low": 2378,
+            "high": 2596
+          },
+          "source": null
+        },
+        "clutch-replacement": {
+          "title": "Clutch Replacement",
+          "parts": {
+            "low": 880,
+            "high": 972
+          },
+          "labor": {
+            "low": 612,
+            "high": 676
+          },
+          "total": {
+            "low": 1492,
+            "high": 1648
+          },
+          "source": null
+        },
+        "coolant---flush": {
+          "title": "Coolant - Flush",
+          "parts": {
+            "low": 47,
+            "high": 64
+          },
+          "labor": {
+            "low": 110,
+            "high": 148
+          },
+          "total": {
+            "low": 157,
+            "high": 212
+          },
+          "source": null
+        },
+        "coolant-thermostat-replacement": {
+          "title": "Coolant Thermostat Replacement",
+          "parts": {
+            "low": 143,
+            "high": 167
+          },
+          "labor": {
+            "low": 416,
+            "high": 470
+          },
+          "total": {
+            "low": 559,
+            "high": 637
+          },
+          "source": null
+        },
+        "crankshaft-seal-replacement": {
+          "title": "Crankshaft Seal Replacement",
+          "parts": {
+            "low": 52,
+            "high": 62
+          },
+          "labor": {
+            "low": 844,
+            "high": 932
+          },
+          "total": {
+            "low": 896,
+            "high": 994
+          },
+          "source": null
+        },
+        "differential-fluid---flush": {
+          "title": "Differential Fluid - Flush",
+          "parts": {
+            "low": 60,
+            "high": 81
+          },
+          "labor": {
+            "low": 60,
+            "high": 81
+          },
+          "total": {
+            "low": 120,
+            "high": 162
+          },
+          "source": null
+        },
+        "drive-belt-tensioner-replacement": {
+          "title": "Drive Belt Tensioner Replacement",
+          "parts": {
+            "low": 323,
+            "high": 365
+          },
+          "labor": {
+            "low": 211,
+            "high": 247
+          },
+          "total": {
+            "low": 534,
+            "high": 612
+          },
+          "source": null
+        },
+        "engine-air-filter---replace": {
+          "title": "Engine Air Filter - Replace",
+          "parts": {
+            "low": 16,
+            "high": 23
+          },
+          "labor": {
+            "low": 24,
+            "high": 33
+          },
+          "total": {
+            "low": 40,
+            "high": 56
+          },
+          "source": null
+        },
+        "engine-belt---replace": {
+          "title": "Engine Belt - Replace",
+          "parts": {
+            "low": 69,
+            "high": 93
+          },
+          "labor": {
+            "low": 104,
+            "high": 140
+          },
+          "total": {
+            "low": 173,
+            "high": 233
+          },
+          "source": null
+        },
+        "engine-diagnostics---check-engine-light": {
+          "title": "Engine Diagnostics - Check Engine Light",
+          "parts": {
+            "low": 0,
+            "high": 0
+          },
+          "labor": {
+            "low": 187,
+            "high": 254
+          },
+          "total": {
+            "low": 187,
+            "high": 254
+          },
+          "source": null
+        },
+        "engine-replacement": {
+          "title": "Engine Replacement",
+          "parts": {
+            "low": 5509,
+            "high": 5909
+          },
+          "labor": {
+            "low": 2580,
+            "high": 2794
+          },
+          "total": {
+            "low": 8089,
+            "high": 8703
+          },
+          "source": null
+        },
+        "exhaust-system-replacement": {
+          "title": "Exhaust System Replacement",
+          "parts": {
+            "low": 441,
+            "high": 497
+          },
+          "labor": {
+            "low": 233,
+            "high": 273
+          },
+          "total": {
+            "low": 674,
+            "high": 770
+          },
+          "source": null
+        },
+        "fuel-injector---service": {
+          "title": "Fuel Injector - Service",
+          "parts": {
+            "low": 108,
+            "high": 145
+          },
+          "labor": {
+            "low": 132,
+            "high": 178
+          },
+          "total": {
+            "low": 240,
+            "high": 323
+          },
+          "source": null
+        },
+        "head-gasket-replacement": {
+          "title": "Head Gasket Replacement",
+          "parts": {
+            "low": 572,
+            "high": 632
+          },
+          "labor": {
+            "low": 1563,
+            "high": 1693
+          },
+          "total": {
+            "low": 2135,
+            "high": 2325
+          },
+          "source": null
+        },
+        "hood-latch-assembly-replacement": {
+          "title": "Hood Latch Assembly Replacement",
+          "parts": {
+            "low": 177,
+            "high": 207
+          },
+          "labor": {
+            "low": 190,
+            "high": 224
+          },
+          "total": {
+            "low": 367,
+            "high": 431
+          },
+          "source": null
+        },
+        "ignition-switch-replacement": {
+          "title": "Ignition Switch Replacement",
+          "parts": {
+            "low": 253,
+            "high": 297
+          },
+          "labor": {
+            "low": 253,
+            "high": 297
+          },
+          "total": {
+            "low": 506,
+            "high": 594
+          },
+          "source": null
+        },
+        "intake-manifold-gasket---replace": {
+          "title": "Intake Manifold Gasket - Replace",
+          "parts": {
+            "low": 60,
+            "high": 82
+          },
+          "labor": {
+            "low": 343,
+            "high": 463
+          },
+          "total": {
+            "low": 403,
+            "high": 545
+          },
+          "source": null
+        },
+        "mass-air-sensor-replacement": {
+          "title": "Mass Air Sensor Replacement",
+          "parts": {
+            "low": 302,
+            "high": 340
+          },
+          "labor": {
+            "low": 189,
+            "high": 221
+          },
+          "total": {
+            "low": 491,
+            "high": 561
+          },
+          "source": null
+        },
+        "oil-change": {
+          "title": "Oil Change",
+          "parts": {
+            "low": 24,
+            "high": 33
+          },
+          "labor": {
+            "low": 24,
+            "high": 33
+          },
+          "total": {
+            "low": 48,
+            "high": 66
+          },
+          "source": null
+        },
+        "oil-pan-gasket-replacement": {
+          "title": "Oil Pan Gasket Replacement",
+          "parts": {
+            "low": 81,
+            "high": 97
+          },
+          "labor": {
+            "low": 409,
+            "high": 461
+          },
+          "total": {
+            "low": 490,
+            "high": 558
+          },
+          "source": null
+        },
+        "oil-pan-replacement": {
+          "title": "Oil Pan Replacement",
+          "parts": {
+            "low": 149,
+            "high": 175
+          },
+          "labor": {
+            "low": 323,
+            "high": 365
+          },
+          "total": {
+            "low": 472,
+            "high": 540
+          },
+          "source": null
+        },
+        "oil-pressure-sensor-replacement": {
+          "title": "Oil Pressure Sensor Replacement",
+          "parts": {
+            "low": 37,
+            "high": 45
+          },
+          "labor": {
+            "low": 233,
+            "high": 273
+          },
+          "total": {
+            "low": 270,
+            "high": 318
+          },
+          "source": null
+        },
+        "oil-pump-replacement": {
+          "title": "Oil Pump Replacement",
+          "parts": {
+            "low": 814,
+            "high": 900
+          },
+          "labor": {
+            "low": 542,
+            "high": 600
+          },
+          "total": {
+            "low": 1356,
+            "high": 1500
+          },
+          "source": null
+        },
+        "pcv-valve-replacement": {
+          "title": "PCV Valve Replacement",
+          "parts": {
+            "low": 35,
+            "high": 43
+          },
+          "labor": {
+            "low": 68,
+            "high": 82
+          },
+          "total": {
+            "low": 103,
+            "high": 125
+          },
+          "source": null
+        },
+        "power-steering-fluid---flush": {
+          "title": "Power Steering Fluid - Flush",
+          "parts": {
+            "low": 50,
+            "high": 68
+          },
+          "labor": {
+            "low": 76,
+            "high": 102
+          },
+          "total": {
+            "low": 126,
+            "high": 170
+          },
+          "source": null
+        },
+        "purge-valve-replacement": {
+          "title": "Purge Valve Replacement",
+          "parts": {
+            "low": 91,
+            "high": 109
+          },
+          "labor": {
+            "low": 213,
+            "high": 251
+          },
+          "total": {
+            "low": 304,
+            "high": 360
+          },
+          "source": null
+        },
+        "radiator-fan-motor-replacement": {
+          "title": "Radiator Fan Motor Replacement",
+          "parts": {
+            "low": 383,
+            "high": 431
+          },
+          "labor": {
+            "low": 289,
+            "high": 325
+          },
+          "total": {
+            "low": 672,
+            "high": 756
+          },
+          "source": null
+        },
+        "radiator-hose-replacement": {
+          "title": "Radiator Hose Replacement",
+          "parts": {
+            "low": 180,
+            "high": 212
+          },
+          "labor": {
+            "low": 213,
+            "high": 249
+          },
+          "total": {
+            "low": 393,
+            "high": 461
+          },
+          "source": null
+        },
+        "radiator-replacement": {
+          "title": "Radiator Replacement",
+          "parts": {
+            "low": 511,
+            "high": 565
+          },
+          "labor": {
+            "low": 531,
+            "high": 587
+          },
+          "total": {
+            "low": 1042,
+            "high": 1152
+          },
+          "source": null
+        },
+        "spark-plugs---replace": {
+          "title": "Spark Plugs - Replace",
+          "parts": {
+            "low": 118,
+            "high": 160
+          },
+          "labor": {
+            "low": 177,
+            "high": 239
+          },
+          "total": {
+            "low": 295,
+            "high": 399
+          },
+          "source": null
+        },
+        "starter-replacement": {
+          "title": "Starter Replacement",
+          "parts": {
+            "low": 380,
+            "high": 428
+          },
+          "labor": {
+            "low": 324,
+            "high": 366
+          },
+          "total": {
+            "low": 704,
+            "high": 794
+          },
+          "source": null
+        },
+        "throttle-body-replacement": {
+          "title": "Throttle Body Replacement",
+          "parts": {
+            "low": 344,
+            "high": 388
+          },
+          "labor": {
+            "low": 234,
+            "high": 274
+          },
+          "total": {
+            "low": 578,
+            "high": 662
+          },
+          "source": null
+        },
+        "timing-belt---replace": {
+          "title": "Timing Belt - Replace",
+          "parts": {
+            "low": 250,
+            "high": 338
+          },
+          "labor": {
+            "low": 374,
+            "high": 507
+          },
+          "total": {
+            "low": 624,
+            "high": 845
+          },
+          "source": null
+        },
+        "timing-chain-replacement": {
+          "title": "Timing Chain Replacement",
+          "parts": {
+            "low": 1009,
+            "high": 1093
+          },
+          "labor": {
+            "low": 1050,
+            "high": 1138
+          },
+          "total": {
+            "low": 2059,
+            "high": 2231
+          },
+          "source": null
+        },
+        "tire-pressure-tpms-sensor---replace": {
+          "title": "Tire Pressure (TPMS) Sensor - Replace",
+          "parts": {
+            "low": 79,
+            "high": 107
+          },
+          "labor": {
+            "low": 145,
+            "high": 197
+          },
+          "total": {
+            "low": 224,
+            "high": 304
+          },
+          "source": null
+        },
+        "tires---mount--balance-4-wheels": {
+          "title": "Tire(s) - Mount & Balance (4 Wheels)",
+          "parts": {
+            "low": 0,
+            "high": 0
+          },
+          "labor": {
+            "low": 184,
+            "high": 248
+          },
+          "total": {
+            "low": 184,
+            "high": 248
+          },
+          "source": null
+        },
+        "tires---patch": {
+          "title": "Tire(s) - Patch",
+          "parts": {
+            "low": 16,
+            "high": 22
+          },
+          "labor": {
+            "low": 24,
+            "high": 32
+          },
+          "total": {
+            "low": 40,
+            "high": 54
+          },
+          "source": null
+        },
+        "tires---rotate": {
+          "title": "Tire(s) - Rotate",
+          "parts": {
+            "low": 0,
+            "high": 0
+          },
+          "labor": {
+            "low": 29,
+            "high": 38
+          },
+          "total": {
+            "low": 29,
+            "high": 38
+          },
+          "source": null
+        },
+        "tires---rotate--balance-4-wheels": {
+          "title": "Tire(s) - Rotate & Balance (4 Wheels)",
+          "parts": {
+            "low": 0,
+            "high": 0
+          },
+          "labor": {
+            "low": 68,
+            "high": 93
+          },
+          "total": {
+            "low": 68,
+            "high": 93
+          },
+          "source": null
+        },
+        "transmission---replace": {
+          "title": "Transmission - Replace",
+          "parts": {
+            "low": 2967,
+            "high": 4015
+          },
+          "labor": {
+            "low": 989,
+            "high": 1339
+          },
+          "total": {
+            "low": 3956,
+            "high": 5354
+          },
+          "source": null
+        },
+        "transmission-fluid---flush": {
+          "title": "Transmission Fluid - Flush",
+          "parts": {
+            "low": 113,
+            "high": 154
+          },
+          "labor": {
+            "low": 139,
+            "high": 189
+          },
+          "total": {
+            "low": 252,
+            "high": 343
+          },
+          "source": null
+        },
+        "turbo-replacement": {
+          "title": "Turbo Replacement",
+          "parts": {
+            "low": 1601,
+            "high": 1735
+          },
+          "labor": {
+            "low": 781,
+            "high": 863
+          },
+          "total": {
+            "low": 2382,
+            "high": 2598
+          },
+          "source": null
+        },
+        "valve-cover-gasket-replacement": {
+          "title": "Valve Cover Gasket Replacement",
+          "parts": {
+            "low": 187,
+            "high": 219
+          },
+          "labor": {
+            "low": 447,
+            "high": 504
+          },
+          "total": {
+            "low": 634,
+            "high": 723
+          },
+          "source": null
+        },
+        "water-pump---replace": {
+          "title": "Water Pump - Replace",
+          "parts": {
+            "low": 208,
+            "high": 282
+          },
+          "labor": {
+            "low": 388,
+            "high": 524
+          },
+          "total": {
+            "low": 596,
+            "high": 806
+          },
+          "source": null
+        },
+        "wheel-locks---install": {
+          "title": "Wheel Locks - Install",
+          "parts": {
+            "low": 50,
+            "high": 68
+          },
+          "labor": {
+            "low": 22,
+            "high": 30
+          },
+          "total": {
+            "low": 72,
+            "high": 98
+          },
+          "source": null
+        },
+        "wheels---alignment": {
+          "title": "Wheels - Alignment",
+          "parts": {
+            "low": 0,
+            "high": 0
+          },
+          "labor": {
+            "low": 107,
+            "high": 145
+          },
+          "total": {
+            "low": 107,
+            "high": 145
+          },
+          "source": null
+        },
+        "window-regulator-replacement---rear": {
+          "title": "Window Regulator Replacement - Rear",
+          "parts": {
+            "low": 418,
+            "high": 472
+          },
+          "labor": {
+            "low": 272,
+            "high": 320
+          },
+          "total": {
+            "low": 690,
+            "high": 792
+          },
+          "source": null
+        },
+        "wiper-blades---replace-1-front-wiper": {
+          "title": "Wiper Blades - Replace 1 Front Wiper",
+          "parts": {
+            "low": 32,
+            "high": 44
+          },
+          "labor": {
+            "low": 9,
+            "high": 12
+          },
+          "total": {
+            "low": 41,
+            "high": 56
+          },
+          "source": null
+        }
+      },
+      "2022": {
+        "abs-module-replacement": {
+          "title": "ABS Module Replacement",
+          "parts": {
+            "low": 675,
+            "high": 746
+          },
+          "labor": {
+            "low": 376,
+            "high": 424
+          },
+          "total": {
+            "low": 1051,
+            "high": 1170
+          },
+          "source": null
+        },
+        "ac-line-replacement": {
+          "title": "AC Line Replacement",
+          "parts": {
+            "low": 245,
+            "high": 287
+          },
+          "labor": {
+            "low": 332,
+            "high": 374
+          },
+          "total": {
+            "low": 577,
+            "high": 661
+          },
+          "source": null
+        },
+        "ac-repair": {
+          "title": "AC Repair",
+          "parts": {
+            "low": 175,
+            "high": 205
+          },
+          "labor": {
+            "low": 241,
+            "high": 283
+          },
+          "total": {
+            "low": 416,
+            "high": 488
+          },
+          "source": null
+        },
+        "air-conditioning---recharge": {
+          "title": "Air Conditioning - Recharge",
+          "parts": {
+            "low": 72,
+            "high": 99
+          },
+          "labor": {
+            "low": 110,
+            "high": 149
+          },
+          "total": {
+            "low": 182,
+            "high": 248
+          },
+          "source": null
+        },
+        "alternator-replacement": {
+          "title": "Alternator Replacement",
+          "parts": {
+            "low": 530,
+            "high": 586
+          },
+          "labor": {
+            "low": 335,
+            "high": 377
+          },
+          "total": {
+            "low": 865,
+            "high": 963
+          },
+          "source": null
+        },
+        "axle---replace-front-axle": {
+          "title": "Axle - Replace Front Axle",
+          "parts": {
+            "low": 259,
+            "high": 351
+          },
+          "labor": {
+            "low": 389,
+            "high": 527
+          },
+          "total": {
+            "low": 648,
+            "high": 878
+          },
+          "source": null
+        },
+        "battery---replace": {
+          "title": "Battery - Replace",
+          "parts": {
+            "low": 168,
+            "high": 227
+          },
+          "labor": {
+            "low": 56,
+            "high": 76
+          },
+          "total": {
+            "low": 224,
+            "high": 303
+          },
+          "source": null
+        },
+        "battery-check": {
+          "title": "Battery Check",
+          "parts": {
+            "low": 0,
+            "high": 0
+          },
+          "labor": {
+            "low": 143,
+            "high": 167
+          },
+          "total": {
+            "low": 143,
+            "high": 167
+          },
+          "source": null
+        },
+        "brake-bleed": {
+          "title": "Brake Bleed",
+          "parts": {
+            "low": 0,
+            "high": 0
+          },
+          "labor": {
+            "low": 224,
+            "high": 262
+          },
+          "total": {
+            "low": 224,
+            "high": 262
+          },
+          "source": null
+        },
+        "brake-caliper-replacement": {
+          "title": "Brake Caliper Replacement",
+          "parts": {
+            "low": 318,
+            "high": 358
+          },
+          "labor": {
+            "low": 190,
+            "high": 224
+          },
+          "total": {
+            "low": 508,
+            "high": 582
+          },
+          "source": null
+        },
+        "brake-fluid---flush-fluid--bleed-brakes": {
+          "title": "Brake Fluid - Flush Fluid & Bleed Brakes",
+          "parts": {
+            "low": 60,
+            "high": 82
+          },
+          "labor": {
+            "low": 73,
+            "high": 99
+          },
+          "total": {
+            "low": 133,
+            "high": 181
+          },
+          "source": null
+        },
+        "brake-light-switch-replacement": {
+          "title": "Brake Light Switch Replacement",
+          "parts": {
+            "low": 32,
+            "high": 40
+          },
+          "labor": {
+            "low": 174,
+            "high": 204
+          },
+          "total": {
+            "low": 206,
+            "high": 244
+          },
+          "source": null
+        },
+        "brake-line-replacement": {
+          "title": "Brake Line Replacement",
+          "parts": {
+            "low": 178,
+            "high": 210
+          },
+          "labor": {
+            "low": 325,
+            "high": 367
+          },
+          "total": {
+            "low": 503,
+            "high": 577
+          },
+          "source": null
+        },
+        "brake-master-cylinder-replacement": {
+          "title": "Brake Master Cylinder Replacement",
+          "parts": {
+            "low": 470,
+            "high": 530
+          },
+          "labor": {
+            "low": 340,
+            "high": 384
+          },
+          "total": {
+            "low": 810,
+            "high": 914
+          },
+          "source": null
+        },
+        "brakes---adjust": {
+          "title": "Brakes - Adjust",
+          "parts": {
+            "low": 0,
+            "high": 0
+          },
+          "labor": {
+            "low": 91,
+            "high": 123
+          },
+          "total": {
+            "low": 91,
+            "high": 123
+          },
+          "source": null
+        },
+        "brakes---replace-pads": {
+          "title": "Brakes - Replace Pads",
+          "parts": {
+            "low": 116,
+            "high": 158
+          },
+          "labor": {
+            "low": 174,
+            "high": 234
+          },
+          "total": {
+            "low": 290,
+            "high": 392
+          },
+          "source": null
+        },
+        "brakes---replace-pads--resurface-rotors": {
+          "title": "Brakes - Replace Pads & Resurface Rotors",
+          "parts": {
+            "low": 110,
+            "high": 148
+          },
+          "labor": {
+            "low": 165,
+            "high": 223
+          },
+          "total": {
+            "low": 275,
+            "high": 371
+          },
+          "source": null
+        },
+        "brakes---replace-pads--rotors": {
+          "title": "Brakes - Replace Pads & Rotors",
+          "parts": {
+            "low": 164,
+            "high": 222
+          },
+          "labor": {
+            "low": 134,
+            "high": 182
+          },
+          "total": {
+            "low": 298,
+            "high": 404
+          },
+          "source": null
+        },
+        "brakes---replace-rotors": {
+          "title": "Brakes - Replace Rotors",
+          "parts": {
+            "low": 156,
+            "high": 212
+          },
+          "labor": {
+            "low": 128,
+            "high": 173
+          },
+          "total": {
+            "low": 284,
+            "high": 385
+          },
+          "source": null
+        },
+        "brakes---resurface-rotors": {
+          "title": "Brakes - Resurface Rotors",
+          "parts": {
+            "low": 0,
+            "high": 0
+          },
+          "labor": {
+            "low": 227,
+            "high": 307
+          },
+          "total": {
+            "low": 227,
+            "high": 307
+          },
+          "source": null
+        },
+        "cabin-air-filter---replace": {
+          "title": "Cabin Air Filter - Replace",
+          "parts": {
+            "low": 30,
+            "high": 41
+          },
+          "labor": {
+            "low": 30,
+            "high": 41
+          },
+          "total": {
+            "low": 60,
+            "high": 82
+          },
+          "source": null
+        },
+        "catalytic-converter-replacement": {
+          "title": "Catalytic Converter Replacement",
+          "parts": {
+            "low": 1957,
+            "high": 2121
+          },
+          "labor": {
+            "low": 421,
+            "high": 475
+          },
+          "total": {
+            "low": 2378,
+            "high": 2596
+          },
+          "source": null
+        },
+        "clutch-replacement": {
+          "title": "Clutch Replacement",
+          "parts": {
+            "low": 880,
+            "high": 972
+          },
+          "labor": {
+            "low": 612,
+            "high": 676
+          },
+          "total": {
+            "low": 1492,
+            "high": 1648
+          },
+          "source": null
+        },
+        "coolant---flush": {
+          "title": "Coolant - Flush",
+          "parts": {
+            "low": 45,
+            "high": 61
+          },
+          "labor": {
+            "low": 105,
+            "high": 141
+          },
+          "total": {
+            "low": 150,
+            "high": 202
+          },
+          "source": null
+        },
+        "coolant-thermostat-replacement": {
+          "title": "Coolant Thermostat Replacement",
+          "parts": {
+            "low": 143,
+            "high": 167
+          },
+          "labor": {
+            "low": 416,
+            "high": 470
+          },
+          "total": {
+            "low": 559,
+            "high": 637
+          },
+          "source": null
+        },
+        "crankshaft-seal-replacement": {
+          "title": "Crankshaft Seal Replacement",
+          "parts": {
+            "low": 52,
+            "high": 62
+          },
+          "labor": {
+            "low": 844,
+            "high": 932
+          },
+          "total": {
+            "low": 896,
+            "high": 994
+          },
+          "source": null
+        },
+        "differential-fluid---flush": {
+          "title": "Differential Fluid - Flush",
+          "parts": {
+            "low": 64,
+            "high": 86
+          },
+          "labor": {
+            "low": 64,
+            "high": 86
+          },
+          "total": {
+            "low": 128,
+            "high": 172
+          },
+          "source": null
+        },
+        "drive-belt-tensioner-replacement": {
+          "title": "Drive Belt Tensioner Replacement",
+          "parts": {
+            "low": 323,
+            "high": 365
+          },
+          "labor": {
+            "low": 211,
+            "high": 247
+          },
+          "total": {
+            "low": 534,
+            "high": 612
+          },
+          "source": null
+        },
+        "engine-air-filter---replace": {
+          "title": "Engine Air Filter - Replace",
+          "parts": {
+            "low": 14,
+            "high": 20
+          },
+          "labor": {
+            "low": 21,
+            "high": 28
+          },
+          "total": {
+            "low": 35,
+            "high": 48
+          },
+          "source": null
+        },
+        "engine-belt---replace": {
+          "title": "Engine Belt - Replace",
+          "parts": {
+            "low": 76,
+            "high": 102
+          },
+          "labor": {
+            "low": 114,
+            "high": 154
+          },
+          "total": {
+            "low": 190,
+            "high": 256
+          },
+          "source": null
+        },
+        "engine-diagnostics---check-engine-light": {
+          "title": "Engine Diagnostics - Check Engine Light",
+          "parts": {
+            "low": 0,
+            "high": 0
+          },
+          "labor": {
+            "low": 173,
+            "high": 235
+          },
+          "total": {
+            "low": 173,
+            "high": 235
+          },
+          "source": null
+        },
+        "engine-replacement": {
+          "title": "Engine Replacement",
+          "parts": {
+            "low": 5509,
+            "high": 5909
+          },
+          "labor": {
+            "low": 2580,
+            "high": 2794
+          },
+          "total": {
+            "low": 8089,
+            "high": 8703
+          },
+          "source": null
+        },
+        "exhaust-system-replacement": {
+          "title": "Exhaust System Replacement",
+          "parts": {
+            "low": 441,
+            "high": 497
+          },
+          "labor": {
+            "low": 233,
+            "high": 273
+          },
+          "total": {
+            "low": 674,
+            "high": 770
+          },
+          "source": null
+        },
+        "fuel-injector---service": {
+          "title": "Fuel Injector - Service",
+          "parts": {
+            "low": 84,
+            "high": 113
+          },
+          "labor": {
+            "low": 103,
+            "high": 139
+          },
+          "total": {
+            "low": 187,
+            "high": 252
+          },
+          "source": null
+        },
+        "head-gasket-replacement": {
+          "title": "Head Gasket Replacement",
+          "parts": {
+            "low": 572,
+            "high": 632
+          },
+          "labor": {
+            "low": 1563,
+            "high": 1693
+          },
+          "total": {
+            "low": 2135,
+            "high": 2325
+          },
+          "source": null
+        },
+        "hood-latch-assembly-replacement": {
+          "title": "Hood Latch Assembly Replacement",
+          "parts": {
+            "low": 177,
+            "high": 207
+          },
+          "labor": {
+            "low": 190,
+            "high": 224
+          },
+          "total": {
+            "low": 367,
+            "high": 431
+          },
+          "source": null
+        },
+        "ignition-switch-replacement": {
+          "title": "Ignition Switch Replacement",
+          "parts": {
+            "low": 253,
+            "high": 297
+          },
+          "labor": {
+            "low": 253,
+            "high": 297
+          },
+          "total": {
+            "low": 506,
+            "high": 594
+          },
+          "source": null
+        },
+        "intake-manifold-gasket---replace": {
+          "title": "Intake Manifold Gasket - Replace",
+          "parts": {
+            "low": 60,
+            "high": 82
+          },
+          "labor": {
+            "low": 343,
+            "high": 463
+          },
+          "total": {
+            "low": 403,
+            "high": 545
+          },
+          "source": null
+        },
+        "mass-air-sensor-replacement": {
+          "title": "Mass Air Sensor Replacement",
+          "parts": {
+            "low": 302,
+            "high": 340
+          },
+          "labor": {
+            "low": 189,
+            "high": 221
+          },
+          "total": {
+            "low": 491,
+            "high": 561
+          },
+          "source": null
+        },
+        "oil-change": {
+          "title": "Oil Change",
+          "parts": {
+            "low": 29,
+            "high": 40
+          },
+          "labor": {
+            "low": 29,
+            "high": 40
+          },
+          "total": {
+            "low": 58,
+            "high": 80
+          },
+          "source": null
+        },
+        "oil-pan-gasket-replacement": {
+          "title": "Oil Pan Gasket Replacement",
+          "parts": {
+            "low": 81,
+            "high": 97
+          },
+          "labor": {
+            "low": 409,
+            "high": 461
+          },
+          "total": {
+            "low": 490,
+            "high": 558
+          },
+          "source": null
+        },
+        "oil-pan-replacement": {
+          "title": "Oil Pan Replacement",
+          "parts": {
+            "low": 149,
+            "high": 175
+          },
+          "labor": {
+            "low": 323,
+            "high": 365
+          },
+          "total": {
+            "low": 472,
+            "high": 540
+          },
+          "source": null
+        },
+        "oil-pressure-sensor-replacement": {
+          "title": "Oil Pressure Sensor Replacement",
+          "parts": {
+            "low": 37,
+            "high": 45
+          },
+          "labor": {
+            "low": 233,
+            "high": 273
+          },
+          "total": {
+            "low": 270,
+            "high": 318
+          },
+          "source": null
+        },
+        "oil-pump-replacement": {
+          "title": "Oil Pump Replacement",
+          "parts": {
+            "low": 814,
+            "high": 900
+          },
+          "labor": {
+            "low": 542,
+            "high": 600
+          },
+          "total": {
+            "low": 1356,
+            "high": 1500
+          },
+          "source": null
+        },
+        "pcv-valve-replacement": {
+          "title": "PCV Valve Replacement",
+          "parts": {
+            "low": 35,
+            "high": 43
+          },
+          "labor": {
+            "low": 68,
+            "high": 82
+          },
+          "total": {
+            "low": 103,
+            "high": 125
+          },
+          "source": null
+        },
+        "power-steering-fluid---flush": {
+          "title": "Power Steering Fluid - Flush",
+          "parts": {
+            "low": 50,
+            "high": 68
+          },
+          "labor": {
+            "low": 76,
+            "high": 102
+          },
+          "total": {
+            "low": 126,
+            "high": 170
+          },
+          "source": null
+        },
+        "purge-valve-replacement": {
+          "title": "Purge Valve Replacement",
+          "parts": {
+            "low": 91,
+            "high": 109
+          },
+          "labor": {
+            "low": 213,
+            "high": 251
+          },
+          "total": {
+            "low": 304,
+            "high": 360
+          },
+          "source": null
+        },
+        "radiator-fan-motor-replacement": {
+          "title": "Radiator Fan Motor Replacement",
+          "parts": {
+            "low": 383,
+            "high": 431
+          },
+          "labor": {
+            "low": 289,
+            "high": 325
+          },
+          "total": {
+            "low": 672,
+            "high": 756
+          },
+          "source": null
+        },
+        "radiator-hose-replacement": {
+          "title": "Radiator Hose Replacement",
+          "parts": {
+            "low": 180,
+            "high": 212
+          },
+          "labor": {
+            "low": 213,
+            "high": 249
+          },
+          "total": {
+            "low": 393,
+            "high": 461
+          },
+          "source": null
+        },
+        "radiator-replacement": {
+          "title": "Radiator Replacement",
+          "parts": {
+            "low": 511,
+            "high": 565
+          },
+          "labor": {
+            "low": 531,
+            "high": 587
+          },
+          "total": {
+            "low": 1042,
+            "high": 1152
+          },
+          "source": null
+        },
+        "spark-plugs---replace": {
+          "title": "Spark Plugs - Replace",
+          "parts": {
+            "low": 118,
+            "high": 160
+          },
+          "labor": {
+            "low": 177,
+            "high": 239
+          },
+          "total": {
+            "low": 295,
+            "high": 399
+          },
+          "source": null
+        },
+        "starter-replacement": {
+          "title": "Starter Replacement",
+          "parts": {
+            "low": 380,
+            "high": 428
+          },
+          "labor": {
+            "low": 324,
+            "high": 366
+          },
+          "total": {
+            "low": 704,
+            "high": 794
+          },
+          "source": null
+        },
+        "throttle-body-replacement": {
+          "title": "Throttle Body Replacement",
+          "parts": {
+            "low": 344,
+            "high": 388
+          },
+          "labor": {
+            "low": 234,
+            "high": 274
+          },
+          "total": {
+            "low": 578,
+            "high": 662
+          },
+          "source": null
+        },
+        "timing-belt---replace": {
+          "title": "Timing Belt - Replace",
+          "parts": {
+            "low": 294,
+            "high": 398
+          },
+          "labor": {
+            "low": 440,
+            "high": 596
+          },
+          "total": {
+            "low": 734,
+            "high": 994
+          },
+          "source": null
+        },
+        "timing-chain-replacement": {
+          "title": "Timing Chain Replacement",
+          "parts": {
+            "low": 1009,
+            "high": 1093
+          },
+          "labor": {
+            "low": 1050,
+            "high": 1138
+          },
+          "total": {
+            "low": 2059,
+            "high": 2231
+          },
+          "source": null
+        },
+        "tire-pressure-tpms-sensor---replace": {
+          "title": "Tire Pressure (TPMS) Sensor - Replace",
+          "parts": {
+            "low": 92,
+            "high": 125
+          },
+          "labor": {
+            "low": 169,
+            "high": 229
+          },
+          "total": {
+            "low": 261,
+            "high": 354
+          },
+          "source": null
+        },
+        "tires---mount--balance-4-wheels": {
+          "title": "Tire(s) - Mount & Balance (4 Wheels)",
+          "parts": {
+            "low": 0,
+            "high": 0
+          },
+          "labor": {
+            "low": 180,
+            "high": 243
+          },
+          "total": {
+            "low": 180,
+            "high": 243
+          },
+          "source": null
+        },
+        "tires---patch": {
+          "title": "Tire(s) - Patch",
+          "parts": {
+            "low": 17,
+            "high": 24
+          },
+          "labor": {
+            "low": 26,
+            "high": 35
+          },
+          "total": {
+            "low": 43,
+            "high": 59
+          },
+          "source": null
+        },
+        "tires---rotate": {
+          "title": "Tire(s) - Rotate",
+          "parts": {
+            "low": 0,
+            "high": 0
+          },
+          "labor": {
+            "low": 35,
+            "high": 46
+          },
+          "total": {
+            "low": 35,
+            "high": 46
+          },
+          "source": null
+        },
+        "tires---rotate--balance-4-wheels": {
+          "title": "Tire(s) - Rotate & Balance (4 Wheels)",
+          "parts": {
+            "low": 0,
+            "high": 0
+          },
+          "labor": {
+            "low": 73,
+            "high": 99
+          },
+          "total": {
+            "low": 73,
+            "high": 99
+          },
+          "source": null
+        },
+        "transmission---replace": {
+          "title": "Transmission - Replace",
+          "parts": {
+            "low": 2967,
+            "high": 4015
+          },
+          "labor": {
+            "low": 989,
+            "high": 1339
+          },
+          "total": {
+            "low": 3956,
+            "high": 5354
+          },
+          "source": null
+        },
+        "transmission-fluid---flush": {
+          "title": "Transmission Fluid - Flush",
+          "parts": {
+            "low": 110,
+            "high": 150
+          },
+          "labor": {
+            "low": 135,
+            "high": 184
+          },
+          "total": {
+            "low": 245,
+            "high": 334
+          },
+          "source": null
+        },
+        "turbo-replacement": {
+          "title": "Turbo Replacement",
+          "parts": {
+            "low": 1601,
+            "high": 1735
+          },
+          "labor": {
+            "low": 781,
+            "high": 863
+          },
+          "total": {
+            "low": 2382,
+            "high": 2598
+          },
+          "source": null
+        },
+        "valve-cover-gasket-replacement": {
+          "title": "Valve Cover Gasket Replacement",
+          "parts": {
+            "low": 187,
+            "high": 219
+          },
+          "labor": {
+            "low": 447,
+            "high": 504
+          },
+          "total": {
+            "low": 634,
+            "high": 723
+          },
+          "source": null
+        },
+        "water-pump---replace": {
+          "title": "Water Pump - Replace",
+          "parts": {
+            "low": 208,
+            "high": 282
+          },
+          "labor": {
+            "low": 388,
+            "high": 524
+          },
+          "total": {
+            "low": 596,
+            "high": 806
+          },
+          "source": null
+        },
+        "wheel-locks---install": {
+          "title": "Wheel Locks - Install",
+          "parts": {
+            "low": 50,
+            "high": 68
+          },
+          "labor": {
+            "low": 22,
+            "high": 30
+          },
+          "total": {
+            "low": 72,
+            "high": 98
+          },
+          "source": null
+        },
+        "wheels---alignment": {
+          "title": "Wheels - Alignment",
+          "parts": {
+            "low": 0,
+            "high": 0
+          },
+          "labor": {
+            "low": 99,
+            "high": 135
+          },
+          "total": {
+            "low": 99,
+            "high": 135
+          },
+          "source": null
+        },
+        "window-regulator-replacement---rear": {
+          "title": "Window Regulator Replacement - Rear",
+          "parts": {
+            "low": 418,
+            "high": 472
+          },
+          "labor": {
+            "low": 272,
+            "high": 320
+          },
+          "total": {
+            "low": 690,
+            "high": 792
+          },
+          "source": null
+        },
+        "wiper-blades---replace-1-front-wiper": {
+          "title": "Wiper Blades - Replace 1 Front Wiper",
+          "parts": {
+            "low": 31,
+            "high": 43
+          },
+          "labor": {
+            "low": 9,
+            "high": 12
+          },
+          "total": {
+            "low": 40,
+            "high": 55
+          },
+          "source": null
+        }
+      },
+      "2023": {
+        "abs-module-replacement": {
+          "title": "ABS Module Replacement",
+          "parts": {
+            "low": 675,
+            "high": 746
+          },
+          "labor": {
+            "low": 376,
+            "high": 424
+          },
+          "total": {
+            "low": 1051,
+            "high": 1170
+          },
+          "source": null
+        },
+        "ac-line-replacement": {
+          "title": "AC Line Replacement",
+          "parts": {
+            "low": 245,
+            "high": 287
+          },
+          "labor": {
+            "low": 332,
+            "high": 374
+          },
+          "total": {
+            "low": 577,
+            "high": 661
+          },
+          "source": null
+        },
+        "ac-repair": {
+          "title": "AC Repair",
+          "parts": {
+            "low": 175,
+            "high": 205
+          },
+          "labor": {
+            "low": 241,
+            "high": 283
+          },
+          "total": {
+            "low": 416,
+            "high": 488
+          },
+          "source": null
+        },
+        "air-conditioning---recharge": {
+          "title": "Air Conditioning - Recharge",
+          "parts": {
+            "low": 77,
+            "high": 93
+          },
+          "labor": {
+            "low": 118,
+            "high": 138
+          },
+          "total": {
+            "low": 195,
+            "high": 231
+          },
+          "source": null
+        },
+        "alternator-replacement": {
+          "title": "Alternator Replacement",
+          "parts": {
+            "low": 530,
+            "high": 586
+          },
+          "labor": {
+            "low": 335,
+            "high": 377
+          },
+          "total": {
+            "low": 865,
+            "high": 963
+          },
+          "source": null
+        },
+        "axle---replace-front-axle": {
+          "title": "Axle - Replace Front Axle",
+          "parts": {
+            "low": 288,
+            "high": 324
+          },
+          "labor": {
+            "low": 432,
+            "high": 488
+          },
+          "total": {
+            "low": 720,
+            "high": 812
+          },
+          "source": null
+        },
+        "battery---replace": {
+          "title": "Battery - Replace",
+          "parts": {
+            "low": 184,
+            "high": 217
+          },
+          "labor": {
+            "low": 61,
+            "high": 73
+          },
+          "total": {
+            "low": 245,
+            "high": 290
+          },
+          "source": null
+        },
+        "battery-check": {
+          "title": "Battery Check",
+          "parts": {
+            "low": 0,
+            "high": 0
+          },
+          "labor": {
+            "low": 143,
+            "high": 167
+          },
+          "total": {
+            "low": 143,
+            "high": 167
+          },
+          "source": null
+        },
+        "brake-bleed": {
+          "title": "Brake Bleed",
+          "parts": {
+            "low": 0,
+            "high": 0
+          },
+          "labor": {
+            "low": 224,
+            "high": 262
+          },
+          "total": {
+            "low": 224,
+            "high": 262
+          },
+          "source": null
+        },
+        "brake-caliper-replacement": {
+          "title": "Brake Caliper Replacement",
+          "parts": {
+            "low": 318,
+            "high": 358
+          },
+          "labor": {
+            "low": 190,
+            "high": 224
+          },
+          "total": {
+            "low": 508,
+            "high": 582
+          },
+          "source": null
+        },
+        "brake-fluid---flush-fluid--bleed-brakes": {
+          "title": "Brake Fluid - Flush Fluid & Bleed Brakes",
+          "parts": {
+            "low": 82,
+            "high": 99
+          },
+          "labor": {
+            "low": 100,
+            "high": 120
+          },
+          "total": {
+            "low": 182,
+            "high": 219
+          },
+          "source": null
+        },
+        "brake-light-switch-replacement": {
+          "title": "Brake Light Switch Replacement",
+          "parts": {
+            "low": 32,
+            "high": 40
+          },
+          "labor": {
+            "low": 174,
+            "high": 204
+          },
+          "total": {
+            "low": 206,
+            "high": 244
+          },
+          "source": null
+        },
+        "brake-line-replacement": {
+          "title": "Brake Line Replacement",
+          "parts": {
+            "low": 178,
+            "high": 210
+          },
+          "labor": {
+            "low": 325,
+            "high": 367
+          },
+          "total": {
+            "low": 503,
+            "high": 577
+          },
+          "source": null
+        },
+        "brake-master-cylinder-replacement": {
+          "title": "Brake Master Cylinder Replacement",
+          "parts": {
+            "low": 470,
+            "high": 530
+          },
+          "labor": {
+            "low": 340,
+            "high": 384
+          },
+          "total": {
+            "low": 810,
+            "high": 914
+          },
+          "source": null
+        },
+        "brakes---adjust": {
+          "title": "Brakes - Adjust",
+          "parts": {
+            "low": 0,
+            "high": 0
+          },
+          "labor": {
+            "low": 89,
+            "high": 107
+          },
+          "total": {
+            "low": 89,
+            "high": 107
+          },
+          "source": null
+        },
+        "brakes---replace-pads": {
+          "title": "Brakes - Replace Pads",
+          "parts": {
+            "low": 110,
+            "high": 130
+          },
+          "labor": {
+            "low": 167,
+            "high": 195
+          },
+          "total": {
+            "low": 277,
+            "high": 325
+          },
+          "source": null
+        },
+        "brakes---replace-pads--resurface-rotors": {
+          "title": "Brakes - Replace Pads & Resurface Rotors",
+          "parts": {
+            "low": 122,
+            "high": 142
+          },
+          "labor": {
+            "low": 182,
+            "high": 215
+          },
+          "total": {
+            "low": 304,
+            "high": 357
+          },
+          "source": null
+        },
+        "brakes---replace-pads--rotors": {
+          "title": "Brakes - Replace Pads & Rotors",
+          "parts": {
+            "low": 240,
+            "high": 283
+          },
+          "labor": {
+            "low": 197,
+            "high": 231
+          },
+          "total": {
+            "low": 437,
+            "high": 514
+          },
+          "source": null
+        },
+        "brakes---replace-rotors": {
+          "title": "Brakes - Replace Rotors",
+          "parts": {
+            "low": 165,
+            "high": 193
+          },
+          "labor": {
+            "low": 135,
+            "high": 159
+          },
+          "total": {
+            "low": 300,
+            "high": 352
+          },
+          "source": null
+        },
+        "brakes---resurface-rotors": {
+          "title": "Brakes - Resurface Rotors",
+          "parts": {
+            "low": 0,
+            "high": 0
+          },
+          "labor": {
+            "low": 200,
+            "high": 234
+          },
+          "total": {
+            "low": 200,
+            "high": 234
+          },
+          "source": null
+        },
+        "cabin-air-filter---replace": {
+          "title": "Cabin Air Filter - Replace",
+          "parts": {
+            "low": 28,
+            "high": 34
+          },
+          "labor": {
+            "low": 28,
+            "high": 34
+          },
+          "total": {
+            "low": 56,
+            "high": 68
+          },
+          "source": null
+        },
+        "catalytic-converter-replacement": {
+          "title": "Catalytic Converter Replacement",
+          "parts": {
+            "low": 1957,
+            "high": 2121
+          },
+          "labor": {
+            "low": 421,
+            "high": 475
+          },
+          "total": {
+            "low": 2378,
+            "high": 2596
+          },
+          "source": null
+        },
+        "clutch-replacement": {
+          "title": "Clutch Replacement",
+          "parts": {
+            "low": 880,
+            "high": 972
+          },
+          "labor": {
+            "low": 612,
+            "high": 676
+          },
+          "total": {
+            "low": 1492,
+            "high": 1648
+          },
+          "source": null
+        },
+        "coolant---flush": {
+          "title": "Coolant - Flush",
+          "parts": {
+            "low": 57,
+            "high": 69
+          },
+          "labor": {
+            "low": 136,
+            "high": 159
+          },
+          "total": {
+            "low": 193,
+            "high": 228
+          },
+          "source": null
+        },
+        "coolant-thermostat-replacement": {
+          "title": "Coolant Thermostat Replacement",
+          "parts": {
+            "low": 143,
+            "high": 167
+          },
+          "labor": {
+            "low": 416,
+            "high": 470
+          },
+          "total": {
+            "low": 559,
+            "high": 637
+          },
+          "source": null
+        },
+        "crankshaft-seal-replacement": {
+          "title": "Crankshaft Seal Replacement",
+          "parts": {
+            "low": 52,
+            "high": 62
+          },
+          "labor": {
+            "low": 844,
+            "high": 932
+          },
+          "total": {
+            "low": 896,
+            "high": 994
+          },
+          "source": null
+        },
+        "differential-fluid---flush": {
+          "title": "Differential Fluid - Flush",
+          "parts": {
+            "low": 67,
+            "high": 81
+          },
+          "labor": {
+            "low": 67,
+            "high": 81
+          },
+          "total": {
+            "low": 134,
+            "high": 162
+          },
+          "source": null
+        },
+        "drive-belt-tensioner-replacement": {
+          "title": "Drive Belt Tensioner Replacement",
+          "parts": {
+            "low": 323,
+            "high": 365
+          },
+          "labor": {
+            "low": 211,
+            "high": 247
+          },
+          "total": {
+            "low": 534,
+            "high": 612
+          },
+          "source": null
+        },
+        "engine-air-filter---replace": {
+          "title": "Engine Air Filter - Replace",
+          "parts": {
+            "low": 19,
+            "high": 24
+          },
+          "labor": {
+            "low": 28,
+            "high": 35
+          },
+          "total": {
+            "low": 47,
+            "high": 59
+          },
+          "source": null
+        },
+        "engine-belt---replace": {
+          "title": "Engine Belt - Replace",
+          "parts": {
+            "low": 80,
+            "high": 96
+          },
+          "labor": {
+            "low": 122,
+            "high": 144
+          },
+          "total": {
+            "low": 202,
+            "high": 240
+          },
+          "source": null
+        },
+        "engine-diagnostics---check-engine-light": {
+          "title": "Engine Diagnostics - Check Engine Light",
+          "parts": {
+            "low": 0,
+            "high": 0
+          },
+          "labor": {
+            "low": 220,
+            "high": 259
+          },
+          "total": {
+            "low": 220,
+            "high": 259
+          },
+          "source": null
+        },
+        "engine-replacement": {
+          "title": "Engine Replacement",
+          "parts": {
+            "low": 5509,
+            "high": 5909
+          },
+          "labor": {
+            "low": 2580,
+            "high": 2794
+          },
+          "total": {
+            "low": 8089,
+            "high": 8703
+          },
+          "source": null
+        },
+        "exhaust-system-replacement": {
+          "title": "Exhaust System Replacement",
+          "parts": {
+            "low": 441,
+            "high": 497
+          },
+          "labor": {
+            "low": 233,
+            "high": 273
+          },
+          "total": {
+            "low": 674,
+            "high": 770
+          },
+          "source": null
+        },
+        "fuel-injector---service": {
+          "title": "Fuel Injector - Service",
+          "parts": {
+            "low": 71,
+            "high": 85
+          },
+          "labor": {
+            "low": 86,
+            "high": 104
+          },
+          "total": {
+            "low": 157,
+            "high": 189
+          },
+          "source": null
+        },
+        "head-gasket-replacement": {
+          "title": "Head Gasket Replacement",
+          "parts": {
+            "low": 572,
+            "high": 632
+          },
+          "labor": {
+            "low": 1563,
+            "high": 1693
+          },
+          "total": {
+            "low": 2135,
+            "high": 2325
+          },
+          "source": null
+        },
+        "hood-latch-assembly-replacement": {
+          "title": "Hood Latch Assembly Replacement",
+          "parts": {
+            "low": 177,
+            "high": 207
+          },
+          "labor": {
+            "low": 190,
+            "high": 224
+          },
+          "total": {
+            "low": 367,
+            "high": 431
+          },
+          "source": null
+        },
+        "ignition-switch-replacement": {
+          "title": "Ignition Switch Replacement",
+          "parts": {
+            "low": 253,
+            "high": 297
+          },
+          "labor": {
+            "low": 253,
+            "high": 297
+          },
+          "total": {
+            "low": 506,
+            "high": 594
+          },
+          "source": null
+        },
+        "intake-manifold-gasket---replace": {
+          "title": "Intake Manifold Gasket - Replace",
+          "parts": {
+            "low": 89,
+            "high": 107
+          },
+          "labor": {
+            "low": 526,
+            "high": 582
+          },
+          "total": {
+            "low": 615,
+            "high": 689
+          },
+          "source": null
+        },
+        "mass-air-sensor-replacement": {
+          "title": "Mass Air Sensor Replacement",
+          "parts": {
+            "low": 302,
+            "high": 340
+          },
+          "labor": {
+            "low": 189,
+            "high": 221
+          },
+          "total": {
+            "low": 491,
+            "high": 561
+          },
+          "source": null
+        },
+        "oil-change": {
+          "title": "Oil Change",
+          "parts": {
+            "low": 32,
+            "high": 41
+          },
+          "labor": {
+            "low": 32,
+            "high": 41
+          },
+          "total": {
+            "low": 64,
+            "high": 82
+          },
+          "source": null
+        },
+        "oil-pan-gasket-replacement": {
+          "title": "Oil Pan Gasket Replacement",
+          "parts": {
+            "low": 81,
+            "high": 97
+          },
+          "labor": {
+            "low": 409,
+            "high": 461
+          },
+          "total": {
+            "low": 490,
+            "high": 558
+          },
+          "source": null
+        },
+        "oil-pan-replacement": {
+          "title": "Oil Pan Replacement",
+          "parts": {
+            "low": 149,
+            "high": 175
+          },
+          "labor": {
+            "low": 323,
+            "high": 365
+          },
+          "total": {
+            "low": 472,
+            "high": 540
+          },
+          "source": null
+        },
+        "oil-pressure-sensor-replacement": {
+          "title": "Oil Pressure Sensor Replacement",
+          "parts": {
+            "low": 37,
+            "high": 45
+          },
+          "labor": {
+            "low": 233,
+            "high": 273
+          },
+          "total": {
+            "low": 270,
+            "high": 318
+          },
+          "source": null
+        },
+        "oil-pump-replacement": {
+          "title": "Oil Pump Replacement",
+          "parts": {
+            "low": 814,
+            "high": 900
+          },
+          "labor": {
+            "low": 542,
+            "high": 600
+          },
+          "total": {
+            "low": 1356,
+            "high": 1500
+          },
+          "source": null
+        },
+        "pcv-valve-replacement": {
+          "title": "PCV Valve Replacement",
+          "parts": {
+            "low": 35,
+            "high": 43
+          },
+          "labor": {
+            "low": 68,
+            "high": 82
+          },
+          "total": {
+            "low": 103,
+            "high": 125
+          },
+          "source": null
+        },
+        "power-steering-fluid---flush": {
+          "title": "Power Steering Fluid - Flush",
+          "parts": {
+            "low": 61,
+            "high": 73
+          },
+          "labor": {
+            "low": 93,
+            "high": 109
+          },
+          "total": {
+            "low": 154,
+            "high": 182
+          },
+          "source": null
+        },
+        "purge-valve-replacement": {
+          "title": "Purge Valve Replacement",
+          "parts": {
+            "low": 91,
+            "high": 109
+          },
+          "labor": {
+            "low": 213,
+            "high": 251
+          },
+          "total": {
+            "low": 304,
+            "high": 360
+          },
+          "source": null
+        },
+        "radiator-fan-motor-replacement": {
+          "title": "Radiator Fan Motor Replacement",
+          "parts": {
+            "low": 383,
+            "high": 431
+          },
+          "labor": {
+            "low": 289,
+            "high": 325
+          },
+          "total": {
+            "low": 672,
+            "high": 756
+          },
+          "source": null
+        },
+        "radiator-hose-replacement": {
+          "title": "Radiator Hose Replacement",
+          "parts": {
+            "low": 180,
+            "high": 212
+          },
+          "labor": {
+            "low": 213,
+            "high": 249
+          },
+          "total": {
+            "low": 393,
+            "high": 461
+          },
+          "source": null
+        },
+        "radiator-replacement": {
+          "title": "Radiator Replacement",
+          "parts": {
+            "low": 511,
+            "high": 565
+          },
+          "labor": {
+            "low": 531,
+            "high": 587
+          },
+          "total": {
+            "low": 1042,
+            "high": 1152
+          },
+          "source": null
+        },
+        "spark-plugs---replace": {
+          "title": "Spark Plugs - Replace",
+          "parts": {
+            "low": 108,
+            "high": 126
+          },
+          "labor": {
+            "low": 162,
+            "high": 190
+          },
+          "total": {
+            "low": 270,
+            "high": 316
+          },
+          "source": null
+        },
+        "starter-replacement": {
+          "title": "Starter Replacement",
+          "parts": {
+            "low": 380,
+            "high": 428
+          },
+          "labor": {
+            "low": 324,
+            "high": 366
+          },
+          "total": {
+            "low": 704,
+            "high": 794
+          },
+          "source": null
+        },
+        "throttle-body-replacement": {
+          "title": "Throttle Body Replacement",
+          "parts": {
+            "low": 344,
+            "high": 388
+          },
+          "labor": {
+            "low": 234,
+            "high": 274
+          },
+          "total": {
+            "low": 578,
+            "high": 662
+          },
+          "source": null
+        },
+        "timing-belt---replace": {
+          "title": "Timing Belt - Replace",
+          "parts": {
+            "low": 240,
+            "high": 282
+          },
+          "labor": {
+            "low": 368,
+            "high": 414
+          },
+          "total": {
+            "low": 608,
+            "high": 696
+          },
+          "source": null
+        },
+        "timing-chain-replacement": {
+          "title": "Timing Chain Replacement",
+          "parts": {
+            "low": 1009,
+            "high": 1093
+          },
+          "labor": {
+            "low": 1050,
+            "high": 1138
+          },
+          "total": {
+            "low": 2059,
+            "high": 2231
+          },
+          "source": null
+        },
+        "tire-pressure-tpms-sensor---replace": {
+          "title": "Tire Pressure (TPMS) Sensor - Replace",
+          "parts": {
+            "low": 99,
+            "high": 117
+          },
+          "labor": {
+            "low": 185,
+            "high": 217
+          },
+          "total": {
+            "low": 284,
+            "high": 334
+          },
+          "source": null
+        },
+        "tires---mount--balance-4-wheels": {
+          "title": "Tire(s) - Mount & Balance (4 Wheels)",
+          "parts": {
+            "low": 0,
+            "high": 0
+          },
+          "labor": {
+            "low": 211,
+            "high": 248
+          },
+          "total": {
+            "low": 211,
+            "high": 248
+          },
+          "source": null
+        },
+        "tires---patch": {
+          "title": "Tire(s) - Patch",
+          "parts": {
+            "low": 19,
+            "high": 23
+          },
+          "labor": {
+            "low": 28,
+            "high": 34
+          },
+          "total": {
+            "low": 47,
+            "high": 57
+          },
+          "source": null
+        },
+        "tires---rotate": {
+          "title": "Tire(s) - Rotate",
+          "parts": {
+            "low": 0,
+            "high": 0
+          },
+          "labor": {
+            "low": 36,
+            "high": 44
+          },
+          "total": {
+            "low": 36,
+            "high": 44
+          },
+          "source": null
+        },
+        "tires---rotate--balance-4-wheels": {
+          "title": "Tire(s) - Rotate & Balance (4 Wheels)",
+          "parts": {
+            "low": 0,
+            "high": 0
+          },
+          "labor": {
+            "low": 90,
+            "high": 108
+          },
+          "total": {
+            "low": 90,
+            "high": 108
+          },
+          "source": null
+        },
+        "transmission---replace": {
+          "title": "Transmission - Replace",
+          "parts": {
+            "low": 2732,
+            "high": 2960
+          },
+          "labor": {
+            "low": 902,
+            "high": 996
+          },
+          "total": {
+            "low": 3634,
+            "high": 3956
+          },
+          "source": null
+        },
+        "transmission-fluid---flush": {
+          "title": "Transmission Fluid - Flush",
+          "parts": {
+            "low": 108,
+            "high": 126
+          },
+          "labor": {
+            "low": 131,
+            "high": 153
+          },
+          "total": {
+            "low": 239,
+            "high": 279
+          },
+          "source": null
+        },
+        "turbo-replacement": {
+          "title": "Turbo Replacement",
+          "parts": {
+            "low": 1601,
+            "high": 1735
+          },
+          "labor": {
+            "low": 781,
+            "high": 863
+          },
+          "total": {
+            "low": 2382,
+            "high": 2598
+          },
+          "source": null
+        },
+        "valve-cover-gasket-replacement": {
+          "title": "Valve Cover Gasket Replacement",
+          "parts": {
+            "low": 187,
+            "high": 219
+          },
+          "labor": {
+            "low": 447,
+            "high": 504
+          },
+          "total": {
+            "low": 634,
+            "high": 723
+          },
+          "source": null
+        },
+        "water-pump---replace": {
+          "title": "Water Pump - Replace",
+          "parts": {
+            "low": 213,
+            "high": 251
+          },
+          "labor": {
+            "low": 406,
+            "high": 458
+          },
+          "total": {
+            "low": 619,
+            "high": 709
+          },
+          "source": null
+        },
+        "wheel-locks---install": {
+          "title": "Wheel Locks - Install",
+          "parts": {
+            "low": 50,
+            "high": 60
+          },
+          "labor": {
+            "low": 22,
+            "high": 26
+          },
+          "total": {
+            "low": 72,
+            "high": 86
+          },
+          "source": null
+        },
+        "wheels---alignment": {
+          "title": "Wheels - Alignment",
+          "parts": {
+            "low": 0,
+            "high": 0
+          },
+          "labor": {
+            "low": 146,
+            "high": 172
+          },
+          "total": {
+            "low": 146,
+            "high": 172
+          },
+          "source": null
+        },
+        "window-regulator-replacement---rear": {
+          "title": "Window Regulator Replacement - Rear",
+          "parts": {
+            "low": 418,
+            "high": 472
+          },
+          "labor": {
+            "low": 272,
+            "high": 320
+          },
+          "total": {
+            "low": 690,
+            "high": 792
+          },
+          "source": null
+        },
+        "wiper-blades---replace-1-front-wiper": {
+          "title": "Wiper Blades - Replace 1 Front Wiper",
+          "parts": {
+            "low": 38,
+            "high": 47
+          },
+          "labor": {
+            "low": 10,
+            "high": 12
+          },
+          "total": {
+            "low": 48,
+            "high": 59
+          },
+          "source": null
+        }
+      },
+      "2024": {
+        "abs-module-replacement": {
+          "title": "ABS Module Replacement",
+          "parts": {
+            "low": 675,
+            "high": 746
+          },
+          "labor": {
+            "low": 376,
+            "high": 424
+          },
+          "total": {
+            "low": 1051,
+            "high": 1170
+          },
+          "source": null
+        },
+        "ac-line-replacement": {
+          "title": "AC Line Replacement",
+          "parts": {
+            "low": 245,
+            "high": 287
+          },
+          "labor": {
+            "low": 332,
+            "high": 374
+          },
+          "total": {
+            "low": 577,
+            "high": 661
+          },
+          "source": null
+        },
+        "ac-repair": {
+          "title": "AC Repair",
+          "parts": {
+            "low": 175,
+            "high": 205
+          },
+          "labor": {
+            "low": 241,
+            "high": 283
+          },
+          "total": {
+            "low": 416,
+            "high": 488
+          },
+          "source": null
+        },
+        "air-conditioning---recharge": {
+          "title": "Air Conditioning - Recharge",
+          "parts": {
+            "low": 77,
+            "high": 93
+          },
+          "labor": {
+            "low": 118,
+            "high": 138
+          },
+          "total": {
+            "low": 195,
+            "high": 231
+          },
+          "source": null
+        },
+        "alternator-replacement": {
+          "title": "Alternator Replacement",
+          "parts": {
+            "low": 530,
+            "high": 586
+          },
+          "labor": {
+            "low": 335,
+            "high": 377
+          },
+          "total": {
+            "low": 865,
+            "high": 963
+          },
+          "source": null
+        },
+        "axle---replace-front-axle": {
+          "title": "Axle - Replace Front Axle",
+          "parts": {
+            "low": 288,
+            "high": 324
+          },
+          "labor": {
+            "low": 432,
+            "high": 488
+          },
+          "total": {
+            "low": 720,
+            "high": 812
+          },
+          "source": null
+        },
+        "battery---replace": {
+          "title": "Battery - Replace",
+          "parts": {
+            "low": 184,
+            "high": 217
+          },
+          "labor": {
+            "low": 61,
+            "high": 73
+          },
+          "total": {
+            "low": 245,
+            "high": 290
+          },
+          "source": null
+        },
+        "battery-check": {
+          "title": "Battery Check",
+          "parts": {
+            "low": 0,
+            "high": 0
+          },
+          "labor": {
+            "low": 143,
+            "high": 167
+          },
+          "total": {
+            "low": 143,
+            "high": 167
+          },
+          "source": null
+        },
+        "brake-bleed": {
+          "title": "Brake Bleed",
+          "parts": {
+            "low": 0,
+            "high": 0
+          },
+          "labor": {
+            "low": 224,
+            "high": 262
+          },
+          "total": {
+            "low": 224,
+            "high": 262
+          },
+          "source": null
+        },
+        "brake-caliper-replacement": {
+          "title": "Brake Caliper Replacement",
+          "parts": {
+            "low": 318,
+            "high": 358
+          },
+          "labor": {
+            "low": 190,
+            "high": 224
+          },
+          "total": {
+            "low": 508,
+            "high": 582
+          },
+          "source": null
+        },
+        "brake-fluid---flush-fluid--bleed-brakes": {
+          "title": "Brake Fluid - Flush Fluid & Bleed Brakes",
+          "parts": {
+            "low": 82,
+            "high": 99
+          },
+          "labor": {
+            "low": 100,
+            "high": 120
+          },
+          "total": {
+            "low": 182,
+            "high": 219
+          },
+          "source": null
+        },
+        "brake-light-switch-replacement": {
+          "title": "Brake Light Switch Replacement",
+          "parts": {
+            "low": 32,
+            "high": 40
+          },
+          "labor": {
+            "low": 174,
+            "high": 204
+          },
+          "total": {
+            "low": 206,
+            "high": 244
+          },
+          "source": null
+        },
+        "brake-line-replacement": {
+          "title": "Brake Line Replacement",
+          "parts": {
+            "low": 178,
+            "high": 210
+          },
+          "labor": {
+            "low": 325,
+            "high": 367
+          },
+          "total": {
+            "low": 503,
+            "high": 577
+          },
+          "source": null
+        },
+        "brake-master-cylinder-replacement": {
+          "title": "Brake Master Cylinder Replacement",
+          "parts": {
+            "low": 470,
+            "high": 530
+          },
+          "labor": {
+            "low": 340,
+            "high": 384
+          },
+          "total": {
+            "low": 810,
+            "high": 914
+          },
+          "source": null
+        },
+        "brakes---adjust": {
+          "title": "Brakes - Adjust",
+          "parts": {
+            "low": 0,
+            "high": 0
+          },
+          "labor": {
+            "low": 89,
+            "high": 107
+          },
+          "total": {
+            "low": 89,
+            "high": 107
+          },
+          "source": null
+        },
+        "brakes---replace-pads": {
+          "title": "Brakes - Replace Pads",
+          "parts": {
+            "low": 110,
+            "high": 130
+          },
+          "labor": {
+            "low": 167,
+            "high": 195
+          },
+          "total": {
+            "low": 277,
+            "high": 325
+          },
+          "source": null
+        },
+        "brakes---replace-pads--resurface-rotors": {
+          "title": "Brakes - Replace Pads & Resurface Rotors",
+          "parts": {
+            "low": 122,
+            "high": 142
+          },
+          "labor": {
+            "low": 182,
+            "high": 215
+          },
+          "total": {
+            "low": 304,
+            "high": 357
+          },
+          "source": null
+        },
+        "brakes---replace-pads--rotors": {
+          "title": "Brakes - Replace Pads & Rotors",
+          "parts": {
+            "low": 240,
+            "high": 283
+          },
+          "labor": {
+            "low": 197,
+            "high": 231
+          },
+          "total": {
+            "low": 437,
+            "high": 514
+          },
+          "source": null
+        },
+        "brakes---replace-rotors": {
+          "title": "Brakes - Replace Rotors",
+          "parts": {
+            "low": 165,
+            "high": 193
+          },
+          "labor": {
+            "low": 135,
+            "high": 159
+          },
+          "total": {
+            "low": 300,
+            "high": 352
+          },
+          "source": null
+        },
+        "brakes---resurface-rotors": {
+          "title": "Brakes - Resurface Rotors",
+          "parts": {
+            "low": 0,
+            "high": 0
+          },
+          "labor": {
+            "low": 200,
+            "high": 234
+          },
+          "total": {
+            "low": 200,
+            "high": 234
+          },
+          "source": null
+        },
+        "cabin-air-filter---replace": {
+          "title": "Cabin Air Filter - Replace",
+          "parts": {
+            "low": 28,
+            "high": 34
+          },
+          "labor": {
+            "low": 28,
+            "high": 34
+          },
+          "total": {
+            "low": 56,
+            "high": 68
+          },
+          "source": null
+        },
+        "catalytic-converter-replacement": {
+          "title": "Catalytic Converter Replacement",
+          "parts": {
+            "low": 1957,
+            "high": 2121
+          },
+          "labor": {
+            "low": 421,
+            "high": 475
+          },
+          "total": {
+            "low": 2378,
+            "high": 2596
+          },
+          "source": null
+        },
+        "clutch-replacement": {
+          "title": "Clutch Replacement",
+          "parts": {
+            "low": 880,
+            "high": 972
+          },
+          "labor": {
+            "low": 612,
+            "high": 676
+          },
+          "total": {
+            "low": 1492,
+            "high": 1648
+          },
+          "source": null
+        },
+        "coolant---flush": {
+          "title": "Coolant - Flush",
+          "parts": {
+            "low": 57,
+            "high": 69
+          },
+          "labor": {
+            "low": 136,
+            "high": 159
+          },
+          "total": {
+            "low": 193,
+            "high": 228
+          },
+          "source": null
+        },
+        "coolant-thermostat-replacement": {
+          "title": "Coolant Thermostat Replacement",
+          "parts": {
+            "low": 143,
+            "high": 167
+          },
+          "labor": {
+            "low": 416,
+            "high": 470
+          },
+          "total": {
+            "low": 559,
+            "high": 637
+          },
+          "source": null
+        },
+        "crankshaft-seal-replacement": {
+          "title": "Crankshaft Seal Replacement",
+          "parts": {
+            "low": 52,
+            "high": 62
+          },
+          "labor": {
+            "low": 844,
+            "high": 932
+          },
+          "total": {
+            "low": 896,
+            "high": 994
+          },
+          "source": null
+        },
+        "differential-fluid---flush": {
+          "title": "Differential Fluid - Flush",
+          "parts": {
+            "low": 67,
+            "high": 81
+          },
+          "labor": {
+            "low": 67,
+            "high": 81
+          },
+          "total": {
+            "low": 134,
+            "high": 162
+          },
+          "source": null
+        },
+        "drive-belt-tensioner-replacement": {
+          "title": "Drive Belt Tensioner Replacement",
+          "parts": {
+            "low": 323,
+            "high": 365
+          },
+          "labor": {
+            "low": 211,
+            "high": 247
+          },
+          "total": {
+            "low": 534,
+            "high": 612
+          },
+          "source": null
+        },
+        "engine-air-filter---replace": {
+          "title": "Engine Air Filter - Replace",
+          "parts": {
+            "low": 19,
+            "high": 24
+          },
+          "labor": {
+            "low": 28,
+            "high": 35
+          },
+          "total": {
+            "low": 47,
+            "high": 59
+          },
+          "source": null
+        },
+        "engine-belt---replace": {
+          "title": "Engine Belt - Replace",
+          "parts": {
+            "low": 80,
+            "high": 96
+          },
+          "labor": {
+            "low": 122,
+            "high": 144
+          },
+          "total": {
+            "low": 202,
+            "high": 240
+          },
+          "source": null
+        },
+        "engine-diagnostics---check-engine-light": {
+          "title": "Engine Diagnostics - Check Engine Light",
+          "parts": {
+            "low": 0,
+            "high": 0
+          },
+          "labor": {
+            "low": 220,
+            "high": 259
+          },
+          "total": {
+            "low": 220,
+            "high": 259
+          },
+          "source": null
+        },
+        "engine-replacement": {
+          "title": "Engine Replacement",
+          "parts": {
+            "low": 5509,
+            "high": 5909
+          },
+          "labor": {
+            "low": 2580,
+            "high": 2794
+          },
+          "total": {
+            "low": 8089,
+            "high": 8703
+          },
+          "source": null
+        },
+        "exhaust-system-replacement": {
+          "title": "Exhaust System Replacement",
+          "parts": {
+            "low": 441,
+            "high": 497
+          },
+          "labor": {
+            "low": 233,
+            "high": 273
+          },
+          "total": {
+            "low": 674,
+            "high": 770
+          },
+          "source": null
+        },
+        "fuel-injector---service": {
+          "title": "Fuel Injector - Service",
+          "parts": {
+            "low": 71,
+            "high": 85
+          },
+          "labor": {
+            "low": 86,
+            "high": 104
+          },
+          "total": {
+            "low": 157,
+            "high": 189
+          },
+          "source": null
+        },
+        "head-gasket-replacement": {
+          "title": "Head Gasket Replacement",
+          "parts": {
+            "low": 572,
+            "high": 632
+          },
+          "labor": {
+            "low": 1563,
+            "high": 1693
+          },
+          "total": {
+            "low": 2135,
+            "high": 2325
+          },
+          "source": null
+        },
+        "hood-latch-assembly-replacement": {
+          "title": "Hood Latch Assembly Replacement",
+          "parts": {
+            "low": 177,
+            "high": 207
+          },
+          "labor": {
+            "low": 190,
+            "high": 224
+          },
+          "total": {
+            "low": 367,
+            "high": 431
+          },
+          "source": null
+        },
+        "ignition-switch-replacement": {
+          "title": "Ignition Switch Replacement",
+          "parts": {
+            "low": 253,
+            "high": 297
+          },
+          "labor": {
+            "low": 253,
+            "high": 297
+          },
+          "total": {
+            "low": 506,
+            "high": 594
+          },
+          "source": null
+        },
+        "intake-manifold-gasket---replace": {
+          "title": "Intake Manifold Gasket - Replace",
+          "parts": {
+            "low": 89,
+            "high": 107
+          },
+          "labor": {
+            "low": 526,
+            "high": 582
+          },
+          "total": {
+            "low": 615,
+            "high": 689
+          },
+          "source": null
+        },
+        "mass-air-sensor-replacement": {
+          "title": "Mass Air Sensor Replacement",
+          "parts": {
+            "low": 302,
+            "high": 340
+          },
+          "labor": {
+            "low": 189,
+            "high": 221
+          },
+          "total": {
+            "low": 491,
+            "high": 561
+          },
+          "source": null
+        },
+        "oil-change": {
+          "title": "Oil Change",
+          "parts": {
+            "low": 32,
+            "high": 41
+          },
+          "labor": {
+            "low": 32,
+            "high": 41
+          },
+          "total": {
+            "low": 64,
+            "high": 82
+          },
+          "source": null
+        },
+        "oil-pan-gasket-replacement": {
+          "title": "Oil Pan Gasket Replacement",
+          "parts": {
+            "low": 81,
+            "high": 97
+          },
+          "labor": {
+            "low": 409,
+            "high": 461
+          },
+          "total": {
+            "low": 490,
+            "high": 558
+          },
+          "source": null
+        },
+        "oil-pan-replacement": {
+          "title": "Oil Pan Replacement",
+          "parts": {
+            "low": 149,
+            "high": 175
+          },
+          "labor": {
+            "low": 323,
+            "high": 365
+          },
+          "total": {
+            "low": 472,
+            "high": 540
+          },
+          "source": null
+        },
+        "oil-pressure-sensor-replacement": {
+          "title": "Oil Pressure Sensor Replacement",
+          "parts": {
+            "low": 37,
+            "high": 45
+          },
+          "labor": {
+            "low": 233,
+            "high": 273
+          },
+          "total": {
+            "low": 270,
+            "high": 318
+          },
+          "source": null
+        },
+        "oil-pump-replacement": {
+          "title": "Oil Pump Replacement",
+          "parts": {
+            "low": 814,
+            "high": 900
+          },
+          "labor": {
+            "low": 542,
+            "high": 600
+          },
+          "total": {
+            "low": 1356,
+            "high": 1500
+          },
+          "source": null
+        },
+        "pcv-valve-replacement": {
+          "title": "PCV Valve Replacement",
+          "parts": {
+            "low": 35,
+            "high": 43
+          },
+          "labor": {
+            "low": 68,
+            "high": 82
+          },
+          "total": {
+            "low": 103,
+            "high": 125
+          },
+          "source": null
+        },
+        "power-steering-fluid---flush": {
+          "title": "Power Steering Fluid - Flush",
+          "parts": {
+            "low": 61,
+            "high": 73
+          },
+          "labor": {
+            "low": 93,
+            "high": 109
+          },
+          "total": {
+            "low": 154,
+            "high": 182
+          },
+          "source": null
+        },
+        "purge-valve-replacement": {
+          "title": "Purge Valve Replacement",
+          "parts": {
+            "low": 91,
+            "high": 109
+          },
+          "labor": {
+            "low": 213,
+            "high": 251
+          },
+          "total": {
+            "low": 304,
+            "high": 360
+          },
+          "source": null
+        },
+        "radiator-fan-motor-replacement": {
+          "title": "Radiator Fan Motor Replacement",
+          "parts": {
+            "low": 383,
+            "high": 431
+          },
+          "labor": {
+            "low": 289,
+            "high": 325
+          },
+          "total": {
+            "low": 672,
+            "high": 756
+          },
+          "source": null
+        },
+        "radiator-hose-replacement": {
+          "title": "Radiator Hose Replacement",
+          "parts": {
+            "low": 180,
+            "high": 212
+          },
+          "labor": {
+            "low": 213,
+            "high": 249
+          },
+          "total": {
+            "low": 393,
+            "high": 461
+          },
+          "source": null
+        },
+        "radiator-replacement": {
+          "title": "Radiator Replacement",
+          "parts": {
+            "low": 511,
+            "high": 565
+          },
+          "labor": {
+            "low": 531,
+            "high": 587
+          },
+          "total": {
+            "low": 1042,
+            "high": 1152
+          },
+          "source": null
+        },
+        "spark-plugs---replace": {
+          "title": "Spark Plugs - Replace",
+          "parts": {
+            "low": 108,
+            "high": 126
+          },
+          "labor": {
+            "low": 162,
+            "high": 190
+          },
+          "total": {
+            "low": 270,
+            "high": 316
+          },
+          "source": null
+        },
+        "starter-replacement": {
+          "title": "Starter Replacement",
+          "parts": {
+            "low": 380,
+            "high": 428
+          },
+          "labor": {
+            "low": 324,
+            "high": 366
+          },
+          "total": {
+            "low": 704,
+            "high": 794
+          },
+          "source": null
+        },
+        "throttle-body-replacement": {
+          "title": "Throttle Body Replacement",
+          "parts": {
+            "low": 344,
+            "high": 388
+          },
+          "labor": {
+            "low": 234,
+            "high": 274
+          },
+          "total": {
+            "low": 578,
+            "high": 662
+          },
+          "source": null
+        },
+        "timing-belt---replace": {
+          "title": "Timing Belt - Replace",
+          "parts": {
+            "low": 240,
+            "high": 282
+          },
+          "labor": {
+            "low": 368,
+            "high": 414
+          },
+          "total": {
+            "low": 608,
+            "high": 696
+          },
+          "source": null
+        },
+        "timing-chain-replacement": {
+          "title": "Timing Chain Replacement",
+          "parts": {
+            "low": 1009,
+            "high": 1093
+          },
+          "labor": {
+            "low": 1050,
+            "high": 1138
+          },
+          "total": {
+            "low": 2059,
+            "high": 2231
+          },
+          "source": null
+        },
+        "tire-pressure-tpms-sensor---replace": {
+          "title": "Tire Pressure (TPMS) Sensor - Replace",
+          "parts": {
+            "low": 99,
+            "high": 117
+          },
+          "labor": {
+            "low": 185,
+            "high": 217
+          },
+          "total": {
+            "low": 284,
+            "high": 334
+          },
+          "source": null
+        },
+        "tires---mount--balance-4-wheels": {
+          "title": "Tire(s) - Mount & Balance (4 Wheels)",
+          "parts": {
+            "low": 0,
+            "high": 0
+          },
+          "labor": {
+            "low": 211,
+            "high": 248
+          },
+          "total": {
+            "low": 211,
+            "high": 248
+          },
+          "source": null
+        },
+        "tires---patch": {
+          "title": "Tire(s) - Patch",
+          "parts": {
+            "low": 19,
+            "high": 23
+          },
+          "labor": {
+            "low": 28,
+            "high": 34
+          },
+          "total": {
+            "low": 47,
+            "high": 57
+          },
+          "source": null
+        },
+        "tires---rotate": {
+          "title": "Tire(s) - Rotate",
+          "parts": {
+            "low": 0,
+            "high": 0
+          },
+          "labor": {
+            "low": 36,
+            "high": 44
+          },
+          "total": {
+            "low": 36,
+            "high": 44
+          },
+          "source": null
+        },
+        "tires---rotate--balance-4-wheels": {
+          "title": "Tire(s) - Rotate & Balance (4 Wheels)",
+          "parts": {
+            "low": 0,
+            "high": 0
+          },
+          "labor": {
+            "low": 90,
+            "high": 108
+          },
+          "total": {
+            "low": 90,
+            "high": 108
+          },
+          "source": null
+        },
+        "transmission---replace": {
+          "title": "Transmission - Replace",
+          "parts": {
+            "low": 2732,
+            "high": 2960
+          },
+          "labor": {
+            "low": 902,
+            "high": 996
+          },
+          "total": {
+            "low": 3634,
+            "high": 3956
+          },
+          "source": null
+        },
+        "transmission-fluid---flush": {
+          "title": "Transmission Fluid - Flush",
+          "parts": {
+            "low": 108,
+            "high": 126
+          },
+          "labor": {
+            "low": 131,
+            "high": 153
+          },
+          "total": {
+            "low": 239,
+            "high": 279
+          },
+          "source": null
+        },
+        "turbo-replacement": {
+          "title": "Turbo Replacement",
+          "parts": {
+            "low": 1601,
+            "high": 1735
+          },
+          "labor": {
+            "low": 781,
+            "high": 863
+          },
+          "total": {
+            "low": 2382,
+            "high": 2598
+          },
+          "source": null
+        },
+        "valve-cover-gasket-replacement": {
+          "title": "Valve Cover Gasket Replacement",
+          "parts": {
+            "low": 187,
+            "high": 219
+          },
+          "labor": {
+            "low": 447,
+            "high": 504
+          },
+          "total": {
+            "low": 634,
+            "high": 723
+          },
+          "source": null
+        },
+        "water-pump---replace": {
+          "title": "Water Pump - Replace",
+          "parts": {
+            "low": 213,
+            "high": 251
+          },
+          "labor": {
+            "low": 406,
+            "high": 458
+          },
+          "total": {
+            "low": 619,
+            "high": 709
+          },
+          "source": null
+        },
+        "wheel-locks---install": {
+          "title": "Wheel Locks - Install",
+          "parts": {
+            "low": 50,
+            "high": 60
+          },
+          "labor": {
+            "low": 22,
+            "high": 26
+          },
+          "total": {
+            "low": 72,
+            "high": 86
+          },
+          "source": null
+        },
+        "wheels---alignment": {
+          "title": "Wheels - Alignment",
+          "parts": {
+            "low": 0,
+            "high": 0
+          },
+          "labor": {
+            "low": 146,
+            "high": 172
+          },
+          "total": {
+            "low": 146,
+            "high": 172
+          },
+          "source": null
+        },
+        "window-regulator-replacement---rear": {
+          "title": "Window Regulator Replacement - Rear",
+          "parts": {
+            "low": 418,
+            "high": 472
+          },
+          "labor": {
+            "low": 272,
+            "high": 320
+          },
+          "total": {
+            "low": 690,
+            "high": 792
+          },
+          "source": null
+        },
+        "wiper-blades---replace-1-front-wiper": {
+          "title": "Wiper Blades - Replace 1 Front Wiper",
+          "parts": {
+            "low": 38,
+            "high": 47
+          },
+          "labor": {
+            "low": 10,
+            "high": 12
+          },
+          "total": {
+            "low": 48,
+            "high": 59
+          },
+          "source": null
+        }
+      },
+      "2025": {
+        "abs-module-replacement": {
+          "title": "ABS Module Replacement",
+          "parts": {
+            "low": 675,
+            "high": 746
+          },
+          "labor": {
+            "low": 376,
+            "high": 424
+          },
+          "total": {
+            "low": 1051,
+            "high": 1170
+          },
+          "source": null
+        },
+        "ac-line-replacement": {
+          "title": "AC Line Replacement",
+          "parts": {
+            "low": 245,
+            "high": 287
+          },
+          "labor": {
+            "low": 332,
+            "high": 374
+          },
+          "total": {
+            "low": 577,
+            "high": 661
+          },
+          "source": null
+        },
+        "ac-repair": {
+          "title": "AC Repair",
+          "parts": {
+            "low": 175,
+            "high": 205
+          },
+          "labor": {
+            "low": 241,
+            "high": 283
+          },
+          "total": {
+            "low": 416,
+            "high": 488
+          },
+          "source": null
+        },
+        "air-conditioning---recharge": {
+          "title": "Air Conditioning - Recharge",
+          "parts": {
+            "low": 77,
+            "high": 93
+          },
+          "labor": {
+            "low": 118,
+            "high": 138
+          },
+          "total": {
+            "low": 195,
+            "high": 231
+          },
+          "source": null
+        },
+        "alternator-replacement": {
+          "title": "Alternator Replacement",
+          "parts": {
+            "low": 530,
+            "high": 586
+          },
+          "labor": {
+            "low": 335,
+            "high": 377
+          },
+          "total": {
+            "low": 865,
+            "high": 963
+          },
+          "source": null
+        },
+        "axle---replace-front-axle": {
+          "title": "Axle - Replace Front Axle",
+          "parts": {
+            "low": 288,
+            "high": 324
+          },
+          "labor": {
+            "low": 432,
+            "high": 488
+          },
+          "total": {
+            "low": 720,
+            "high": 812
+          },
+          "source": null
+        },
+        "battery---replace": {
+          "title": "Battery - Replace",
+          "parts": {
+            "low": 184,
+            "high": 217
+          },
+          "labor": {
+            "low": 61,
+            "high": 73
+          },
+          "total": {
+            "low": 245,
+            "high": 290
+          },
+          "source": null
+        },
+        "battery-check": {
+          "title": "Battery Check",
+          "parts": {
+            "low": 0,
+            "high": 0
+          },
+          "labor": {
+            "low": 143,
+            "high": 167
+          },
+          "total": {
+            "low": 143,
+            "high": 167
+          },
+          "source": null
+        },
+        "brake-bleed": {
+          "title": "Brake Bleed",
+          "parts": {
+            "low": 0,
+            "high": 0
+          },
+          "labor": {
+            "low": 224,
+            "high": 262
+          },
+          "total": {
+            "low": 224,
+            "high": 262
+          },
+          "source": null
+        },
+        "brake-caliper-replacement": {
+          "title": "Brake Caliper Replacement",
+          "parts": {
+            "low": 318,
+            "high": 358
+          },
+          "labor": {
+            "low": 190,
+            "high": 224
+          },
+          "total": {
+            "low": 508,
+            "high": 582
+          },
+          "source": null
+        },
+        "brake-fluid---flush-fluid--bleed-brakes": {
+          "title": "Brake Fluid - Flush Fluid & Bleed Brakes",
+          "parts": {
+            "low": 82,
+            "high": 99
+          },
+          "labor": {
+            "low": 100,
+            "high": 120
+          },
+          "total": {
+            "low": 182,
+            "high": 219
+          },
+          "source": null
+        },
+        "brake-light-switch-replacement": {
+          "title": "Brake Light Switch Replacement",
+          "parts": {
+            "low": 32,
+            "high": 40
+          },
+          "labor": {
+            "low": 174,
+            "high": 204
+          },
+          "total": {
+            "low": 206,
+            "high": 244
+          },
+          "source": null
+        },
+        "brake-line-replacement": {
+          "title": "Brake Line Replacement",
+          "parts": {
+            "low": 178,
+            "high": 210
+          },
+          "labor": {
+            "low": 325,
+            "high": 367
+          },
+          "total": {
+            "low": 503,
+            "high": 577
+          },
+          "source": null
+        },
+        "brake-master-cylinder-replacement": {
+          "title": "Brake Master Cylinder Replacement",
+          "parts": {
+            "low": 470,
+            "high": 530
+          },
+          "labor": {
+            "low": 340,
+            "high": 384
+          },
+          "total": {
+            "low": 810,
+            "high": 914
+          },
+          "source": null
+        },
+        "brakes---adjust": {
+          "title": "Brakes - Adjust",
+          "parts": {
+            "low": 0,
+            "high": 0
+          },
+          "labor": {
+            "low": 89,
+            "high": 107
+          },
+          "total": {
+            "low": 89,
+            "high": 107
+          },
+          "source": null
+        },
+        "brakes---replace-pads": {
+          "title": "Brakes - Replace Pads",
+          "parts": {
+            "low": 110,
+            "high": 130
+          },
+          "labor": {
+            "low": 167,
+            "high": 195
+          },
+          "total": {
+            "low": 277,
+            "high": 325
+          },
+          "source": null
+        },
+        "brakes---replace-pads--resurface-rotors": {
+          "title": "Brakes - Replace Pads & Resurface Rotors",
+          "parts": {
+            "low": 122,
+            "high": 142
+          },
+          "labor": {
+            "low": 182,
+            "high": 215
+          },
+          "total": {
+            "low": 304,
+            "high": 357
+          },
+          "source": null
+        },
+        "brakes---replace-pads--rotors": {
+          "title": "Brakes - Replace Pads & Rotors",
+          "parts": {
+            "low": 240,
+            "high": 283
+          },
+          "labor": {
+            "low": 197,
+            "high": 231
+          },
+          "total": {
+            "low": 437,
+            "high": 514
+          },
+          "source": null
+        },
+        "brakes---replace-rotors": {
+          "title": "Brakes - Replace Rotors",
+          "parts": {
+            "low": 165,
+            "high": 193
+          },
+          "labor": {
+            "low": 135,
+            "high": 159
+          },
+          "total": {
+            "low": 300,
+            "high": 352
+          },
+          "source": null
+        },
+        "brakes---resurface-rotors": {
+          "title": "Brakes - Resurface Rotors",
+          "parts": {
+            "low": 0,
+            "high": 0
+          },
+          "labor": {
+            "low": 200,
+            "high": 234
+          },
+          "total": {
+            "low": 200,
+            "high": 234
+          },
+          "source": null
+        },
+        "cabin-air-filter---replace": {
+          "title": "Cabin Air Filter - Replace",
+          "parts": {
+            "low": 28,
+            "high": 34
+          },
+          "labor": {
+            "low": 28,
+            "high": 34
+          },
+          "total": {
+            "low": 56,
+            "high": 68
+          },
+          "source": null
+        },
+        "catalytic-converter-replacement": {
+          "title": "Catalytic Converter Replacement",
+          "parts": {
+            "low": 1957,
+            "high": 2121
+          },
+          "labor": {
+            "low": 421,
+            "high": 475
+          },
+          "total": {
+            "low": 2378,
+            "high": 2596
+          },
+          "source": null
+        },
+        "clutch-replacement": {
+          "title": "Clutch Replacement",
+          "parts": {
+            "low": 880,
+            "high": 972
+          },
+          "labor": {
+            "low": 612,
+            "high": 676
+          },
+          "total": {
+            "low": 1492,
+            "high": 1648
+          },
+          "source": null
+        },
+        "coolant---flush": {
+          "title": "Coolant - Flush",
+          "parts": {
+            "low": 57,
+            "high": 69
+          },
+          "labor": {
+            "low": 136,
+            "high": 159
+          },
+          "total": {
+            "low": 193,
+            "high": 228
+          },
+          "source": null
+        },
+        "coolant-thermostat-replacement": {
+          "title": "Coolant Thermostat Replacement",
+          "parts": {
+            "low": 143,
+            "high": 167
+          },
+          "labor": {
+            "low": 416,
+            "high": 470
+          },
+          "total": {
+            "low": 559,
+            "high": 637
+          },
+          "source": null
+        },
+        "crankshaft-seal-replacement": {
+          "title": "Crankshaft Seal Replacement",
+          "parts": {
+            "low": 52,
+            "high": 62
+          },
+          "labor": {
+            "low": 844,
+            "high": 932
+          },
+          "total": {
+            "low": 896,
+            "high": 994
+          },
+          "source": null
+        },
+        "differential-fluid---flush": {
+          "title": "Differential Fluid - Flush",
+          "parts": {
+            "low": 67,
+            "high": 81
+          },
+          "labor": {
+            "low": 67,
+            "high": 81
+          },
+          "total": {
+            "low": 134,
+            "high": 162
+          },
+          "source": null
+        },
+        "drive-belt-tensioner-replacement": {
+          "title": "Drive Belt Tensioner Replacement",
+          "parts": {
+            "low": 323,
+            "high": 365
+          },
+          "labor": {
+            "low": 211,
+            "high": 247
+          },
+          "total": {
+            "low": 534,
+            "high": 612
+          },
+          "source": null
+        },
+        "engine-air-filter---replace": {
+          "title": "Engine Air Filter - Replace",
+          "parts": {
+            "low": 19,
+            "high": 24
+          },
+          "labor": {
+            "low": 28,
+            "high": 35
+          },
+          "total": {
+            "low": 47,
+            "high": 59
+          },
+          "source": null
+        },
+        "engine-belt---replace": {
+          "title": "Engine Belt - Replace",
+          "parts": {
+            "low": 80,
+            "high": 96
+          },
+          "labor": {
+            "low": 122,
+            "high": 144
+          },
+          "total": {
+            "low": 202,
+            "high": 240
+          },
+          "source": null
+        },
+        "engine-diagnostics---check-engine-light": {
+          "title": "Engine Diagnostics - Check Engine Light",
+          "parts": {
+            "low": 0,
+            "high": 0
+          },
+          "labor": {
+            "low": 220,
+            "high": 259
+          },
+          "total": {
+            "low": 220,
+            "high": 259
+          },
+          "source": null
+        },
+        "engine-replacement": {
+          "title": "Engine Replacement",
+          "parts": {
+            "low": 5509,
+            "high": 5909
+          },
+          "labor": {
+            "low": 2580,
+            "high": 2794
+          },
+          "total": {
+            "low": 8089,
+            "high": 8703
+          },
+          "source": null
+        },
+        "exhaust-system-replacement": {
+          "title": "Exhaust System Replacement",
+          "parts": {
+            "low": 441,
+            "high": 497
+          },
+          "labor": {
+            "low": 233,
+            "high": 273
+          },
+          "total": {
+            "low": 674,
+            "high": 770
+          },
+          "source": null
+        },
+        "fuel-injector---service": {
+          "title": "Fuel Injector - Service",
+          "parts": {
+            "low": 71,
+            "high": 85
+          },
+          "labor": {
+            "low": 86,
+            "high": 104
+          },
+          "total": {
+            "low": 157,
+            "high": 189
+          },
+          "source": null
+        },
+        "head-gasket-replacement": {
+          "title": "Head Gasket Replacement",
+          "parts": {
+            "low": 572,
+            "high": 632
+          },
+          "labor": {
+            "low": 1563,
+            "high": 1693
+          },
+          "total": {
+            "low": 2135,
+            "high": 2325
+          },
+          "source": null
+        },
+        "hood-latch-assembly-replacement": {
+          "title": "Hood Latch Assembly Replacement",
+          "parts": {
+            "low": 177,
+            "high": 207
+          },
+          "labor": {
+            "low": 190,
+            "high": 224
+          },
+          "total": {
+            "low": 367,
+            "high": 431
+          },
+          "source": null
+        },
+        "ignition-switch-replacement": {
+          "title": "Ignition Switch Replacement",
+          "parts": {
+            "low": 253,
+            "high": 297
+          },
+          "labor": {
+            "low": 253,
+            "high": 297
+          },
+          "total": {
+            "low": 506,
+            "high": 594
+          },
+          "source": null
+        },
+        "intake-manifold-gasket---replace": {
+          "title": "Intake Manifold Gasket - Replace",
+          "parts": {
+            "low": 89,
+            "high": 107
+          },
+          "labor": {
+            "low": 526,
+            "high": 582
+          },
+          "total": {
+            "low": 615,
+            "high": 689
+          },
+          "source": null
+        },
+        "mass-air-sensor-replacement": {
+          "title": "Mass Air Sensor Replacement",
+          "parts": {
+            "low": 302,
+            "high": 340
+          },
+          "labor": {
+            "low": 189,
+            "high": 221
+          },
+          "total": {
+            "low": 491,
+            "high": 561
+          },
+          "source": null
+        },
+        "oil-change": {
+          "title": "Oil Change",
+          "parts": {
+            "low": 32,
+            "high": 41
+          },
+          "labor": {
+            "low": 32,
+            "high": 41
+          },
+          "total": {
+            "low": 64,
+            "high": 82
+          },
+          "source": null
+        },
+        "oil-pan-gasket-replacement": {
+          "title": "Oil Pan Gasket Replacement",
+          "parts": {
+            "low": 81,
+            "high": 97
+          },
+          "labor": {
+            "low": 409,
+            "high": 461
+          },
+          "total": {
+            "low": 490,
+            "high": 558
+          },
+          "source": null
+        },
+        "oil-pan-replacement": {
+          "title": "Oil Pan Replacement",
+          "parts": {
+            "low": 149,
+            "high": 175
+          },
+          "labor": {
+            "low": 323,
+            "high": 365
+          },
+          "total": {
+            "low": 472,
+            "high": 540
+          },
+          "source": null
+        },
+        "oil-pressure-sensor-replacement": {
+          "title": "Oil Pressure Sensor Replacement",
+          "parts": {
+            "low": 37,
+            "high": 45
+          },
+          "labor": {
+            "low": 233,
+            "high": 273
+          },
+          "total": {
+            "low": 270,
+            "high": 318
+          },
+          "source": null
+        },
+        "oil-pump-replacement": {
+          "title": "Oil Pump Replacement",
+          "parts": {
+            "low": 814,
+            "high": 900
+          },
+          "labor": {
+            "low": 542,
+            "high": 600
+          },
+          "total": {
+            "low": 1356,
+            "high": 1500
+          },
+          "source": null
+        },
+        "pcv-valve-replacement": {
+          "title": "PCV Valve Replacement",
+          "parts": {
+            "low": 35,
+            "high": 43
+          },
+          "labor": {
+            "low": 68,
+            "high": 82
+          },
+          "total": {
+            "low": 103,
+            "high": 125
+          },
+          "source": null
+        },
+        "power-steering-fluid---flush": {
+          "title": "Power Steering Fluid - Flush",
+          "parts": {
+            "low": 61,
+            "high": 73
+          },
+          "labor": {
+            "low": 93,
+            "high": 109
+          },
+          "total": {
+            "low": 154,
+            "high": 182
+          },
+          "source": null
+        },
+        "purge-valve-replacement": {
+          "title": "Purge Valve Replacement",
+          "parts": {
+            "low": 91,
+            "high": 109
+          },
+          "labor": {
+            "low": 213,
+            "high": 251
+          },
+          "total": {
+            "low": 304,
+            "high": 360
+          },
+          "source": null
+        },
+        "radiator-fan-motor-replacement": {
+          "title": "Radiator Fan Motor Replacement",
+          "parts": {
+            "low": 383,
+            "high": 431
+          },
+          "labor": {
+            "low": 289,
+            "high": 325
+          },
+          "total": {
+            "low": 672,
+            "high": 756
+          },
+          "source": null
+        },
+        "radiator-hose-replacement": {
+          "title": "Radiator Hose Replacement",
+          "parts": {
+            "low": 180,
+            "high": 212
+          },
+          "labor": {
+            "low": 213,
+            "high": 249
+          },
+          "total": {
+            "low": 393,
+            "high": 461
+          },
+          "source": null
+        },
+        "radiator-replacement": {
+          "title": "Radiator Replacement",
+          "parts": {
+            "low": 511,
+            "high": 565
+          },
+          "labor": {
+            "low": 531,
+            "high": 587
+          },
+          "total": {
+            "low": 1042,
+            "high": 1152
+          },
+          "source": null
+        },
+        "spark-plugs---replace": {
+          "title": "Spark Plugs - Replace",
+          "parts": {
+            "low": 108,
+            "high": 126
+          },
+          "labor": {
+            "low": 162,
+            "high": 190
+          },
+          "total": {
+            "low": 270,
+            "high": 316
+          },
+          "source": null
+        },
+        "starter-replacement": {
+          "title": "Starter Replacement",
+          "parts": {
+            "low": 380,
+            "high": 428
+          },
+          "labor": {
+            "low": 324,
+            "high": 366
+          },
+          "total": {
+            "low": 704,
+            "high": 794
+          },
+          "source": null
+        },
+        "throttle-body-replacement": {
+          "title": "Throttle Body Replacement",
+          "parts": {
+            "low": 344,
+            "high": 388
+          },
+          "labor": {
+            "low": 234,
+            "high": 274
+          },
+          "total": {
+            "low": 578,
+            "high": 662
+          },
+          "source": null
+        },
+        "timing-belt---replace": {
+          "title": "Timing Belt - Replace",
+          "parts": {
+            "low": 240,
+            "high": 282
+          },
+          "labor": {
+            "low": 368,
+            "high": 414
+          },
+          "total": {
+            "low": 608,
+            "high": 696
+          },
+          "source": null
+        },
+        "timing-chain-replacement": {
+          "title": "Timing Chain Replacement",
+          "parts": {
+            "low": 1009,
+            "high": 1093
+          },
+          "labor": {
+            "low": 1050,
+            "high": 1138
+          },
+          "total": {
+            "low": 2059,
+            "high": 2231
+          },
+          "source": null
+        },
+        "tire-pressure-tpms-sensor---replace": {
+          "title": "Tire Pressure (TPMS) Sensor - Replace",
+          "parts": {
+            "low": 99,
+            "high": 117
+          },
+          "labor": {
+            "low": 185,
+            "high": 217
+          },
+          "total": {
+            "low": 284,
+            "high": 334
+          },
+          "source": null
+        },
+        "tires---mount--balance-4-wheels": {
+          "title": "Tire(s) - Mount & Balance (4 Wheels)",
+          "parts": {
+            "low": 0,
+            "high": 0
+          },
+          "labor": {
+            "low": 211,
+            "high": 248
+          },
+          "total": {
+            "low": 211,
+            "high": 248
+          },
+          "source": null
+        },
+        "tires---patch": {
+          "title": "Tire(s) - Patch",
+          "parts": {
+            "low": 19,
+            "high": 23
+          },
+          "labor": {
+            "low": 28,
+            "high": 34
+          },
+          "total": {
+            "low": 47,
+            "high": 57
+          },
+          "source": null
+        },
+        "tires---rotate": {
+          "title": "Tire(s) - Rotate",
+          "parts": {
+            "low": 0,
+            "high": 0
+          },
+          "labor": {
+            "low": 36,
+            "high": 44
+          },
+          "total": {
+            "low": 36,
+            "high": 44
+          },
+          "source": null
+        },
+        "tires---rotate--balance-4-wheels": {
+          "title": "Tire(s) - Rotate & Balance (4 Wheels)",
+          "parts": {
+            "low": 0,
+            "high": 0
+          },
+          "labor": {
+            "low": 90,
+            "high": 108
+          },
+          "total": {
+            "low": 90,
+            "high": 108
+          },
+          "source": null
+        },
+        "transmission---replace": {
+          "title": "Transmission - Replace",
+          "parts": {
+            "low": 2732,
+            "high": 2960
+          },
+          "labor": {
+            "low": 902,
+            "high": 996
+          },
+          "total": {
+            "low": 3634,
+            "high": 3956
+          },
+          "source": null
+        },
+        "transmission-fluid---flush": {
+          "title": "Transmission Fluid - Flush",
+          "parts": {
+            "low": 108,
+            "high": 126
+          },
+          "labor": {
+            "low": 131,
+            "high": 153
+          },
+          "total": {
+            "low": 239,
+            "high": 279
+          },
+          "source": null
+        },
+        "turbo-replacement": {
+          "title": "Turbo Replacement",
+          "parts": {
+            "low": 1601,
+            "high": 1735
+          },
+          "labor": {
+            "low": 781,
+            "high": 863
+          },
+          "total": {
+            "low": 2382,
+            "high": 2598
+          },
+          "source": null
+        },
+        "valve-cover-gasket-replacement": {
+          "title": "Valve Cover Gasket Replacement",
+          "parts": {
+            "low": 187,
+            "high": 219
+          },
+          "labor": {
+            "low": 447,
+            "high": 504
+          },
+          "total": {
+            "low": 634,
+            "high": 723
+          },
+          "source": null
+        },
+        "water-pump---replace": {
+          "title": "Water Pump - Replace",
+          "parts": {
+            "low": 213,
+            "high": 251
+          },
+          "labor": {
+            "low": 406,
+            "high": 458
+          },
+          "total": {
+            "low": 619,
+            "high": 709
+          },
+          "source": null
+        },
+        "wheel-locks---install": {
+          "title": "Wheel Locks - Install",
+          "parts": {
+            "low": 50,
+            "high": 60
+          },
+          "labor": {
+            "low": 22,
+            "high": 26
+          },
+          "total": {
+            "low": 72,
+            "high": 86
+          },
+          "source": null
+        },
+        "wheels---alignment": {
+          "title": "Wheels - Alignment",
+          "parts": {
+            "low": 0,
+            "high": 0
+          },
+          "labor": {
+            "low": 146,
+            "high": 172
+          },
+          "total": {
+            "low": 146,
+            "high": 172
+          },
+          "source": null
+        },
+        "window-regulator-replacement---rear": {
+          "title": "Window Regulator Replacement - Rear",
+          "parts": {
+            "low": 418,
+            "high": 472
+          },
+          "labor": {
+            "low": 272,
+            "high": 320
+          },
+          "total": {
+            "low": 690,
+            "high": 792
+          },
+          "source": null
+        },
+        "wiper-blades---replace-1-front-wiper": {
+          "title": "Wiper Blades - Replace 1 Front Wiper",
+          "parts": {
+            "low": 38,
+            "high": 47
+          },
+          "labor": {
+            "low": 10,
+            "high": 12
+          },
+          "total": {
+            "low": 48,
+            "high": 59
           },
           "source": null
         }
