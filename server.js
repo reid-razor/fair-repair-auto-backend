@@ -1,12 +1,13 @@
 /**
  * FAIR REPAIR AUTO - BACKEND SERVER
- * Version: 2.2 - FIXED DATA FORMAT
+ * Version: 2.3 - PRODUCTION YEARS ENDPOINT
  * Last Updated: January 6, 2026
  * 
  * Features:
  * - Handles nested JSON structure {parts: {low, high}, labor: {low, high}}
  * - Applies regional multiplier to existing labor rates
  * - Available repairs endpoint (prevents "no data" scenarios)
+ * - Production years endpoint (serves vehicle/year data to frontend)
  * - Payment verification hooks (Stripe integration ready)
  */
 
@@ -29,6 +30,7 @@ app.use(express.json());
 
 // In-memory cache for JSON files
 const priceCache = {};
+let productionYearsData = null;
 
 /**
  * HELPER FUNCTIONS - MUST BE DEFINED BEFORE USE
@@ -81,19 +83,70 @@ function loadMake(make) {
 }
 
 /**
+ * Load production years data
+ */
+function loadProductionYears() {
+  if (productionYearsData) {
+    return productionYearsData;
+  }
+  
+  const jsonPath = path.join(__dirname, 'production_years.json');
+  
+  if (!fs.existsSync(jsonPath)) {
+    console.error('production_years.json not found!');
+    return null;
+  }
+  
+  try {
+    const raw = fs.readFileSync(jsonPath, 'utf-8');
+    productionYearsData = JSON.parse(raw);
+    console.log('✅ Production years data loaded successfully');
+    return productionYearsData;
+  } catch (error) {
+    console.error('Error loading production_years.json:', error.message);
+    return null;
+  }
+}
+
+/**
  * ENDPOINT: Health Check
  */
 app.get('/', (req, res) => {
   res.json({
     ok: true,
     service: 'fair-repair-auto-api',
-    version: '2.2',
+    version: '2.3',
     mode: 'json-only',
     endpoints: {
       quote: 'POST /api/quote',
       availableRepairs: 'GET /api/available-repairs/:year/:make/:model',
+      productionYears: 'GET /api/production-years',
       health: 'GET /'
     }
+  });
+});
+
+/**
+ * ENDPOINT: Get Production Years Data
+ * Returns complete vehicle production years for all makes/models
+ * 
+ * GET /api/production-years
+ * 
+ * Returns: { ok: true, data: {...all production years...} }
+ */
+app.get('/api/production-years', (req, res) => {
+  const data = loadProductionYears();
+  
+  if (!data) {
+    return res.status(500).json({
+      ok: false,
+      error: 'Failed to load production years data'
+    });
+  }
+  
+  res.json({
+    ok: true,
+    data: data
   });
 });
 
