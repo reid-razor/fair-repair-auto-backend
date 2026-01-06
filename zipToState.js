@@ -1,10 +1,13 @@
 /**
  * ZIP CODE TO STATE MAPPING
  * Maps ZIP code ranges to US states
- * Source: USPS ZIP code allocation + previous app versions
+ * Source: USPS ZIP code allocation
+ * 
+ * NOTE: This file is now integrated into laborRates.js
+ * Kept here for reference but not imported by server.js
  */
 
-function getStateFromZip(zip) {
+export function getStateFromZip(zip) {
   if (!zip || typeof zip !== 'string') {
     return null;
   }
@@ -67,5 +70,3 @@ function getStateFromZip(zip) {
 
   return null; // Unknown ZIP code
 }
-
-module.exports = { getStateFromZip };
