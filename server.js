@@ -1,7 +1,7 @@
 /**
  * FAIR REPAIR AUTO - BACKEND SERVER
- * Version: 2.0
- * Last Updated: January 5, 2026
+ * Version: 2.1 - FIXED
+ * Last Updated: January 6, 2026
  * 
  * Features:
  * - Pricing quotes with regional labor rate adjustments
@@ -29,6 +29,24 @@ app.use(express.json());
 
 // In-memory cache for JSON files
 const priceCache = {};
+
+/**
+ * HELPER FUNCTIONS - MUST BE DEFINED BEFORE USE
+ */
+
+/**
+ * Normalize strings for matching
+ */
+function norm(str) {
+  return String(str || '').toLowerCase().trim();
+}
+
+/**
+ * Normalize year (keep as string, just trim)
+ */
+function normYear(year) {
+  return String(year || '').trim();
+}
 
 /**
  * Load and cache a make's pricing data
@@ -63,24 +81,13 @@ function loadMake(make) {
 }
 
 /**
- * Normalize strings for matching
- */
-function norm(str) {
-  return String(str || '').toLowerCase().trim();
-}
-
-function normYear(year) {
-  return String(year || '').trim();
-}
-
-/**
  * ENDPOINT: Health Check
  */
 app.get('/', (req, res) => {
   res.json({
     ok: true,
     service: 'fair-repair-auto-api',
-    version: '2.0',
+    version: '2.1',
     mode: 'json-only',
     endpoints: {
       quote: 'POST /api/quote',
@@ -169,7 +176,7 @@ app.post('/api/quote', (req, res) => {
   // Normalize inputs
   const normMake = norm(make);
   const normModel = norm(model);
-  const normYear = normYear(year);
+  const normYearValue = normYear(year);
   const normRepair = norm(repairSlug);
   
   // Load make data
@@ -194,7 +201,7 @@ app.post('/api/quote', (req, res) => {
   }
   
   // Check year
-  if (!makeData[normModel][normYear]) {
+  if (!makeData[normModel][normYearValue]) {
     return res.json({
       ok: true,
       available: false,
@@ -204,7 +211,7 @@ app.post('/api/quote', (req, res) => {
   }
   
   // Check repair
-  if (!makeData[normModel][normYear][normRepair]) {
+  if (!makeData[normModel][normYearValue][normRepair]) {
     return res.json({
       ok: true,
       available: false,
@@ -214,7 +221,7 @@ app.post('/api/quote', (req, res) => {
   }
   
   // Get base pricing data
-  const repairData = makeData[normModel][normYear][normRepair];
+  const repairData = makeData[normModel][normYearValue][normRepair];
   
   // Get labor rate information for ZIP code
   const laborInfo = zip ? getLaborRate(zip) : {
