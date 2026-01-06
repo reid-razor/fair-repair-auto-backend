@@ -1,13 +1,13 @@
 /**
  * FAIR REPAIR AUTO - BACKEND SERVER
- * Version: 2.1 - FIXED
+ * Version: 2.2 - FIXED DATA FORMAT
  * Last Updated: January 6, 2026
  * 
  * Features:
- * - Pricing quotes with regional labor rate adjustments
+ * - Handles nested JSON structure {parts: {low, high}, labor: {low, high}}
+ * - Applies regional multiplier to existing labor rates
  * - Available repairs endpoint (prevents "no data" scenarios)
  * - Payment verification hooks (Stripe integration ready)
- * - JSON-based pricing database (no external API dependency)
  */
 
 import express from 'express';
@@ -87,7 +87,7 @@ app.get('/', (req, res) => {
   res.json({
     ok: true,
     service: 'fair-repair-auto-api',
-    version: '2.1',
+    version: '2.2',
     mode: 'json-only',
     endpoints: {
       quote: 'POST /api/quote',
@@ -232,104 +232,82 @@ app.post('/api/quote', (req, res) => {
   
   const laborMultiplier = zip ? getLaborMultiplier(zip) : 1.0;
   
-  // Calculate adjusted pricing
-  let adjustedLow, adjustedHigh;
+  // Extract pricing from nested object structure
+  // Format: { parts: {low, high}, labor: {low, high}, total: {low, high} }
+  let partsLow, partsHigh, laborLow, laborHigh;
   
-  if (Array.isArray(repairData)) {
-    // YMM format: [partsLow, partsHigh, laborLow, laborHigh]
-    const [partsLow, partsHigh, laborLow, laborHigh] = repairData;
-    
-    const adjustedLaborLow = Math.round(laborLow * laborMultiplier);
-    const adjustedLaborHigh = Math.round(laborHigh * laborMultiplier);
-    
-    adjustedLow = partsLow + adjustedLaborLow;
-    adjustedHigh = partsHigh + adjustedLaborHigh;
-    
-    return res.json({
-      ok: true,
-      available: true,
-      price: {
-        low: adjustedLow,
-        high: adjustedHigh,
-        average: Math.round((adjustedLow + adjustedHigh) / 2)
-      },
-      breakdown: {
-        parts: {
-          low: partsLow,
-          high: partsHigh
-        },
-        labor: {
-          low: adjustedLaborLow,
-          high: adjustedLaborHigh,
-          baseRate: laborInfo.rate,
-          source: laborInfo.source
-        }
-      },
-      regionalAdjustment: {
-        multiplier: Math.round(laborMultiplier * 1000) / 1000,
-        laborRate: laborInfo.rate,
-        nationalAverage: NATIONAL_AVERAGE,
-        difference: `${laborMultiplier > 1 ? '+' : ''}${Math.round((laborMultiplier - 1) * 100)}%`,
-        details: laborInfo.breakdown
-      },
-      vehicle: {
-        year: year,
-        make: make,
-        model: model,
-        repair: repairSlug
-      },
-      location: {
-        zip: zip || 'Not provided',
-        source: laborInfo.source
-      }
-    });
+  if (repairData.parts && repairData.labor) {
+    // Nested object format (current format)
+    partsLow = repairData.parts.low;
+    partsHigh = repairData.parts.high;
+    laborLow = repairData.labor.low;
+    laborHigh = repairData.labor.high;
+  } else if (Array.isArray(repairData)) {
+    // Array format: [partsLow, partsHigh, laborLow, laborHigh]
+    [partsLow, partsHigh, laborLow, laborHigh] = repairData;
+  } else if (repairData.partsLow !== undefined) {
+    // Flat object format: {partsLow, partsHigh, laborLow, laborHigh}
+    partsLow = repairData.partsLow;
+    partsHigh = repairData.partsHigh;
+    laborLow = repairData.laborLow;
+    laborHigh = repairData.laborHigh;
   } else {
-    // VIN format: {partsLow, partsHigh, laborLow, laborHigh, totalLow, totalHigh}
-    const adjustedLaborLow = Math.round(repairData.laborLow * laborMultiplier);
-    const adjustedLaborHigh = Math.round(repairData.laborHigh * laborMultiplier);
-    
-    adjustedLow = repairData.partsLow + adjustedLaborLow;
-    adjustedHigh = repairData.partsHigh + adjustedLaborHigh;
-    
     return res.json({
       ok: true,
-      available: true,
-      price: {
-        low: adjustedLow,
-        high: adjustedHigh,
-        average: Math.round((adjustedLow + adjustedHigh) / 2)
-      },
-      breakdown: {
-        parts: {
-          low: repairData.partsLow,
-          high: repairData.partsHigh
-        },
-        labor: {
-          low: adjustedLaborLow,
-          high: adjustedLaborHigh,
-          baseRate: laborInfo.rate,
-          source: laborInfo.source
-        }
-      },
-      regionalAdjustment: {
-        multiplier: Math.round(laborMultiplier * 1000) / 1000,
-        laborRate: laborInfo.rate,
-        nationalAverage: NATIONAL_AVERAGE,
-        difference: `${laborMultiplier > 1 ? '+' : ''}${Math.round((laborMultiplier - 1) * 100)}%`,
-        details: laborInfo.breakdown
-      },
-      vehicle: {
-        year: year,
-        make: make,
-        model: model,
-        repair: repairSlug
-      },
-      location: {
-        zip: zip || 'Not provided',
-        source: laborInfo.source
-      }
+      available: false,
+      reason: 'INVALID_FORMAT',
+      message: 'Pricing data format not recognized'
     });
   }
+  
+  // Apply regional multiplier to the labor rates from JSON
+  const adjustedLaborLow = Math.round(laborLow * laborMultiplier);
+  const adjustedLaborHigh = Math.round(laborHigh * laborMultiplier);
+  
+  // Calculate total pricing
+  const adjustedLow = partsLow + adjustedLaborLow;
+  const adjustedHigh = partsHigh + adjustedLaborHigh;
+  
+  return res.json({
+    ok: true,
+    available: true,
+    price: {
+      low: adjustedLow,
+      high: adjustedHigh,
+      average: Math.round((adjustedLow + adjustedHigh) / 2)
+    },
+    breakdown: {
+      parts: {
+        low: partsLow,
+        high: partsHigh
+      },
+      labor: {
+        low: adjustedLaborLow,
+        high: adjustedLaborHigh,
+        baseLow: laborLow,
+        baseHigh: laborHigh,
+        baseRate: laborInfo.rate,
+        source: laborInfo.source
+      }
+    },
+    regionalAdjustment: {
+      multiplier: Math.round(laborMultiplier * 1000) / 1000,
+      laborRate: laborInfo.rate,
+      nationalAverage: NATIONAL_AVERAGE,
+      difference: `${laborMultiplier > 1 ? '+' : ''}${Math.round((laborMultiplier - 1) * 100)}%`,
+      details: laborInfo.breakdown
+    },
+    vehicle: {
+      year: year,
+      make: make,
+      model: model,
+      repair: repairSlug
+    },
+    location: {
+      zip: zip || 'Not provided',
+      source: laborInfo.source
+    }
+  });
 });
 
 /**
