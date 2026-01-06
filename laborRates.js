@@ -4,10 +4,8 @@
  * Source: Identifix 2025 + NATA 2024 Survey + Industry Reports
  */
 
-const { getStateFromZip } = require('./zipToState');
-
 // 2025 Labor Rates by State (dollars per hour)
-const STATE_LABOR_RATES = {
+export const STATE_LABOR_RATES = {
   // States with specific 2025 rates
   'AZ': 138.78,
   'DE': 142.15,
@@ -47,10 +45,10 @@ const STATE_LABOR_RATES = {
 };
 
 // National average (used as baseline)
-const NATIONAL_AVERAGE = 144.06;
+export const NATIONAL_AVERAGE = 144.06;
 
 // Major US Cities Coordinates (for distance-based premium calculation)
-const CITY_COORDINATES = {
+export const CITY_COORDINATES = {
   'new york': { lat: 40.7128, lon: -74.0060, rate: 140 },
   'los angeles': { lat: 34.0522, lon: -118.2437, rate: 149.50 },
   'chicago': { lat: 41.8781, lon: -87.6298, rate: 147 },
@@ -86,7 +84,7 @@ const CITY_COORDINATES = {
  * @param {number} lon2 - Longitude of point 2
  * @returns {number} Distance in miles
  */
-function calculateDistance(lat1, lon1, lat2, lon2) {
+export function calculateDistance(lat1, lon1, lat2, lon2) {
   const R = 3959; // Earth's radius in miles
   const dLat = (lat2 - lat1) * Math.PI / 180;
   const dLon = (lon2 - lon1) * Math.PI / 180;
@@ -102,7 +100,7 @@ function calculateDistance(lat1, lon1, lat2, lon2) {
  * @param {string} zip - 5-digit ZIP code
  * @returns {object} {lat, lon} coordinates
  */
-function getZipCoordinates(zip) {
+export function getZipCoordinates(zip) {
   const zipNum = parseInt(zip);
   let lat, lon;
   
@@ -129,12 +127,78 @@ function getZipCoordinates(zip) {
 }
 
 /**
+ * Get state from ZIP code
+ */
+function getStateFromZip(zip) {
+  if (!zip || typeof zip !== 'string') {
+    return null;
+  }
+
+  const zipNum = parseInt(zip.substring(0, 5));
+  
+  if (zipNum >= 35000 && zipNum <= 36999) return 'AL';
+  if (zipNum >= 99500 && zipNum <= 99999) return 'AK';
+  if (zipNum >= 85000 && zipNum <= 86999) return 'AZ';
+  if (zipNum >= 71600 && zipNum <= 72999) return 'AR';
+  if (zipNum >= 90000 && zipNum <= 96699) return 'CA';
+  if (zipNum >= 80000 && zipNum <= 81999) return 'CO';
+  if (zipNum >= 6000 && zipNum <= 6999) return 'CT';
+  if (zipNum >= 19700 && zipNum <= 19999) return 'DE';
+  if (zipNum >= 20000 && zipNum <= 20099) return 'DC';
+  if (zipNum >= 32000 && zipNum <= 34999) return 'FL';
+  if (zipNum >= 30000 && zipNum <= 31999) return 'GA';
+  if (zipNum >= 96700 && zipNum <= 96899) return 'HI';
+  if (zipNum >= 83200 && zipNum <= 83999) return 'ID';
+  if (zipNum >= 60000 && zipNum <= 62999) return 'IL';
+  if (zipNum >= 46000 && zipNum <= 47999) return 'IN';
+  if (zipNum >= 50000 && zipNum <= 52999) return 'IA';
+  if (zipNum >= 66000 && zipNum <= 67999) return 'KS';
+  if (zipNum >= 40000 && zipNum <= 42999) return 'KY';
+  if (zipNum >= 70000 && zipNum <= 71599) return 'LA';
+  if (zipNum >= 3900 && zipNum <= 4999) return 'ME';
+  if (zipNum >= 20600 && zipNum <= 21999) return 'MD';
+  if (zipNum >= 1000 && zipNum <= 2799) return 'MA';
+  if (zipNum >= 48000 && zipNum <= 49999) return 'MI';
+  if (zipNum >= 55000 && zipNum <= 56999) return 'MN';
+  if (zipNum >= 38600 && zipNum <= 39999) return 'MS';
+  if (zipNum >= 63000 && zipNum <= 65999) return 'MO';
+  if (zipNum >= 59000 && zipNum <= 59999) return 'MT';
+  if (zipNum >= 68000 && zipNum <= 69999) return 'NE';
+  if (zipNum >= 88900 && zipNum <= 89999) return 'NV';
+  if (zipNum >= 3000 && zipNum <= 3899) return 'NH';
+  if (zipNum >= 7000 && zipNum <= 8999) return 'NJ';
+  if (zipNum >= 87000 && zipNum <= 88499) return 'NM';
+  if (zipNum >= 10000 && zipNum <= 14999) return 'NY';
+  if (zipNum >= 27000 && zipNum <= 28999) return 'NC';
+  if (zipNum >= 58000 && zipNum <= 58999) return 'ND';
+  if (zipNum >= 43000 && zipNum <= 45999) return 'OH';
+  if (zipNum >= 73000 && zipNum <= 74999) return 'OK';
+  if (zipNum >= 97000 && zipNum <= 97999) return 'OR';
+  if (zipNum >= 15000 && zipNum <= 19699) return 'PA';
+  if (zipNum >= 2800 && zipNum <= 2999) return 'RI';
+  if (zipNum >= 29000 && zipNum <= 29999) return 'SC';
+  if (zipNum >= 57000 && zipNum <= 57999) return 'SD';
+  if (zipNum >= 37000 && zipNum <= 38599) return 'TN';
+  if (zipNum >= 75000 && zipNum <= 79999) return 'TX';
+  if (zipNum >= 84000 && zipNum <= 84999) return 'UT';
+  if (zipNum >= 5000 && zipNum <= 5999) return 'VT';
+  if (zipNum >= 20100 && zipNum <= 20199) return 'VA';
+  if (zipNum >= 22000 && zipNum <= 24699) return 'VA';
+  if (zipNum >= 98000 && zipNum <= 99499) return 'WA';
+  if (zipNum >= 24700 && zipNum <= 26999) return 'WV';
+  if (zipNum >= 53000 && zipNum <= 54999) return 'WI';
+  if (zipNum >= 82000 && zipNum <= 83199) return 'WY';
+
+  return null;
+}
+
+/**
  * Get labor rate for a ZIP code
  * Factors in: state base rate + city premium (if within 15 miles of major city)
  * @param {string} zip - 5-digit ZIP code
  * @returns {object} { rate: number, source: string, breakdown: object }
  */
-function getLaborRate(zip) {
+export function getLaborRate(zip) {
   if (!zip || zip.length !== 5) {
     return {
       rate: NATIONAL_AVERAGE,
@@ -213,17 +277,7 @@ function getLaborRate(zip) {
  * @param {string} zip - 5-digit ZIP code
  * @returns {number} Multiplier (e.g., 1.05 = 5% higher than national average)
  */
-function getLaborMultiplier(zip) {
+export function getLaborMultiplier(zip) {
   const { rate } = getLaborRate(zip);
   return rate / NATIONAL_AVERAGE;
 }
-
-module.exports = {
-  STATE_LABOR_RATES,
-  NATIONAL_AVERAGE,
-  CITY_COORDINATES,
-  getLaborRate,
-  getLaborMultiplier,
-  getZipCoordinates,
-  calculateDistance
-};
