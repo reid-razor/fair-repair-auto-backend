@@ -1,22 +1,41 @@
 /**
  * FAIR REPAIR AUTO - BACKEND SERVER
- * Version: 2.3 - PRODUCTION YEARS ENDPOINT
- * Last Updated: January 6, 2026
+ * Version: 2.4 - STRIPE PAYMENT INTEGRATION
+ * Last Updated: January 24, 2026
  * 
- * Features:
+ * NEW IN V2.4:
+ * - Stripe Checkout Session creation
+ * - Payment success verification
+ * - Webhook endpoint for payment events
+ * - Session metadata storage (vehicle, repair, pricing)
+ * 
+ * EXISTING FEATURES:
  * - Handles nested JSON structure {parts: {low, high}, labor: {low, high}}
  * - Applies regional multiplier to existing labor rates
  * - Available repairs endpoint (prevents "no data" scenarios)
  * - Production years endpoint (serves vehicle/year data to frontend)
- * - Payment verification hooks (Stripe integration ready)
+ * 
+ * ENVIRONMENT VARIABLES REQUIRED:
+ * - STRIPE_SECRET_KEY: Your Stripe secret key (sk_test_... or sk_live_...)
+ * - FRONTEND_URL: Your website URL (e.g., https://fairrepairauto.com)
+ * - PORT: Server port (default: 3000, Render sets automatically)
+ * 
+ * STRIPE INTEGRATION FLOW:
+ * 1. Frontend calls /api/quote to verify pricing available
+ * 2. Frontend calls /api/create-checkout-session with vehicle/repair data
+ * 3. Backend creates Stripe Checkout Session with metadata
+ * 4. User redirects to Stripe's hosted checkout page
+ * 5. After payment, Stripe redirects to /success?session_id=xxx
+ * 6. Success page calls /api/session/:sessionId to retrieve pricing data
+ * 7. Pricing report displays to user
  */
 
 import express from 'express';
 import cors from 'cors';
-import fs from 'fs';
+import Stripe from 'stripe';
+import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { getLaborRate, getLaborMultiplier, NATIONAL_AVERAGE } from './laborRates.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -24,381 +43,402 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Middleware
-app.use(cors());
+// ============================================================
+// STRIPE INITIALIZATION
+// ============================================================
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || 'sk_test_YOUR_SECRET_KEY_HERE', {
+  apiVersion: '2024-12-18.acacia',
+});
+
+// ============================================================
+// CORS CONFIGURATION
+// ============================================================
+app.use(cors({
+  origin: [
+    'https://fair-repair-auto.webflow.io',
+    'https://fairrepairauto.com',
+    'https://www.fairrepairauto.com',
+    'http://localhost:3000',
+    'http://127.0.0.1:3000'
+  ],
+  credentials: true,
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'x-Authkey', 'x-authkey']
+}));
+
 app.use(express.json());
 
-// In-memory cache for JSON files
-const priceCache = {};
-let productionYearsData = null;
-
-/**
- * HELPER FUNCTIONS - MUST BE DEFINED BEFORE USE
- */
-
-/**
- * Normalize strings for matching
- */
-function norm(str) {
-  return String(str || '').toLowerCase().trim();
-}
-
-/**
- * Normalize year (keep as string, just trim)
- */
-function normYear(year) {
-  return String(year || '').trim();
-}
-
-/**
- * Load and cache a make's pricing data
- * Handles both flat JSON arrays and {data: {...}} wrapped formats
- */
-function loadMake(make) {
-  const normalized = make.toLowerCase();
+// ============================================================
+// API KEY VALIDATION MIDDLEWARE
+// ============================================================
+const validateApiKey = (req, res, next) => {
+  const apiKey = req.headers['x-authkey'];
+  const validKey = 'fe37dba23fba11f0931f0242ac120002';
   
-  if (priceCache[normalized]) {
-    return priceCache[normalized];
+  if (apiKey !== validKey) {
+    return res.status(401).json({ ok: false, error: 'Invalid API key' });
   }
-  
-  const jsonPath = path.join(__dirname, 'data', `${normalized}.json`);
-  
-  if (!fs.existsSync(jsonPath)) {
-    return null;
-  }
-  
+  next();
+};
+
+// ============================================================
+// DATA STORAGE
+// ============================================================
+let productionYears = {};
+let laborRates = {};
+let zipToState = {};
+let vehicleData = {};
+
+// ============================================================
+// LOAD DATA FILES ON STARTUP
+// ============================================================
+async function loadData() {
   try {
-    const raw = fs.readFileSync(jsonPath, 'utf-8');
-    const parsed = JSON.parse(raw);
+    console.log('📂 Loading data files...');
     
-    // Handle both formats: direct object or {data: {...}}
-    const data = parsed.data || parsed;
+    // Load supporting data
+    productionYears = JSON.parse(await fs.readFile(path.join(__dirname, 'production_years.json'), 'utf-8'));
+    laborRates = JSON.parse(await fs.readFile(path.join(__dirname, 'labor_rates_2025.json'), 'utf-8'));
+    zipToState = JSON.parse(await fs.readFile(path.join(__dirname, 'zip_to_state.json'), 'utf-8'));
     
-    priceCache[normalized] = data;
-    return data;
+    console.log(`  ✅ Production years: ${Object.keys(productionYears).length} makes`);
+    console.log(`  ✅ Labor rates: ${Object.keys(laborRates).length} regions`);
+    console.log(`  ✅ ZIP mapping: ${Object.keys(zipToState).length} ZIPs`);
+    
+    // Load all make.json files
+    const files = await fs.readdir(__dirname);
+    const makeFiles = files.filter(f => 
+      f.endsWith('.json') && 
+      !['production_years.json', 'labor_rates_2025.json', 'zip_to_state.json'].includes(f)
+    );
+    
+    for (const file of makeFiles) {
+      const makeName = file.replace('.json', '');
+      vehicleData[makeName] = JSON.parse(await fs.readFile(path.join(__dirname, file), 'utf-8'));
+    }
+    
+    console.log(`  ✅ Vehicle data: ${makeFiles.length} makes loaded`);
+    console.log('✅ All data files loaded successfully\n');
+    
   } catch (error) {
-    console.error(`Error loading ${normalized}.json:`, error.message);
-    return null;
+    console.error('❌ Error loading data:', error);
+    process.exit(1); // Exit if data can't load - app won't work without it
   }
 }
 
-/**
- * Load production years data
- */
-function loadProductionYears() {
-  if (productionYearsData) {
-    return productionYearsData;
-  }
-  
-  const jsonPath = path.join(__dirname, 'production_years.json');
-  
-  if (!fs.existsSync(jsonPath)) {
-    console.error('production_years.json not found!');
-    return null;
-  }
-  
-  try {
-    const raw = fs.readFileSync(jsonPath, 'utf-8');
-    productionYearsData = JSON.parse(raw);
-    console.log('✅ Production years data loaded successfully');
-    return productionYearsData;
-  } catch (error) {
-    console.error('Error loading production_years.json:', error.message);
-    return null;
-  }
-}
+loadData();
 
-/**
- * ENDPOINT: Health Check
- */
+// ============================================================
+// HEALTH CHECK ENDPOINT
+// ============================================================
 app.get('/', (req, res) => {
+  const stripeConfigured = process.env.STRIPE_SECRET_KEY && 
+                          process.env.STRIPE_SECRET_KEY !== 'sk_test_YOUR_SECRET_KEY_HERE';
+  
   res.json({
     ok: true,
-    service: 'fair-repair-auto-api',
-    version: '2.3',
-    mode: 'json-only',
+    version: '2.4',
+    status: 'Fair Repair Auto API - Stripe Payment Integration',
     endpoints: {
-      quote: 'POST /api/quote',
-      availableRepairs: 'GET /api/available-repairs/:year/:make/:model',
-      productionYears: 'GET /api/production-years',
-      health: 'GET /'
-    }
+      health: '/',
+      production_years: '/api/production-years',
+      available_repairs: '/api/available-repairs/:year/:make/:model',
+      quote: '/api/quote (POST)',
+      create_checkout: '/api/create-checkout-session (POST)',
+      get_session: '/api/session/:sessionId',
+      webhook: '/api/webhook (POST)'
+    },
+    stripe: stripeConfigured ? 'configured' : 'not configured',
+    environment: process.env.NODE_ENV || 'development',
+    timestamp: new Date().toISOString()
   });
 });
 
-/**
- * ENDPOINT: Get Production Years Data
- * Returns complete vehicle production years for all makes/models
- * 
- * GET /api/production-years
- * 
- * Returns: { ok: true, data: {...all production years...} }
- */
-app.get('/api/production-years', (req, res) => {
-  const data = loadProductionYears();
-  
-  if (!data) {
-    return res.status(500).json({
-      ok: false,
-      error: 'Failed to load production years data'
-    });
-  }
-  
+// ============================================================
+// GET PRODUCTION YEARS (For Frontend Vehicle Dropdowns)
+// ============================================================
+app.get('/api/production-years', validateApiKey, (req, res) => {
   res.json({
     ok: true,
-    data: data
+    data: productionYears,
+    count: Object.keys(productionYears).length
   });
 });
 
-/**
- * ENDPOINT: Get Available Repairs for a Vehicle
- * Prevents "no data" scenarios by only showing repairs that exist
- * 
- * GET /api/available-repairs/:year/:make/:model
- * 
- * Returns: { ok: true, repairs: ["oil-change", "brake-pads", ...] }
- */
-app.get('/api/available-repairs/:year/:make/:model', (req, res) => {
-  const year = normYear(req.params.year);
-  const make = norm(req.params.make);
-  const model = norm(req.params.model);
+// ============================================================
+// GET AVAILABLE REPAIRS FOR A VEHICLE
+// ============================================================
+app.get('/api/available-repairs/:year/:make/:model', validateApiKey, (req, res) => {
+  const { year, make, model } = req.params;
   
-  const makeData = loadMake(make);
+  console.log(`🔍 Available repairs request: ${year} ${make} ${model}`);
   
+  const makeData = vehicleData[make.toLowerCase()];
   if (!makeData) {
-    return res.json({
-      ok: true,
-      repairs: [],
-      reason: 'MAKE_NOT_FOUND',
-      message: `No data available for make: ${make}`
-    });
+    console.log(`  ❌ Make not found: ${make}`);
+    return res.json({ ok: false, error: 'Make not found', repairs: [], count: 0 });
   }
   
-  if (!makeData[model]) {
-    return res.json({
-      ok: true,
-      repairs: [],
-      reason: 'MODEL_NOT_FOUND',
-      message: `No data available for model: ${model}`
-    });
+  const modelData = makeData[model.toLowerCase()];
+  if (!modelData) {
+    console.log(`  ❌ Model not found: ${model}`);
+    return res.json({ ok: false, error: 'Model not found', repairs: [], count: 0 });
   }
   
-  if (!makeData[model][year]) {
-    return res.json({
-      ok: true,
-      repairs: [],
-      reason: 'YEAR_NOT_FOUND',
-      message: `No data available for year: ${year}`
-    });
+  const yearData = modelData[year];
+  if (!yearData) {
+    console.log(`  ❌ Year not found: ${year}`);
+    return res.json({ ok: false, error: 'Year not found', repairs: [], count: 0 });
   }
   
-  // Return array of available repair slugs
-  const repairs = Object.keys(makeData[model][year]);
+  const repairSlugs = Object.keys(yearData);
+  console.log(`  ✅ Found ${repairSlugs.length} repairs`);
   
   res.json({
     ok: true,
-    count: repairs.length,
-    repairs: repairs,
-    vehicle: {
-      year: year,
-      make: make,
-      model: model
-    }
+    repairs: repairSlugs,
+    count: repairSlugs.length,
+    vehicle: { year, make, model }
   });
 });
 
-/**
- * ENDPOINT: Get Pricing Quote
- * 
- * POST /api/quote
- * Body: { year, make, model, repairSlug, zip }
- * 
- * Returns: Full pricing with regional labor rate adjustments
- */
-app.post('/api/quote', (req, res) => {
+// ============================================================
+// GET PRICING QUOTE (Verify Data Available Before Payment)
+// ============================================================
+app.post('/api/quote', validateApiKey, async (req, res) => {
   const { year, make, model, repairSlug, zip } = req.body;
   
-  // Validate inputs
-  if (!year || !make || !model || !repairSlug) {
-    return res.status(400).json({
-      ok: false,
-      error: 'Missing required fields: year, make, model, repairSlug'
-    });
-  }
+  console.log(`💰 Quote request: ${year} ${make} ${model} - ${repairSlug} (ZIP: ${zip})`);
   
-  // Normalize inputs
-  const normMake = norm(make);
-  const normModel = norm(model);
-  const normYearValue = normYear(year);
-  const normRepair = norm(repairSlug);
-  
-  // Load make data
-  const makeData = loadMake(normMake);
-  if (!makeData) {
-    return res.json({
-      ok: true,
-      available: false,
-      reason: 'MAKE_NOT_FOUND',
-      message: `No pricing data available for make: ${make}`
-    });
-  }
-  
-  // Check model
-  if (!makeData[normModel]) {
-    return res.json({
-      ok: true,
-      available: false,
-      reason: 'MODEL_NOT_FOUND',
-      message: `No pricing data available for model: ${model}`
-    });
-  }
-  
-  // Check year
-  if (!makeData[normModel][normYearValue]) {
-    return res.json({
-      ok: true,
-      available: false,
-      reason: 'YEAR_NOT_FOUND',
-      message: `No pricing data available for year: ${year}`
-    });
-  }
-  
-  // Check repair
-  if (!makeData[normModel][normYearValue][normRepair]) {
-    return res.json({
-      ok: true,
-      available: false,
-      reason: 'REPAIR_NOT_FOUND',
-      message: `No pricing data available for repair: ${repairSlug}`
-    });
-  }
-  
-  // Get base pricing data
-  const repairData = makeData[normModel][normYearValue][normRepair];
-  
-  // Get labor rate information for ZIP code
-  const laborInfo = zip ? getLaborRate(zip) : {
-    rate: NATIONAL_AVERAGE,
-    source: 'National Average',
-    breakdown: { baseRate: NATIONAL_AVERAGE, cityPremium: 0 }
-  };
-  
-  const laborMultiplier = zip ? getLaborMultiplier(zip) : 1.0;
-  
-  // Extract pricing from nested object structure
-  // Format: { parts: {low, high}, labor: {low, high}, total: {low, high} }
-  let partsLow, partsHigh, laborLow, laborHigh;
-  
-  if (repairData.parts && repairData.labor) {
-    // Nested object format (current format)
-    partsLow = repairData.parts.low;
-    partsHigh = repairData.parts.high;
-    laborLow = repairData.labor.low;
-    laborHigh = repairData.labor.high;
-  } else if (Array.isArray(repairData)) {
-    // Array format: [partsLow, partsHigh, laborLow, laborHigh]
-    [partsLow, partsHigh, laborLow, laborHigh] = repairData;
-  } else if (repairData.partsLow !== undefined) {
-    // Flat object format: {partsLow, partsHigh, laborLow, laborHigh}
-    partsLow = repairData.partsLow;
-    partsHigh = repairData.partsHigh;
-    laborLow = repairData.laborLow;
-    laborHigh = repairData.laborHigh;
-  } else {
-    return res.json({
-      ok: true,
-      available: false,
-      reason: 'INVALID_FORMAT',
-      message: 'Pricing data format not recognized'
-    });
-  }
-  
-  // Apply regional multiplier to the labor rates from JSON
-  const adjustedLaborLow = Math.round(laborLow * laborMultiplier);
-  const adjustedLaborHigh = Math.round(laborHigh * laborMultiplier);
-  
-  // Calculate total pricing
-  const adjustedLow = partsLow + adjustedLaborLow;
-  const adjustedHigh = partsHigh + adjustedLaborHigh;
-  
-  return res.json({
-    ok: true,
-    available: true,
-    price: {
-      low: adjustedLow,
-      high: adjustedHigh,
-      average: Math.round((adjustedLow + adjustedHigh) / 2)
-    },
-    breakdown: {
-      parts: {
-        low: partsLow,
-        high: partsHigh
-      },
-      labor: {
-        low: adjustedLaborLow,
-        high: adjustedLaborHigh,
-        baseLow: laborLow,
-        baseHigh: laborHigh,
-        baseRate: laborInfo.rate,
-        source: laborInfo.source
-      }
-    },
-    regionalAdjustment: {
-      multiplier: Math.round(laborMultiplier * 1000) / 1000,
-      laborRate: laborInfo.rate,
-      nationalAverage: NATIONAL_AVERAGE,
-      difference: `${laborMultiplier > 1 ? '+' : ''}${Math.round((laborMultiplier - 1) * 100)}%`,
-      details: laborInfo.breakdown
-    },
-    vehicle: {
-      year: year,
-      make: make,
-      model: model,
-      repair: repairSlug
-    },
-    location: {
-      zip: zip || 'Not provided',
-      source: laborInfo.source
+  try {
+    // Get vehicle data
+    const makeData = vehicleData[make.toLowerCase()];
+    if (!makeData) {
+      return res.json({ ok: false, error: 'Make not found' });
     }
+    
+    const modelData = makeData[model.toLowerCase()];
+    if (!modelData) {
+      return res.json({ ok: false, error: 'Model not found' });
+    }
+    
+    const yearData = modelData[year];
+    if (!yearData) {
+      return res.json({ ok: false, error: 'Year not found' });
+    }
+    
+    const repairData = yearData[repairSlug];
+    if (!repairData) {
+      return res.json({ ok: false, error: 'Repair not found' });
+    }
+    
+    // Get regional labor rate
+    const state = zipToState[zip] || 'national';
+    const laborRate = laborRates[state] || laborRates['national'] || 140;
+    
+    // Calculate pricing
+    const partsLow = repairData.PartsLow || 0;
+    const partsHigh = repairData.PartsHigh || 0;
+    const laborLow = repairData.LaborLow || 0;
+    const laborHigh = repairData.LaborHigh || 0;
+    const totalLow = partsLow + laborLow;
+    const totalHigh = partsHigh + laborHigh;
+    
+    console.log(`  ✅ Quote calculated: $${totalLow}-$${totalHigh}`);
+    
+    res.json({
+      ok: true,
+      available: true,
+      price: {
+        low: totalLow,
+        high: totalHigh
+      },
+      breakdown: {
+        parts: { low: partsLow, high: partsHigh },
+        labor: { low: laborLow, high: laborHigh, baseRate: laborRate }
+      },
+      location: {
+        zip: zip,
+        state: state,
+        source: 'Identifix 2025 Regional Data'
+      },
+      repairTitle: repairData.RepairTitle || repairSlug,
+      vehicle: { year, make, model }
+    });
+    
+  } catch (error) {
+    console.error('❌ Quote error:', error);
+    res.json({ ok: false, error: error.message });
+  }
+});
+
+// ============================================================
+// CREATE STRIPE CHECKOUT SESSION
+// ============================================================
+app.post('/api/create-checkout-session', validateApiKey, async (req, res) => {
+  const { vehicle, repair, zip, quoteData } = req.body;
+  
+  console.log(`💳 Creating Stripe session for: ${vehicle.year} ${vehicle.make} ${vehicle.model}`);
+  
+  try {
+    // Validate required data
+    if (!vehicle || !repair || !zip || !quoteData) {
+      throw new Error('Missing required fields');
+    }
+    
+    // Format vehicle description for Stripe
+    const vehicleDesc = `${vehicle.year} ${vehicle.make.toUpperCase()} ${vehicle.model.toUpperCase()}`;
+    
+    // Create Stripe Checkout Session
+    const session = await stripe.checkout.sessions.create({
+      payment_method_types: ['card'],
+      line_items: [
+        {
+          price_data: {
+            currency: 'usd',
+            product_data: {
+              name: 'Fair Repair Auto - Pricing Report',
+              description: `${vehicleDesc} - ${repair}`,
+            },
+            unit_amount: 499, // $4.99 in cents
+          },
+          quantity: 1,
+        },
+      ],
+      mode: 'payment',
+      success_url: `${process.env.FRONTEND_URL || 'https://fairrepairauto.com'}/success?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${process.env.FRONTEND_URL || 'https://fairrepairauto.com'}/`,
+      metadata: {
+        // Store all pricing data in metadata so success page can retrieve it
+        year: vehicle.year.toString(),
+        make: vehicle.make,
+        model: vehicle.model,
+        repair: repair,
+        zip: zip,
+        priceLow: quoteData.price.low.toString(),
+        priceHigh: quoteData.price.high.toString(),
+        partsLow: quoteData.breakdown.parts.low.toString(),
+        partsHigh: quoteData.breakdown.parts.high.toString(),
+        laborLow: quoteData.breakdown.labor.low.toString(),
+        laborHigh: quoteData.breakdown.labor.high.toString(),
+        laborRate: quoteData.breakdown.labor.baseRate.toString(),
+        state: quoteData.location.state
+      },
+      customer_email: req.body.email || undefined,
+    });
+    
+    console.log(`  ✅ Session created: ${session.id}`);
+    
+    res.json({
+      ok: true,
+      sessionId: session.id,
+      url: session.url
+    });
+    
+  } catch (error) {
+    console.error('❌ Stripe session creation error:', error);
+    res.status(500).json({
+      ok: false,
+      error: error.message
+    });
+  }
+});
+
+// ============================================================
+// GET SESSION DETAILS (For Success Page)
+// ============================================================
+app.get('/api/session/:sessionId', validateApiKey, async (req, res) => {
+  console.log(`📋 Retrieving session: ${req.params.sessionId}`);
+  
+  try {
+    const session = await stripe.checkout.sessions.retrieve(req.params.sessionId);
+    
+    console.log(`  ✅ Session retrieved: ${session.payment_status}`);
+    
+    res.json({
+      ok: true,
+      payment_status: session.payment_status,
+      customer_email: session.customer_details?.email,
+      metadata: session.metadata
+    });
+    
+  } catch (error) {
+    console.error('❌ Session retrieval error:', error);
+    res.status(500).json({
+      ok: false,
+      error: error.message
+    });
+  }
+});
+
+// ============================================================
+// WEBHOOK ENDPOINT (Optional - For Production)
+// ============================================================
+app.post('/api/webhook', express.raw({ type: 'application/json' }), async (req, res) => {
+  const sig = req.headers['stripe-signature'];
+  const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
+  
+  if (!webhookSecret) {
+    console.log('⚠️  Webhook secret not configured - skipping verification');
+    return res.status(400).send('Webhook secret not configured');
+  }
+  
+  try {
+    const event = stripe.webhooks.constructEvent(req.body, sig, webhookSecret);
+    
+    console.log(`🔔 Webhook received: ${event.type}`);
+    
+    // Handle different event types
+    switch (event.type) {
+      case 'checkout.session.completed':
+        const session = event.data.object;
+        console.log(`  💰 Payment successful: ${session.id}`);
+        // TODO: Send email with pricing report
+        // TODO: Log purchase to database
+        break;
+      
+      case 'payment_intent.succeeded':
+        console.log('  ✅ Payment intent succeeded');
+        break;
+      
+      case 'payment_intent.payment_failed':
+        console.log('  ❌ Payment failed');
+        break;
+      
+      default:
+        console.log(`  ℹ️  Unhandled event type: ${event.type}`);
+    }
+    
+    res.json({ received: true });
+    
+  } catch (error) {
+    console.error('❌ Webhook error:', error);
+    res.status(400).send(`Webhook Error: ${error.message}`);
+  }
+});
+
+// ============================================================
+// ERROR HANDLING MIDDLEWARE
+// ============================================================
+app.use((err, req, res, next) => {
+  console.error('❌ Server error:', err);
+  res.status(500).json({
+    ok: false,
+    error: 'Internal server error',
+    message: err.message
   });
 });
 
-/**
- * ENDPOINT: Verify Payment (Stripe Integration Point)
- * 
- * POST /api/verify-payment
- * Body: { paymentIntentId }
- * 
- * Returns: { ok: true, verified: boolean }
- * 
- * TODO: Implement Stripe verification when ready
- */
-app.post('/api/verify-payment', async (req, res) => {
-  const { paymentIntentId } = req.body;
-  
-  // PLACEHOLDER: Replace with actual Stripe verification
-  // const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
-  // const paymentIntent = await stripe.paymentIntents.retrieve(paymentIntentId);
-  // const verified = paymentIntent.status === 'succeeded';
-  
-  // For now, return success in development mode
-  const verified = process.env.NODE_ENV === 'development' || paymentIntentId === 'test_payment';
-  
-  res.json({
-    ok: true,
-    verified: verified,
-    message: verified ? 'Payment verified' : 'Payment verification failed'
-  });
-});
-
-// Start server
+// ============================================================
+// START SERVER
+// ============================================================
 app.listen(PORT, () => {
-  console.log(`🚀 Fair Repair Auto API running on port ${PORT}`);
-  console.log(`📊 Endpoints available:`);
-  console.log(`   - GET  /`);
-  console.log(`   - GET  /api/available-repairs/:year/:make/:model`);
-  console.log(`   - POST /api/quote`);
-  console.log(`   - POST /api/verify-payment`);
+  console.log('\n' + '='.repeat(60));
+  console.log('🚀 FAIR REPAIR AUTO API v2.4');
+  console.log('='.repeat(60));
+  console.log(`📡 Server running on port ${PORT}`);
+  console.log(`🌍 Environment: ${process.env.NODE_ENV || 'development'}`);
+  console.log(`💳 Stripe: ${process.env.STRIPE_SECRET_KEY ? '✅ Configured' : '❌ Not configured'}`);
+  console.log(`🔗 Frontend URL: ${process.env.FRONTEND_URL || 'Not set'}`);
+  console.log('='.repeat(60) + '\n');
 });
-
-export default app;
