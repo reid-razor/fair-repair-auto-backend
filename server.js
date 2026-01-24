@@ -90,38 +90,37 @@ let zipToState = {};
 let vehicleData = {};
 
 // ============================================================
-// LOAD DATA FILES ON STARTUP
+// LOAD DATA FILES ON STARTUP (FIXED FOR /data FOLDER)
 // ============================================================
 async function loadData() {
   try {
     console.log('📂 Loading data files...');
     
-    // Load supporting data
+    // Load supporting data from root directory
     productionYears = JSON.parse(await fs.readFile(path.join(__dirname, 'production_years.json'), 'utf-8'));
-    laborRates = JSON.parse(await fs.readFile(path.join(__dirname, 'labor_rates_2025.json'), 'utf-8'));
-    zipToState = JSON.parse(await fs.readFile(path.join(__dirname, 'zip_to_state.json'), 'utf-8'));
+    laborRates = JSON.parse(await fs.readFile(path.join(__dirname, 'laborRates.js'), 'utf-8'));
+    zipToState = JSON.parse(await fs.readFile(path.join(__dirname, 'zipToState.js'), 'utf-8'));
     
     console.log(`  ✅ Production years: ${Object.keys(productionYears).length} makes`);
     console.log(`  ✅ Labor rates: ${Object.keys(laborRates).length} regions`);
     console.log(`  ✅ ZIP mapping: ${Object.keys(zipToState).length} ZIPs`);
     
-    // Load all make.json files
-    const files = await fs.readdir(__dirname);
-    const makeFiles = files.filter(f => 
-      f.endsWith('.json') && 
-      !['production_years.json', 'labor_rates_2025.json', 'zip_to_state.json'].includes(f)
-    );
+    // Load all make.json files from /data folder
+    const dataDir = path.join(__dirname, 'data');
+    const files = await fs.readdir(dataDir);
+    const makeFiles = files.filter(f => f.endsWith('.json'));
     
     for (const file of makeFiles) {
       const makeName = file.replace('.json', '');
-      vehicleData[makeName] = JSON.parse(await fs.readFile(path.join(__dirname, file), 'utf-8'));
+      vehicleData[makeName] = JSON.parse(await fs.readFile(path.join(dataDir, file), 'utf-8'));
     }
     
-    console.log(`  ✅ Vehicle data: ${makeFiles.length} makes loaded`);
+    console.log(`  ✅ Vehicle data: ${makeFiles.length} makes loaded from /data folder`);
     console.log('✅ All data files loaded successfully\n');
     
   } catch (error) {
     console.error('❌ Error loading data:', error);
+    console.error('   File path attempted:', error.path);
     process.exit(1); // Exit if data can't load - app won't work without it
   }
 }
