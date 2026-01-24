@@ -1,14 +1,15 @@
 {
-  "name": "fair-repair-auto-backend",
-  "version": "2.0.0",
+  "name": "fair-repair-auto-api",
+  "version": "2.4.0",
   "type": "module",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
   "dependencies": {
-    "express": "^4.19.2",
-    "cors": "^2.8.5"
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "stripe": "^14.10.0"
   },
   "engines": {
     "node": ">=18.0.0"
