@@ -14,6 +14,7 @@
  * - Applies regional multiplier to existing labor rates
  * - Available repairs endpoint (prevents "no data" scenarios)
  * - Production years endpoint (serves vehicle/year data to frontend)
+ * - Smart labor rate calculations using getLaborRate() functions
  * 
  * ENVIRONMENT VARIABLES REQUIRED:
  * - STRIPE_SECRET_KEY: Your Stripe secret key (sk_test_... or sk_live_...)
@@ -36,6 +37,7 @@ import Stripe from 'stripe';
 import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { getLaborRate, getLaborMultiplier, NATIONAL_AVERAGE } from './laborRates.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -85,25 +87,18 @@ const validateApiKey = (req, res, next) => {
 // DATA STORAGE
 // ============================================================
 let productionYears = {};
-let laborRates = {};
-let zipToState = {};
 let vehicleData = {};
 
 // ============================================================
-// LOAD DATA FILES ON STARTUP (FIXED FOR /data FOLDER)
+// LOAD DATA FILES ON STARTUP
 // ============================================================
 async function loadData() {
   try {
     console.log('📂 Loading data files...');
     
-    // Load supporting data from root directory
+    // Load production years from root
     productionYears = JSON.parse(await fs.readFile(path.join(__dirname, 'production_years.json'), 'utf-8'));
-    laborRates = JSON.parse(await fs.readFile(path.join(__dirname, 'laborRates.js'), 'utf-8'));
-    zipToState = JSON.parse(await fs.readFile(path.join(__dirname, 'zipToState.js'), 'utf-8'));
-    
     console.log(`  ✅ Production years: ${Object.keys(productionYears).length} makes`);
-    console.log(`  ✅ Labor rates: ${Object.keys(laborRates).length} regions`);
-    console.log(`  ✅ ZIP mapping: ${Object.keys(zipToState).length} ZIPs`);
     
     // Load all make.json files from /data folder
     const dataDir = path.join(__dirname, 'data');
@@ -116,16 +111,28 @@ async function loadData() {
     }
     
     console.log(`  ✅ Vehicle data: ${makeFiles.length} makes loaded from /data folder`);
+    console.log(`  ✅ Labor rates: Using getLaborRate() from laborRates.js`);
     console.log('✅ All data files loaded successfully\n');
     
   } catch (error) {
     console.error('❌ Error loading data:', error);
     console.error('   File path attempted:', error.path);
-    process.exit(1); // Exit if data can't load - app won't work without it
+    process.exit(1);
   }
 }
 
 loadData();
+
+// ============================================================
+// HELPER FUNCTIONS
+// ============================================================
+function norm(str) {
+  return String(str || '').toLowerCase().trim();
+}
+
+function normYear(year) {
+  return String(year || '').trim();
+}
 
 // ============================================================
 // HEALTH CHECK ENDPOINT
@@ -168,17 +175,19 @@ app.get('/api/production-years', validateApiKey, (req, res) => {
 // GET AVAILABLE REPAIRS FOR A VEHICLE
 // ============================================================
 app.get('/api/available-repairs/:year/:make/:model', validateApiKey, (req, res) => {
-  const { year, make, model } = req.params;
+  const year = normYear(req.params.year);
+  const make = norm(req.params.make);
+  const model = norm(req.params.model);
   
   console.log(`🔍 Available repairs request: ${year} ${make} ${model}`);
   
-  const makeData = vehicleData[make.toLowerCase()];
+  const makeData = vehicleData[make];
   if (!makeData) {
     console.log(`  ❌ Make not found: ${make}`);
     return res.json({ ok: false, error: 'Make not found', repairs: [], count: 0 });
   }
   
-  const modelData = makeData[model.toLowerCase()];
+  const modelData = makeData[model];
   if (!modelData) {
     console.log(`  ❌ Model not found: ${model}`);
     return res.json({ ok: false, error: 'Model not found', repairs: [], count: 0 });
@@ -210,38 +219,68 @@ app.post('/api/quote', validateApiKey, async (req, res) => {
   console.log(`💰 Quote request: ${year} ${make} ${model} - ${repairSlug} (ZIP: ${zip})`);
   
   try {
+    // Normalize inputs
+    const normMake = norm(make);
+    const normModel = norm(model);
+    const normYearValue = normYear(year);
+    const normRepair = norm(repairSlug);
+    
     // Get vehicle data
-    const makeData = vehicleData[make.toLowerCase()];
+    const makeData = vehicleData[normMake];
     if (!makeData) {
       return res.json({ ok: false, error: 'Make not found' });
     }
     
-    const modelData = makeData[model.toLowerCase()];
+    const modelData = makeData[normModel];
     if (!modelData) {
       return res.json({ ok: false, error: 'Model not found' });
     }
     
-    const yearData = modelData[year];
+    const yearData = modelData[normYearValue];
     if (!yearData) {
       return res.json({ ok: false, error: 'Year not found' });
     }
     
-    const repairData = yearData[repairSlug];
+    const repairData = yearData[normRepair];
     if (!repairData) {
       return res.json({ ok: false, error: 'Repair not found' });
     }
     
-    // Get regional labor rate
-    const state = zipToState[zip] || 'national';
-    const laborRate = laborRates[state] || laborRates['national'] || 140;
+    // Get labor rate information using imported function
+    const laborInfo = zip ? getLaborRate(zip) : {
+      rate: NATIONAL_AVERAGE,
+      source: 'National Average',
+      breakdown: { baseRate: NATIONAL_AVERAGE, cityPremium: 0 }
+    };
     
-    // Calculate pricing
-    const partsLow = repairData.PartsLow || 0;
-    const partsHigh = repairData.PartsHigh || 0;
-    const laborLow = repairData.LaborLow || 0;
-    const laborHigh = repairData.LaborHigh || 0;
-    const totalLow = partsLow + laborLow;
-    const totalHigh = partsHigh + laborHigh;
+    const laborMultiplier = zip ? getLaborMultiplier(zip) : 1.0;
+    
+    // Extract pricing from nested object structure
+    let partsLow, partsHigh, laborLow, laborHigh;
+    
+    if (repairData.parts && repairData.labor) {
+      // Nested object format
+      partsLow = repairData.parts.low;
+      partsHigh = repairData.parts.high;
+      laborLow = repairData.labor.low;
+      laborHigh = repairData.labor.high;
+    } else if (repairData.PartsLow !== undefined) {
+      // Capital case format (your current format)
+      partsLow = repairData.PartsLow;
+      partsHigh = repairData.PartsHigh;
+      laborLow = repairData.LaborLow;
+      laborHigh = repairData.LaborHigh;
+    } else {
+      return res.json({ ok: false, error: 'Invalid pricing data format' });
+    }
+    
+    // Apply regional multiplier to labor
+    const adjustedLaborLow = Math.round(laborLow * laborMultiplier);
+    const adjustedLaborHigh = Math.round(laborHigh * laborMultiplier);
+    
+    // Calculate totals
+    const totalLow = partsLow + adjustedLaborLow;
+    const totalHigh = partsHigh + adjustedLaborHigh;
     
     console.log(`  ✅ Quote calculated: $${totalLow}-$${totalHigh}`);
     
@@ -254,12 +293,21 @@ app.post('/api/quote', validateApiKey, async (req, res) => {
       },
       breakdown: {
         parts: { low: partsLow, high: partsHigh },
-        labor: { low: laborLow, high: laborHigh, baseRate: laborRate }
+        labor: { 
+          low: adjustedLaborLow, 
+          high: adjustedLaborHigh, 
+          baseRate: laborInfo.rate 
+        }
       },
       location: {
         zip: zip,
-        state: state,
-        source: 'Identifix 2025 Regional Data'
+        source: laborInfo.source
+      },
+      regionalAdjustment: {
+        multiplier: Math.round(laborMultiplier * 1000) / 1000,
+        laborRate: laborInfo.rate,
+        nationalAverage: NATIONAL_AVERAGE,
+        difference: `${laborMultiplier > 1 ? '+' : ''}${Math.round((laborMultiplier - 1) * 100)}%`
       },
       repairTitle: repairData.RepairTitle || repairSlug,
       vehicle: { year, make, model }
@@ -280,15 +328,12 @@ app.post('/api/create-checkout-session', validateApiKey, async (req, res) => {
   console.log(`💳 Creating Stripe session for: ${vehicle.year} ${vehicle.make} ${vehicle.model}`);
   
   try {
-    // Validate required data
     if (!vehicle || !repair || !zip || !quoteData) {
       throw new Error('Missing required fields');
     }
     
-    // Format vehicle description for Stripe
     const vehicleDesc = `${vehicle.year} ${vehicle.make.toUpperCase()} ${vehicle.model.toUpperCase()}`;
     
-    // Create Stripe Checkout Session
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
       line_items: [
@@ -299,7 +344,7 @@ app.post('/api/create-checkout-session', validateApiKey, async (req, res) => {
               name: 'Fair Repair Auto - Pricing Report',
               description: `${vehicleDesc} - ${repair}`,
             },
-            unit_amount: 499, // $4.99 in cents
+            unit_amount: 499,
           },
           quantity: 1,
         },
@@ -308,7 +353,6 @@ app.post('/api/create-checkout-session', validateApiKey, async (req, res) => {
       success_url: `${process.env.FRONTEND_URL || 'https://fairrepairauto.com'}/success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${process.env.FRONTEND_URL || 'https://fairrepairauto.com'}/`,
       metadata: {
-        // Store all pricing data in metadata so success page can retrieve it
         year: vehicle.year.toString(),
         make: vehicle.make,
         model: vehicle.model,
@@ -321,7 +365,7 @@ app.post('/api/create-checkout-session', validateApiKey, async (req, res) => {
         laborLow: quoteData.breakdown.labor.low.toString(),
         laborHigh: quoteData.breakdown.labor.high.toString(),
         laborRate: quoteData.breakdown.labor.baseRate.toString(),
-        state: quoteData.location.state
+        locationSource: quoteData.location.source
       },
       customer_email: req.body.email || undefined,
     });
@@ -387,13 +431,10 @@ app.post('/api/webhook', express.raw({ type: 'application/json' }), async (req, 
     
     console.log(`🔔 Webhook received: ${event.type}`);
     
-    // Handle different event types
     switch (event.type) {
       case 'checkout.session.completed':
         const session = event.data.object;
         console.log(`  💰 Payment successful: ${session.id}`);
-        // TODO: Send email with pricing report
-        // TODO: Log purchase to database
         break;
       
       case 'payment_intent.succeeded':
@@ -441,3 +482,5 @@ app.listen(PORT, () => {
   console.log(`🔗 Frontend URL: ${process.env.FRONTEND_URL || 'Not set'}`);
   console.log('='.repeat(60) + '\n');
 });
+
+export default app;
