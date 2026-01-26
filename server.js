@@ -116,9 +116,12 @@ async function loadData() {
     const makeFiles = files.filter(f => f.endsWith('.json'));
     
     for (const file of makeFiles) {
-      const makeName = file.replace('.json', '');
-      vehicleData[makeName] = JSON.parse(await fs.readFile(path.join(dataDir, file), 'utf-8'));
-    }
+     const makeName = file.replace('.json', '');
+     const fileContent = await fs.readFile(path.join(dataDir, file), 'utf-8');
+     const parsed = JSON.parse(fileContent);
+     // Handle both formats: direct object or {data: {...}}
+     vehicleData[makeName] = parsed.data || parsed;
+   }
     
     console.log(`  ✅ Vehicle data: ${makeFiles.length} makes loaded from /data folder`);
     console.log(`  ✅ Labor rates: Using getLaborRate() from laborRates.js`);
