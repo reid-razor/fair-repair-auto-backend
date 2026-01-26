@@ -58,6 +58,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || 'sk_test_YOUR_SECRET_
 app.use(cors({
   origin: [
     'https://fair-repair-auto.webflow.io',
+    'https://fair-repair-auto-app.webflow.io',
     'https://fairrepairauto.com',
     'https://www.fairrepairauto.com',
     'http://localhost:3000',
