@@ -1,7 +1,7 @@
 /**
  * FAIR REPAIR AUTO - BACKEND SERVER
  * Version: 2.4 - STRIPE PAYMENT INTEGRATION
- * Last Updated: January 24, 2026
+ * Last Updated: January 26, 2026
  * 
  * NEW IN V2.4:
  * - Stripe Checkout Session creation
@@ -15,6 +15,15 @@
  * - Available repairs endpoint (prevents "no data" scenarios)
  * - Production years endpoint (serves vehicle/year data to frontend)
  * - Smart labor rate calculations using getLaborRate() functions
+ * 
+ * SECURITY MODEL:
+ * - Public endpoints (NO API key required):
+ *   - /api/production-years
+ *   - /api/available-repairs/:year/:make/:model
+ *   - /api/quote
+ * - Protected endpoints (API key required):
+ *   - /api/create-checkout-session
+ *   - /api/session/:sessionId
  * 
  * ENVIRONMENT VARIABLES REQUIRED:
  * - STRIPE_SECRET_KEY: Your Stripe secret key (sk_test_... or sk_live_...)
@@ -164,7 +173,7 @@ app.get('/', (req, res) => {
 // ============================================================
 // GET PRODUCTION YEARS (For Frontend Vehicle Dropdowns)
 // ============================================================
-app.get('/api/production-years', validateApiKey, (req, res) => {
+app.get('/api/production-years', (req, res) => {
   res.json({
     ok: true,
     data: productionYears,
@@ -175,7 +184,7 @@ app.get('/api/production-years', validateApiKey, (req, res) => {
 // ============================================================
 // GET AVAILABLE REPAIRS FOR A VEHICLE
 // ============================================================
-app.get('/api/available-repairs/:year/:make/:model', validateApiKey, (req, res) => {
+app.get('/api/available-repairs/:year/:make/:model', (req, res) => {
   const year = normYear(req.params.year);
   const make = norm(req.params.make);
   const model = norm(req.params.model);
@@ -214,7 +223,7 @@ app.get('/api/available-repairs/:year/:make/:model', validateApiKey, (req, res) 
 // ============================================================
 // GET PRICING QUOTE (Verify Data Available Before Payment)
 // ============================================================
-app.post('/api/quote', validateApiKey, async (req, res) => {
+app.post('/api/quote', async (req, res) => {
   const { year, make, model, repairSlug, zip } = req.body;
   
   console.log(`💰 Quote request: ${year} ${make} ${model} - ${repairSlug} (ZIP: ${zip})`);
