@@ -357,7 +357,7 @@ app.post('/api/create-checkout-session', validateApiKey, async (req, res) => {
               name: 'Fair Repair Auto - Pricing Report',
               description: `${vehicleDesc} - ${repair}`,
             },
-            unit_amount: 499,
+            unit_amount: 999,
           },
           quantity: 1,
         },
